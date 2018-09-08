@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <list>
 
 void swap(int& a, int& b) {
@@ -21,10 +20,11 @@ void removeNegative(std::list<int>& numbers) {
 }
 
 int main() {
-	using namespace std;
-
 	int x = 13, y = 42;
 	swap(x, y); // x == 42, y == 13
+
+    using namespace std;
+
 	cout << x << " " << y << endl;
 
 	list<int> values{ 1, -69, -4, 42, -2, 13, -9 };
