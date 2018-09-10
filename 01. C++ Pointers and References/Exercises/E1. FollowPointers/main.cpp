@@ -1,6 +1,8 @@
 #include<iostream>
+#include<string>
 
 #include "Node.h"
+#include "FollowPointers.h"
 
 //int getSumFrom(Node* start);
 
