@@ -9,7 +9,7 @@ typedef unsigned char byte;
 
 namespace local {
   byte next(const byte*& memory) {
-    return *memory++;
+    return *(memory++);
   }
 
   int parseId(const byte*& memory) {
