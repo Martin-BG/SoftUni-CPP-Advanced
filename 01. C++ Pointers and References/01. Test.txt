@@ -1,0 +1,74 @@
+NOTE: answers are marked as follows:
+. incorrect answers
+= correct answers
+
+01. Which of the following declares a reference that cannot be used to modify the variable it is assigned to?
+. int& ref
+. int* ref
+= const int& ref
+. int& const ref
+
+02. If we have a class X that has a field int& ref; which of the following constructors will allow us to create objects of the class X?
+. X(int ref) { this->ref = ref }
+= X(int& ref) : ref(ref) { }
+. X() : ref() { }
+. X() { }
+
+03. Which of the following prints the address of the variable int x;?
+= cout << &x;
+. cout << x;
+. cout << *x;
+. cout << x->;
+
+04. Which of the following declares a pointer that can be used to modify the pointed object, but the pointer itself cannot be changed to point to another object?
+. const int* ptr
+= int* const ptr
+. const int * const ptr
+. int* ptr
+
+05. Which of the following prints the 2nd element (value 42) in the array int arr[]{ 13, 42, 69 };?
+. cout << &(arr[1])
+. cout << *arr + 1
+. cout << arr + 1
+= cout << *(arr + 1);
+
+
+06. Given the array int arr[]{ 13, 42, 69 }; and the pointer int* p = arr; which of the following will change the value 42 to 43?
+. p = 43;
+. p+=2; p = 43;
+. p[2]++;
+= p++; (*p)++;
+
+07. Which of the following is not a valid C++ construct (i.e. valid things in C++)?
+. int** p - a pointer to a pointer to an integer
+. int*** p - a pointer to a pointer to a pointer to an integer
+. int*& p - a reference to a pointer to an integer
+= all of these are valid C++ constructs
+
+****08. If we have
+string a = "hello", b = "world";
+vector<string*> words{ &a, &b };
+for (auto i = words.begin(); i != words.end(); i++) {
+  /*answer*/
+}
+What code should replace the /*answer*/ comment to print "hello world "?
+. cout << i << " "
+. cout << *i << " "
+= cout << *(*i) << " "
+. cout << i-> << " "
+
+09. Which of the following will print all the values of arr[]{ 13, 42, 69 };?
+= cout << *(p++) << *(p++) << *(p++);
+. cout << arr << arr + 1 << arr + 2
+. cout << (*arr) + 1 << (*arr) + 2 << (*arr) + 3
+. cout << &arr[0] << &arr[1] << &arr[2]
+
+10. If we have 
+char arr[]{'a', 'b', 'c'}; char* ptr = arr;
+What will the code
+cout << ptr;
+print on the console?
+. abc
+. a
+. the address of the first element of arr
+= behavior is undefined
