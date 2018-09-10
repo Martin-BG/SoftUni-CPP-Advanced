@@ -1,0 +1,10 @@
+Exercise 1: FollowPointers
+
+You are given the following main.cpp file and a Node.h file
+- main.cpp declares a function int getSumFrom(Node* node)
+- Node.h file defines what a Node is
+Create a FollowPointers.h that implements the function
+The function should calculate the sum
+- Of the value fields, from the provided node
+- Moving by going to the next field, until nullptr is reached
+Write #include "Node.h" in your file to use the Node code
