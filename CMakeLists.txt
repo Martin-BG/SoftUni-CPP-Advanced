@@ -3,6 +3,7 @@ project(CPP_Advanced)
 
 set(CMAKE_CXX_STANDARD 11)
 
+#######################################
 set(L01 "01. C++ Pointers and References/")
 
 set(L01_DEMOS "${L01}Demos/")
@@ -20,8 +21,8 @@ add_executable(L01_D11.PointersAsArrays "${L01_DEMOS}11. PointersAsArrays.cpp")
 add_executable(L01_D12.FunFactIndexingOperatorSyntax "${L01_DEMOS}12. FunFactIndexingOperatorSyntax.cpp")
 
 set(L01_EXERCISES "${L01}Exercises/")
-set(L01_EXERCISES_E1 "${L01_EXERCISES}E1. FollowPointers/")
-add_executable(L01_E01.FollowPointers ${L01_EXERCISES_E1}main.cpp ${L01_EXERCISES_E1}Node.h ${L01_EXERCISES_E1}FollowPointers.h)
+set(L01_EXERCISES_E01 "${L01_EXERCISES}01. FollowPointers/")
+add_executable(L01_E01.FollowPointers ${L01_EXERCISES_E01}main.cpp ${L01_EXERCISES_E01}Node.h ${L01_EXERCISES_E01}FollowPointers.h)
 
 set(L01_HOMEWORK "${L01}Homework/")
 set(L01_HOMEWORK_01 "${L01_HOMEWORK}01. TryParse/")
@@ -34,3 +35,37 @@ add_executable(L01_H02.Find ${L01_HOMEWORK_02}Main.cpp ${L01_HOMEWORK_02}Company
 add_executable(L01_H03.Order ${L01_HOMEWORK_03}OrderMain.cpp ${L01_HOMEWORK_03}Company.h ${L01_HOMEWORK_03}OrderedInserter.h)
 add_executable(L01_H04.Profits ${L01_HOMEWORK_04}ProfitsMain.cpp ${L01_HOMEWORK_04}Company.h ${L01_HOMEWORK_04}ProfitCalculator.h ${L01_HOMEWORK_04}ProfitReport.h)
 add_executable(L01_H05.Memory ${L01_HOMEWORK_05}MemoryMain.cpp ${L01_HOMEWORK_05}Company.h ${L01_HOMEWORK_05}CompanyMemoryUtils.h)
+
+#######################################
+set(L02 "02. Memory Management/")
+
+set(L02_DEMOS "${L02}Demos/")
+add_executable(L02_D01.FunctionPointers "${L02_DEMOS}01. FunctionPointers.cpp")
+add_executable(L02_D02.VoidPointer "${L02_DEMOS}02. VoidPointer.cpp")
+add_executable(L02_D03.PitfallUncheckedCStyleCasting "${L02_DEMOS}03. PitfallUncheckedCStyleCasting.cpp")
+add_executable(L02_D04.CastingPointers "${L02_DEMOS}04. CastingPointers.cpp")
+add_executable(L02_D05.AutomaticStorage "${L02_DEMOS}05. AutomaticStorage.cpp")
+add_executable(L02_D06.OperatorNew "${L02_DEMOS}06. OperatorNew.cpp")
+add_executable(L02_D07.ReleasingUnusedMemory "${L02_DEMOS}07. ReleasingUnusedMemory.cpp")
+add_executable(L02_D08.PitfallDeletingMemoryMoreThanOnce "${L02_DEMOS}08. PitfallDeletingMemoryMoreThanOnce.cpp")
+add_executable(L02_D09.PitfallDeletingPointerContainerBeforePointersInside "${L02_DEMOS}09. PitfallDeletingPointerContainerBeforePointersInside.cpp")
+add_executable(L02_D10.UniquePtr "${L02_DEMOS}10. UniquePtr.cpp")
+add_executable(L02_D11.SharedPtr "${L02_DEMOS}11. SharedPtr.cpp")
+
+set(L02_EXERCISES "${L02}Exercises/")
+set(L02_EXERCISES_E01 "${L02_EXERCISES}01. Filter/")
+set(L02_EXERCISES_E02 "${L02_EXERCISES}02. LargestSumArrayNewDelete/")
+add_executable(L02_E01.Filter ${L02_EXERCISES_E01}Filter.cpp)
+add_executable(L02_E02.LargestSumArrayNewDelete ${L02_EXERCISES_E02}LargestSumArrayNewDelete.cpp)
+
+set(L02_HOMEWORK "${L02}Homework/")
+set(L02_HOMEWORK_01 "${L02_HOMEWORK}01. MinBy/")
+set(L02_HOMEWORK_02 "${L02_HOMEWORK}02. Remove Invalid/")
+set(L02_HOMEWORK_03 "${L02_HOMEWORK}03. Make Company/")
+set(L02_HOMEWORK_04 "${L02_HOMEWORK}04. Parse Unique Companies/")
+set(L02_HOMEWORK_05 "${L02_HOMEWORK}05. Serialize/")
+add_executable(L02_H01.MinBy ${L02_HOMEWORK_01}MinByMain.cpp ${L02_HOMEWORK_01}MinBy.h)
+add_executable(L02_H02.RemoveInvalid ${L02_HOMEWORK_02}RemoveInvlalidMain.cpp ${L02_HOMEWORK_02}Company.h ${L02_HOMEWORK_02}RemoveInvalid.h)
+add_executable(L02_H03.MakeCompany ${L02_HOMEWORK_03}MakeCompanyMain.cpp ${L02_HOMEWORK_03}Company.h ${L02_HOMEWORK_03}MakeCompany.h)
+add_executable(L02_H04.ParseUniqueCompanies ${L02_HOMEWORK_04}ParseUniqueCompaniesMain.cpp ${L02_HOMEWORK_04}Company.h ${L02_HOMEWORK_04}ParseCompanies.h)
+add_executable(L02_H05.Serialize ${L02_HOMEWORK_05}SerializeMain.cpp ${L02_HOMEWORK_05}Company.h ${L02_HOMEWORK_05}Serialize.h)
