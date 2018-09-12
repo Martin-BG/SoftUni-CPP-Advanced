@@ -1,0 +1,10 @@
+apple = 90
+johnson_&_johnson = 160
+microsoft = 210
+alphabet = 240
+tencent = 250
+amazon = 240
+berkshire_hathaway = 210
+facebook = 160
+alibaba_group = 90
+jpmorgan_chase = 0

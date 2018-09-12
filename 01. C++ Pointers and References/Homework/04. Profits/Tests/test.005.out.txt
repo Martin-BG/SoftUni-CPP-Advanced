@@ -1,0 +1,6 @@
+amazon = 240
+berkshire_hathaway = 210
+alphabet = 240
+tencent = 250
+johnson_&_johnson = 180
+microsoft = 210

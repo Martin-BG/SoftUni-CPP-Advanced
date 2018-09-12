@@ -1,0 +1,11 @@
+apple 851317
+johnson_&_johnson 343780
+microsoft 702760
+alphabet 717404
+tencent 507990
+amazon 700672
+berkshire_hathaway 492019
+facebook 464189
+alibaba_group 470930
+jpmorgan_chase 377410
+end

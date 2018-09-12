@@ -1,0 +1,3 @@
+acme = 0
+softuni_foundation = 500
+itjoro = 600
