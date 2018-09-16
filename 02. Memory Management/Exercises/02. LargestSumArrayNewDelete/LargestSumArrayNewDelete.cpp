@@ -21,6 +21,7 @@ int main() {
 		}
 
 		if (maxSumArr == nullptr || maxSum < sum) {
+			delete[] maxSumArr;
 			maxSum = sum;
 			maxSumArr = arr;
 			maxSumArrLength = length;
