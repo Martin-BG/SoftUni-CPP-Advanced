@@ -9,7 +9,7 @@ int main() {
 
 	int number = 42;
 	char cStr[] = "I'm a C-String";
-	char* otherCStr = "I'm another C-String";
+	char* otherCStr = "I'm another C-String"; // NOTE: ISO C++11 does not allow conversion from string literal to 'char *'
 
 	int * numberPtr = &number;
 	void* p;
@@ -26,7 +26,7 @@ int main() {
 	p = otherCStr;
 	cout << otherCStr << " " << p << endl; // otherCStr will be printed as a string, p as an address
 
-	p = print;
+	p = print; // NOTE: error: invalid conversion from 'void (*)(int)' to 'void*' [-fpermissive]
 	cout << p << endl; // address to the function
 
 	return 0;
