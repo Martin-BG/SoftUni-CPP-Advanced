@@ -11,12 +11,12 @@ std::ostream& operator<<(std::ostream& stream, const std::vector<T>& v) {
 	return stream;
 }
 
-std::vector<int> filter(std::vector<int> numbers, bool(*shouldFilter)(int)) {
+std::vector<int> filter(const std::vector<int>& numbers, bool(*shouldTake)(int)) {
 	std::vector<int> filtered;
 
 
 	for (int n : numbers) {
-		if (shouldFilter(n)) {
+		if (shouldTake(n)) {
 			filtered.push_back(n);
 		}
 	}
@@ -28,6 +28,10 @@ bool isEven(int number) {
 	return number % 2 == 0;
 }
 
+bool isNegative(int number) {
+  return number < 0;
+}
+
 int main() {
 	using namespace std;
 
@@ -37,9 +41,7 @@ int main() {
 
 	cout << filter({ 1, 2, 3, 4, 5, 6, 7 }, isEven) << endl;
 
-	cout << filter({ 1, -2, 3, 4, -5, 6, -7 }, [](int n) {
-		return n < 0;
-	}) << endl;
+	cout << filter({ 1, -2, 3, 4, -5, 6, -7 }, isNegative) << endl;
 
 	return 0;
 }
