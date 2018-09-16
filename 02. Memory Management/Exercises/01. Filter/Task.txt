@@ -1,0 +1,5 @@
+Exercise: function to filter a vector<int>
+ Accept pointer to function – to decide which numbers to filter
+ Filter numbers > 3
+ Filter even numbers
+ Filter negative numbers

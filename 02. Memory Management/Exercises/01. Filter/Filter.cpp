@@ -35,7 +35,11 @@ int main() {
 		return n > 3;
 	}) << endl;
 
-	cout << filter({ 1, 2, 3, 4, 5, 6, 7 }, isEven);
+	cout << filter({ 1, 2, 3, 4, 5, 6, 7 }, isEven) << endl;
+
+	cout << filter({ 1, -2, 3, 4, -5, 6, -7 }, [](int n) {
+		return n < 0;
+	}) << endl;
 
 	return 0;
 }
