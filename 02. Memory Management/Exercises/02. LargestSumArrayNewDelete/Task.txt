@@ -1,0 +1,9 @@
+Exercise 2: Print Largest Sum Array
+You are given integer N – number of arrays
+ Each array entered as integer L followed by exactly L integers
+ Print the one with the largest sum
+ You are NOT allowed to
+use any STL container
+ i.e. you must use
+new and delete for the arrays
+ Avoid memory leaks!
