@@ -71,7 +71,7 @@ add_executable(L02_H04.ParseUniqueCompanies ${L02_HOMEWORK_04}ParseUniqueCompani
 add_executable(L02_H05.Serialize ${L02_HOMEWORK_05}SerializeMain.cpp ${L02_HOMEWORK_05}Company.h ${L02_HOMEWORK_05}Serialize.h)
 
 #######################################
-set(L03 "03. Exercises on Pointers, References and Dynamic Memory/")
+set(L03 "03. Exercises/")
 
 set(L03_TASK_01 "${L03}01. Sort/")
 set(L03_TASK_02 "${L03}02. Sort Pointers/")
