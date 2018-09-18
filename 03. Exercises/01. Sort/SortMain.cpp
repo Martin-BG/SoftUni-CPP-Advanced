@@ -4,6 +4,35 @@
 #include <algorithm>
 #include "Company.h"
 
+std::vector<Company> readCompanies();
+
+bool (* getSortingFunction())(const Company&, const Company&);
+
+bool compId(const Company& a, const Company& b);
+
+bool compName(const Company& a, const Company& b);
+
+int main() {
+  auto companies = readCompanies();
+  auto comp = getSortingFunction();
+
+  std::sort(companies.begin(), companies.end(), comp);
+
+  for (auto company: companies) {
+    std::cout << company.toString() << std::endl;
+  }
+
+  return 0;
+}
+
+bool compId(const Company& a, const Company& b) {
+  return a.getId() < b.getId();
+}
+
+bool compName(const Company& a, const Company& b) {
+  return a.getName() < b.getName();
+}
+
 std::vector<Company> readCompanies() {
   std::vector<Company> companies;
   std::string line;
@@ -21,19 +50,8 @@ std::vector<Company> readCompanies() {
   return companies;
 }
 
-bool compId(const Company& a, const Company& b) {
-  return a.getId() < b.getId();
-}
-
-bool compName(const Company& a, const Company& b) {
-  return a.getName() < b.getName();
-}
-
-int main() {
-
-  auto companies = readCompanies();
-
-  bool (* comp)(const Company&, const Company&) = nullptr;
+bool (* getSortingFunction())(const Company&, const Company&) {
+  bool (* comp)(const Company&, const Company&);
 
   std::string sortBy;
   getline(std::cin, sortBy);
@@ -46,11 +64,5 @@ int main() {
     comp = nullptr;
   }
 
-  std::sort(companies.begin(), companies.end(), comp);
-
-  for (auto company: companies) {
-    std::cout << company.toString() << std::endl;
-  }
-
-  return 0;
+  return comp;
 }
