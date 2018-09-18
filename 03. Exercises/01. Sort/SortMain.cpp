@@ -37,14 +37,12 @@ std::vector<Company> readCompanies() {
   std::vector<Company> companies;
   std::string line;
 
-  getline(std::cin, line);
-  while (line != "end") {
+  while (getline(std::cin, line) && line != "end") {
     std::istringstream lineIn(line);
     std::string name;
     int id;
     lineIn >> name >> id;
     companies.emplace_back(id, name);
-    getline(std::cin, line);
   }
 
   return companies;
