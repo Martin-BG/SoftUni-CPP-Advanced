@@ -3,7 +3,6 @@
 #include <string>
 #include <map>
 
-
 int main() {
   std::ostream::sync_with_stdio(false);
   std::istream::sync_with_stdio(false);
@@ -38,4 +37,5 @@ int main() {
   }
 
   std::cout << result.str();
+  * /
 }
