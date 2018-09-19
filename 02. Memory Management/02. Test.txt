@@ -1,0 +1,123 @@
+01. Which of the following declares a pointer <code>p</code> to a <code>void</code> function accepting an <code>int</code> and a <code>double</code>?
+= void (*p)(int, double)
+. void p(int, double)
+. void (*p)(int*, double*)
+. int (*p)(int, double)
+
+02. Which of the following initializes a <code>void (p*)(int, double)</code> correctly, assuming a function void <code>x(int i, double d) {}</code> is declared
+. p = x;
+. p = &x;
+. p = (&x);
+= all of these are correct
+
+03. If we have <code>int* p = new int[2];</code> followed by <code>delete p[]; delete[] p;</code> (double deletion), what will happen?
+. The memory will be deallocated successfully and the second delete will ignore it
+. There will be a runtime error
+. There will be a compilation error
+= Behavior is undefined
+
+04. Does this code have a memory leak (assume the Person class is defined and has a default ctor)?
+<code>
+Person* p = new Person();
+for (int i = 0; i < 10; i++) {
+  p = new Person();
+}
+delete p;
+</code>
+. No
+= Yes
+. The code will not compile
+. The code will cause a runtime error
+
+05. What will the following code do?
+<code>
+char letter = 'A';
+void* voidPtr = &letter;
+char* p1 = reinterpret_cast<char*>(voidPtr); // no checks for void*
+int* p2 = reinterpret_cast<int*>(p1); // compilation error
+</code>
+. Cause a compilation error
+. Cause a runtime error
+= Compile and run successfully
+. Behavior is undefined
+
+06. What should be inserted at the end of this code, so that there are no memory leaks (assume the Person class is defined and has a default ctor)?
+<code>
+shared_ptr<Person> sharedP = make_shared<Person>();
+Person p = new Person();
+Person people = new Person[3];
+</code>
+. delete sharedP; delete people;
+= delete p; delete[] people;
+. delete p; delete people;
+. delete sharedP.get(); delete[] people;
+
+07. Will the following code have a memory leak (assume the Person class is defined and has a default ctor)?
+<code>
+while (true) {
+  unique_ptr<Person> p(new Person());
+  unique_ptr<Person> copy = p;
+}
+</code>
+. Yes
+. No
+. Behavior is undefined
+= There will be a compilation error
+
+08. What code should replace the two ? here, so that the code compiles & runs successfully without memory leaks?
+<code>
+struct Person {
+  int age;
+  Person() : age(0) {}
+};
+
+? make() {
+  return ?
+}
+
+int main() {
+  while (true) { cout << make()->age << endl; }
+  return 0;
+}
+</code>
+= shared_ptr<Person> and shared_ptr<Person>(new Person())
+. Person* and shared_ptr<Person>(new Person());
+. Person* and new Person();
+. Person* and nullptr;
+
+09. What will the following code do?
+<code>
+class X {};
+
+int main() {
+  shared_ptr<X> x(new X());
+  delete x.get();
+}
+</code>
+. Cause a memory leak
+. Compile and run successfully without errors or memory leaks
+. Cause a compilation error
+= Behavior is undefined
+
+10. Will the following code have a memory leak?
+<code>
+struct Node {
+  shared_ptr<Node> next;
+  shared_ptr<Node> previous;
+};
+
+int main() {
+  while(true) {
+    shared_ptr<Node> a(new Node());
+    shared_ptr<Node> b(new Node());
+    a->next = b;
+    b->previous = a;
+  }
+
+  return 0;
+}
+</code>
+= Yes
+. No
+. There will be a compilation error
+. Behavior is undefined
