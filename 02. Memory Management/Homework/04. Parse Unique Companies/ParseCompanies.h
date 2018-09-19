@@ -19,7 +19,7 @@ Company* parseUniqueCompanies(const std::string& input,
   std::unordered_set<std::string> identifiers;
   std::vector<Company> uniqueCompanies;
 
-  for (uint64_t i = 0; i < tokens.size(); i += 2) {
+  for (size_t i = 0; i < tokens.size(); i += 2) {
     Company company = Company(std::stoi(tokens.at(i)), tokens.at(i + 1));
     if (identifiers.insert(identifier(company)).second) {
       uniqueCompanies.push_back(company);
