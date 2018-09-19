@@ -5,7 +5,6 @@
 #include <iterator>
 #include <unordered_set>
 #include <vector>
-#include <algorithm>
 #include "Company.h"
 
 Company* parseUniqueCompanies(const std::string& input,
