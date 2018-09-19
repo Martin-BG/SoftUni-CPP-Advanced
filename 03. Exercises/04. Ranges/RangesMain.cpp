@@ -37,5 +37,4 @@ int main() {
   }
 
   std::cout << result.str();
-  * /
 }
