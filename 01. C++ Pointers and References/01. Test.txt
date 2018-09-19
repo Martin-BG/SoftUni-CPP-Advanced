@@ -46,12 +46,12 @@ NOTE: answers are marked as follows:
 = all of these are valid C++ constructs
 
 ****08. If we have
-string a = "hello", b = "world";
-vector<string*> words{ &a, &b };
-for (auto i = words.begin(); i != words.end(); i++) {
-  /*answer*/
-}
-What code should replace the /*answer*/ comment to print "hello world "?
+    string a = "hello", b = "world";
+    vector<string*> words{ &a, &b };
+    for (auto i = words.begin(); i != words.end(); i++) {
+      /*answer*/
+    }
+  What code should replace the /*answer*/ comment to print "hello world "?
 . cout << i << " "
 . cout << *i << " "
 = cout << *(*i) << " "
@@ -63,11 +63,11 @@ What code should replace the /*answer*/ comment to print "hello world "?
 . cout << (*arr) + 1 << (*arr) + 2 << (*arr) + 3
 . cout << &arr[0] << &arr[1] << &arr[2]
 
-10. If we have 
-char arr[]{'a', 'b', 'c'}; char* ptr = arr;
-What will the code
-cout << ptr;
-print on the console?
+10. If we have
+    char arr[]{'a', 'b', 'c'}; char* ptr = arr;
+    What will the code
+    cout << ptr;
+  print on the console?
 . abc
 . a
 . the address of the first element of arr
