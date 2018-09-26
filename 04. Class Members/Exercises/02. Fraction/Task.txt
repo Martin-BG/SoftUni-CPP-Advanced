@@ -1,0 +1,8 @@
+Exercise 2: Fraction Class
+Expand the Fraction class from the last examples
+ Equality comparison
+ Addition and subtraction
+ Direct cout usage
+ Direct cin usage
+ Automatically reduce – e.g. 2/4 should initialize as 1/2
+ operator++ incrementation by 1 (be careful with the math)

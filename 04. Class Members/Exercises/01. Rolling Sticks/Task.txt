@@ -1,0 +1,10 @@
+Exercise 1: Rolling Sticks
+You are given code that animates sticks
+ Represented on a line on the console
+ "roll" by changing their symbol and position on the line
+ Symbols: start from _, then \, then |, then / and back to _
+ Position starts from 0. When symbol becomes | – move to next
+ The code already does the animation, you need to implement a
+Stick class that keeps and updates the state of a Stick
+ Implement the code in a Stick.h file included by the
+RollingSticksMain.cpp file
