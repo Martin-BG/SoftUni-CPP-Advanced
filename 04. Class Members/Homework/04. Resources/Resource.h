@@ -9,7 +9,7 @@
 namespace SoftUni {
   class Resource {
     int id{ };
-    ResourceType type;
+    ResourceType type{ };
     std::string link;
   public:
     Resource() = default;;
