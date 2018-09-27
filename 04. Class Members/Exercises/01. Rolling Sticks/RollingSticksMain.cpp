@@ -3,8 +3,9 @@
 #include <string>
 #include <list>
 #include <thread>
+#include "mingw.thread.h"
 
-#ifdef __linux__ 
+#ifdef __linux__
 // WARNING: the linux code here is not tested
 void clearScreen() {
 	// CSI[2J clears screen, CSI[H moves the cursor to top-left corner
