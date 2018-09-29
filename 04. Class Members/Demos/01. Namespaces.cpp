@@ -3,7 +3,7 @@
 #include <string>
 
 namespace SoftUni {
-	// NOTE: depending on the situation, these two "courses" might better be represented a "class Course" 
+	// NOTE: depending on the situation, these two "courses" might better be represented a "class Course"
 	// that has lectures in it, and two instances to represent fundamentals and advanced,
 	// but the point here is to illustrate the syntax, not so much to give code architecture suggestions
 
@@ -18,7 +18,7 @@ namespace SoftUni {
 	}
 }
 
-namespace geometry2d {
+namespace Geometry2D {
 	struct vector {
 		int x, y;
 	};
