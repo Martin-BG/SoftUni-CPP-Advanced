@@ -101,7 +101,7 @@ set(L04_EXERCISES "${L04}Exercises/")
 set(L04_EXERCISES_E01 "${L04_EXERCISES}01. Rolling Sticks/")
 set(L04_EXERCISES_E02 "${L04_EXERCISES}02. Fraction/")
 add_executable(L04_E01.RollingSticks ${L04_EXERCISES_E01}RollingSticksMain.cpp ${L04_EXERCISES_E01}Stick.h)
-add_executable(L04_E02.Fraction ${L04_EXERCISES_E02}FractionMain.cpp ${L04_EXERCISES_E02}Fraction.h)
+add_executable(L04_E02.Fraction ${L04_EXERCISES_E02}FractionMain.cpp ${L04_EXERCISES_E02}Fraction.cpp)
 
 set(L04_HOMEWORK "${L04}Homework/")
 set(L04_HOMEWORK_01 "${L04_HOMEWORK}01. Car/")

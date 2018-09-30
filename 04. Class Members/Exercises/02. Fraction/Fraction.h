@@ -1,22 +1,60 @@
 #include <iostream>
-#include <set>
 
-class Fraction {
-	int numerator;
-	int denominator;
+namespace MyFraction {
+  class Fraction {
+  private:
+    int numerator;
+    int denominator;
 
-public:
-	Fraction(int num, int denom) : numerator(num), denominator(denom) {}
+    static int gcd(int a, int b);
 
-	int getNumerator() {
-		return this->numerator;
-	}
+    void normalize();
 
-	int getDenominator() {
-		return this->denominator;
-	}
+  public:
+    Fraction();
 
-	bool operator<(const Fraction& other) const {
-		return this->numerator * other.denominator < other.numerator * this->denominator;
-	}
-};
+    Fraction(int numerator, int denominator);
+
+    int getNumerator() const;
+
+    int getDenominator() const;
+
+    Fraction& operator++();
+
+    const Fraction operator++(int);
+
+    Fraction& operator--();
+
+    const Fraction operator--(int);
+
+    Fraction& operator+(const Fraction& other);
+
+    Fraction& operator-(const Fraction& other);
+
+    Fraction& operator*(const Fraction& other);
+
+    Fraction& operator/(const Fraction& other);
+
+    Fraction& operator/=(const Fraction& other);
+
+    Fraction& operator*=(const Fraction& other);
+
+    Fraction& operator-=(const Fraction& other);
+
+    Fraction& operator+=(const Fraction& other);
+
+    bool operator<(const Fraction& other) const;
+
+    bool operator>(const Fraction& other) const;
+
+    bool operator>=(const Fraction& other) const;
+
+    bool operator<=(const Fraction& other) const;
+
+    bool operator==(const Fraction& other) const;
+
+    friend std::ostream& operator<<(std::ostream& out, const Fraction& fraction);
+
+    friend std::istream& operator>>(std::istream& in, Fraction& fraction);
+  };
+}
