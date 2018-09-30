@@ -53,6 +53,8 @@ namespace MyFraction {
 
     const bool operator==(const Fraction& other) const;
 
+    const bool operator!=(const Fraction& other) const;
+
     friend std::ostream& operator<<(std::ostream& out, const Fraction& fraction);
 
     friend std::istream& operator>>(std::istream& in, Fraction& fraction);

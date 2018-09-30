@@ -1,7 +1,7 @@
 #include "Fraction.h"
 
 namespace MyFraction {
-  Fraction::Fraction() : numerator(0), denominator(0) { }
+  Fraction::Fraction() : numerator(0), denominator(1) { }
 
   Fraction::Fraction(int numerator, int denominator) : numerator(numerator), denominator(denominator) {
     this->normalize();
@@ -37,7 +37,7 @@ namespace MyFraction {
   }
 
   const Fraction Fraction::operator++(int) {
-    Fraction temp = *this;
+    Fraction temp(*this);
     ++(*this);
     return temp;
   }
@@ -49,19 +49,17 @@ namespace MyFraction {
   }
 
   const Fraction Fraction::operator--(int) {
-    Fraction temp = *this;
+    Fraction temp(*this);
     --(*this);
     return temp;
   }
 
   const Fraction Fraction::operator+(const Fraction& other) const {
-    return { this->numerator * other.denominator + other.numerator * this->denominator,
-             this->denominator * other.denominator };
+    return Fraction(*this) += other;
   }
 
   const Fraction Fraction::operator-(const Fraction& other) const {
-    return { this->numerator * other.denominator - other.numerator * this->denominator,
-             this->denominator * other.denominator };
+    return Fraction(*this) -= other;
   }
 
   const Fraction Fraction::operator*(const Fraction& other) const {
@@ -75,19 +73,39 @@ namespace MyFraction {
   }
 
   Fraction& Fraction::operator/=(const Fraction& other) {
-    return *this = *this / other;
+    this->numerator *= other.denominator;
+    this->denominator *= other.numerator;
+    this->normalize();
+    return *this;
   }
 
   Fraction& Fraction::operator*=(const Fraction& other) {
-    return *this = *this * other;
+    this->numerator *= other.numerator;
+    this->denominator *= other.denominator;
+    this->normalize();
+    return *this;
   }
 
   Fraction& Fraction::operator-=(const Fraction& other) {
-    return *this = *this - other;
+    if (this->denominator != other.denominator) {
+      this->numerator = this->numerator * other.denominator - other.numerator * this->denominator;
+      this->denominator *= other.denominator;
+    } else {
+      this->numerator -= other.numerator;
+    }
+    this->normalize();
+    return *this;
   }
 
   Fraction& Fraction::operator+=(const Fraction& other) {
-    return *this = *this + other;
+    if (this->denominator != other.denominator) {
+      this->numerator = this->numerator * other.denominator + other.numerator * this->denominator;
+      this->denominator *= other.denominator;
+    } else {
+      this->numerator += other.numerator;
+    }
+    this->normalize();
+    return *this;
   }
 
   const bool Fraction::operator<(const Fraction& other) const {
@@ -108,6 +126,10 @@ namespace MyFraction {
 
   const bool Fraction::operator==(const Fraction& other) const {
     return this->numerator * other.denominator == other.numerator * this->denominator;
+  }
+
+  const bool Fraction::operator!=(const Fraction& other) const {
+    return !(*this == other);
   }
 
   std::ostream& operator<<(std::ostream& out, const Fraction& fraction) {
