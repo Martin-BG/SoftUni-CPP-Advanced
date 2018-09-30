@@ -27,13 +27,13 @@ namespace MyFraction {
 
     const Fraction operator--(int);
 
-    Fraction& operator+(const Fraction& other);
+    const Fraction operator+(const Fraction& other) const;
 
-    Fraction& operator-(const Fraction& other);
+    const Fraction operator-(const Fraction& other) const;
 
-    Fraction& operator*(const Fraction& other);
+    const Fraction operator*(const Fraction& other) const;
 
-    Fraction& operator/(const Fraction& other);
+    const Fraction operator/(const Fraction& other) const;
 
     Fraction& operator/=(const Fraction& other);
 
@@ -43,15 +43,15 @@ namespace MyFraction {
 
     Fraction& operator+=(const Fraction& other);
 
-    bool operator<(const Fraction& other) const;
+    const bool operator<(const Fraction& other) const;
 
-    bool operator>(const Fraction& other) const;
+    const bool operator>(const Fraction& other) const;
 
-    bool operator>=(const Fraction& other) const;
+    const bool operator>=(const Fraction& other) const;
 
-    bool operator<=(const Fraction& other) const;
+    const bool operator<=(const Fraction& other) const;
 
-    bool operator==(const Fraction& other) const;
+    const bool operator==(const Fraction& other) const;
 
     friend std::ostream& operator<<(std::ostream& out, const Fraction& fraction);
 
