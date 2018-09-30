@@ -30,6 +30,14 @@ namespace MyFraction {
     return this->denominator;
   }
 
+  const Fraction Fraction::operator-() const {
+    return { -this->numerator, this->denominator };
+  }
+
+  const Fraction Fraction::operator+() const {
+    return Fraction(*this);
+  }
+
   Fraction& Fraction::operator++() {
     this->numerator = this->numerator + this->denominator;
     this->normalize();
@@ -38,7 +46,7 @@ namespace MyFraction {
 
   const Fraction Fraction::operator++(int) {
     Fraction temp(*this);
-    ++(*this);
+    this->operator++();
     return temp;
   }
 
@@ -50,7 +58,7 @@ namespace MyFraction {
 
   const Fraction Fraction::operator--(int) {
     Fraction temp(*this);
-    --(*this);
+    this->operator--();
     return temp;
   }
 

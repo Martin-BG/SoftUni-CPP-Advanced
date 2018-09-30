@@ -19,6 +19,10 @@ namespace MyFraction {
 
     int getDenominator() const;
 
+    const Fraction operator-() const;
+
+    const Fraction operator+() const;
+
     Fraction& operator++();
 
     const Fraction operator++(int);
