@@ -147,3 +147,15 @@ add_executable(L05_D08.AccessingTemplateSubtype ${L05_D08}AccessingTemplateSubty
 
 set(L05_D09 "${L05_DEMOS}09. TemplateSpecialization/")
 add_executable(L05_D09.TemplateSpecialization ${L05_D09}TemplateSpecialization.cpp)
+
+set(L05_HOMEWORK "${L05}Homework/")
+set(L05_HOMEWORK_01 "${L05_HOMEWORK}01. Compile/")
+set(L05_HOMEWORK_02 "${L05_HOMEWORK}02. Censorship/")
+set(L05_HOMEWORK_03 "${L05_HOMEWORK}03. Parser/")
+set(L05_HOMEWORK_04 "${L05_HOMEWORK}04. Split and Join/")
+set(L05_HOMEWORK_05 "${L05_HOMEWORK}05. Sorting/")
+add_executable(L05_H01.Compile ${L05_HOMEWORK_01}CompileMain.cpp)
+add_executable(L05_H02.Censorship ${L05_HOMEWORK_02}CensorshipMain.cpp ${L05_HOMEWORK_02}Article13Filter.h)
+add_executable(L05_H03.Parser ${L05_HOMEWORK_03}ParserMain.cpp)
+add_executable(L05_H04.SplitAndJoin ${L05_HOMEWORK_04}SplitAndJoinMain.cpp)
+add_executable(L05_H05.Sorting ${L05_HOMEWORK_05}SortingMain.cpp ${L05_HOMEWORK_05}Song.h)
