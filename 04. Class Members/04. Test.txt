@@ -1,0 +1,211 @@
+01. Which of the operators can NOT be overloaded?
+. operator +
+. operator ->
+= operator ::
+. operator *=
+
+02. What is the correct output?
+
+    static int number = 0;
+    void incrementNumber( int numberToBeIncremented ) {
+      numberToBeIncremented++;
+      number = numberToBeIncremented;
+    }
+    int main() {
+      IncrementNumber( number ) ;
+      number--;
+      cout << number << endl;
+      return 0;
+    }
+
+. -1
+= 0
+. 1
+. 2
+
+03. What will the following code do?
+
+    void PrintFunction() {
+      static int number = 0;
+      number--;
+    }
+    int main() {
+      int number = 10;
+      cout << number << endl;
+      return 0;
+    }
+
+. The compiler will throw an error
+= The console will print 10
+. The console will print 0
+. The console will print -1
+
+04. What will the following code do?
+
+    const int a = 10;
+    const int b = a;
+    b = 5;
+    a = b;
+    cout << b << endl;
+    cout << a << endl;
+    return 0;
+
+= The compiler will throw an error because we can not modify CONST
+. The console will print 5 10
+. The console will print 10 5
+. The compiler will throw an error because we can not assign CONST to reference
+
+05. What will the following code do?
+
+    class Score {
+    public:
+      const string person;
+      const int points;
+      Score() {
+        this->person = "";
+        this->points = 0;
+      }
+    }
+
+    int main() {
+      Score a, b;
+
+      cout << a.points << endl;
+
+      return 0;
+    }
+
+= Cause a compilation error
+. Cause a runtime error
+. Print a line containing "0" on the console
+. Print an empty line
+
+06. What will the following code do?
+
+    class Score {
+    public:
+      string person;
+      int points;
+      Score(string person, int points) {
+        this->person = person;
+        this->points = points;
+      }
+    }
+
+    std::ostream& operator<<(std::ostream& out, const Score& s) {
+      out << s.person << " " << s.score;
+      return out;
+    }
+
+    int main() {
+      Score a{"A", 14}, b{"B", 42};
+
+      cout << a << endl << b << endl;
+
+      return 0;
+    }
+
+= Print two lines, "A 14" and "B 42"
+. Cause a compilation error
+. Cause a runtime error
+. Behavior is undefined
+
+07. What will the following code do?
+
+    vector<int>& operator<<(vector<int>& a, const vector<int>& b) {
+      for (auto e : b) { a.push_back(e); }
+      return a;
+    }
+
+    int main() {
+      vector<int> a{ 1, 2 }, b{ 3, 4 }, c{ 5, 6 };
+
+      a << b << c;
+
+      for (auto e : a) {
+        cout << e << " "
+      }
+
+      return 0;
+    }
+
+= Print "1 2 3 4 5 6 "
+. Cause a compilation error
+. Print "6 5 4 3 2 1 "
+. Behavior is undefined
+
+08. What will the following code do?
+
+    class Score {
+      string person;
+      int points;
+    public:
+      Score(string person, int points) {
+        this->person = person;
+        this->points = points;
+      }
+
+      friend ostream operator<(ostream& out, Score s);
+    }
+
+    ostream& operator<<(ostream& out, const Score& s) {
+      out << s.person << " " << s.score;
+      return out;
+    }
+
+    int main() {
+      Score a{"A", 14}, b{"B", 42};
+
+      cout << a << endl << b << endl;
+
+      return 0;
+    }
+
+= Cause a compilation error
+. Cause a runtime error
+. Print two lines, "A 14" and "B 42"
+. Behavior is undefined
+
+09. What will the following code do?
+
+    string& operator<<(string& a, string& b) {
+      a += b;
+    }
+
+    int main() {
+      string a = "hello", b = "C++", c = "world";
+
+      a << b << c;
+
+      return 0;
+    }
+
+= Behavior is undefined
+. Print "helloC++world"
+. Print "hello C++ world"
+. Cause a compilation error
+
+10. What will the following code do?
+
+    void operator<<(string& s) {
+      for (char c : s) {
+        this->push_back(c);
+      }
+    }
+
+    int main() {
+      string word = "hello";
+      vector<char> letters;
+      letters << word;
+
+      for (int i = 0; i < letters.size(); i++) {
+        cout << letters[i] << " ";
+      }
+
+      return 0;
+    }
+
+= Cause a compilation error
+. Print "hello"
+. Print "h e l l o "
+. Behavior is undefined
