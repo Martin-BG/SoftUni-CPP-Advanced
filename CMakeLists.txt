@@ -114,3 +114,36 @@ add_executable(L04_H02.SumOfVectors ${L04_HOMEWORK_02}Main.cpp ${L04_HOMEWORK_02
 add_executable(L04_H03.Operators ${L04_HOMEWORK_03}OperatorsMain.cpp ${L04_HOMEWORK_03}Operators.h)
 add_executable(L04_H04.Resources ${L04_HOMEWORK_04}ResourcesMain.cpp ${L04_HOMEWORK_04}ResourceType.h ${L04_HOMEWORK_04}Resource.h)
 add_executable(L04_H05.Lectures ${L04_HOMEWORK_05}LecturesMain.cpp ${L04_HOMEWORK_05}ResourceType.h ${L04_HOMEWORK_05}Lecture.h)
+
+#######################################
+set(L05 "05. Code Organization and Templates/")
+
+set(L05_DEMOS "${L05}Demos/")
+
+set(L05_D01 "${L05_DEMOS}01. IncludeAndDefine/")
+add_executable(L05_D01.IncludeAndDefine ${L05_D01}IncludeAndDefineMain.cpp ${L05_D01}Macros.h)
+
+set(L05_D02 "${L05_DEMOS}02. PitfallMacrosBracketsInExpressions/")
+add_executable(L05_D02.PitfallMacrosBracketsInExpressions ${L05_D02}PitfallMissingBracketsInMacroExpressions.cpp)
+
+set(L05_D03 "${L05_DEMOS}03. ConditionalInclusionsAndIncludeGuards/")
+add_executable(L05_D03.ConditionalInclusionsAndIncludeGuards ${L05_D03}ConditionalInclusionsAndIncludeGuards.cpp
+        ${L05_D03}HeaderGuardedFile.h ${L05_D03}OtherFileAlsoIncludingHeaderGuardedFile.h)
+
+set(L05_D04 "${L05_DEMOS}04. SeparatingDeclarationAndImplementation/")
+add_executable(L05_D04.SeparatingDeclarationAndImplementation "${L05_D04}SeparatingMemberDefinitions.cpp")
+
+set(L05_D05 "${L05_DEMOS}05. HeaderAndSourceFiles/")
+add_executable(L05_D05.HeaderAndSourceFiles ${L05_D05}HeaderAndSourceFilesMain.cpp ${L05_D05}Company.cpp)
+
+set(L05_D06 "${L05_DEMOS}06. FunctionTemplates/")
+add_executable(L05_D06.FunctionTemplates ${L05_D06}FunctionTemplatesMain.cpp ${L05_D06}Fraction.h)
+
+set(L05_D07 "${L05_DEMOS}07. ClassTemplates/")
+add_executable(L05_D07.ClassTemplates ${L05_D07}ClassTemplatesMain.cpp ${L05_D07}Pair.h)
+
+set(L05_D08 "${L05_DEMOS}08. AccessingTemplateSubtype/")
+add_executable(L05_D08.AccessingTemplateSubtype ${L05_D08}AccessingTemplateSubtype.cpp)
+
+set(L05_D09 "${L05_DEMOS}09. TemplateSpecialization/")
+add_executable(L05_D09.TemplateSpecialization ${L05_D09}TemplateSpecialization.cpp)
