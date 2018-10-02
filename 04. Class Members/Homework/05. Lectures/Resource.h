@@ -12,7 +12,7 @@ namespace SoftUni {
     ResourceType type{ };
     std::string link;
   public:
-    Resource() = default;;
+    Resource() = default;
 
     int getId() const {
       return this->id;
