@@ -19,25 +19,13 @@ namespace MyFraction {
 
     int getDenominator() const;
 
-    const Fraction operator-() const;
+    Fraction operator++(int);
 
-    const Fraction operator+() const;
+    Fraction operator--(int);
 
     Fraction& operator++();
 
-    const Fraction operator++(int);
-
     Fraction& operator--();
-
-    const Fraction operator--(int);
-
-    const Fraction operator+(const Fraction& other) const;
-
-    const Fraction operator-(const Fraction& other) const;
-
-    const Fraction operator*(const Fraction& other) const;
-
-    const Fraction operator/(const Fraction& other) const;
 
     Fraction& operator/=(const Fraction& other);
 
@@ -47,17 +35,29 @@ namespace MyFraction {
 
     Fraction& operator+=(const Fraction& other);
 
-    const bool operator<(const Fraction& other) const;
+    friend Fraction operator-(const Fraction& fraction);
 
-    const bool operator>(const Fraction& other) const;
+    friend Fraction operator+(const Fraction& fraction);
 
-    const bool operator>=(const Fraction& other) const;
+    friend Fraction operator+(const Fraction& lhs, const Fraction& rhs);
 
-    const bool operator<=(const Fraction& other) const;
+    friend Fraction operator-(const Fraction& lhs, const Fraction& rhs);
 
-    const bool operator==(const Fraction& other) const;
+    friend Fraction operator*(const Fraction& lhs, const Fraction& rhs);
 
-    const bool operator!=(const Fraction& other) const;
+    friend Fraction operator/(const Fraction& lhs, const Fraction& rhs);
+
+    friend const bool operator<(const Fraction& lhs, const Fraction& rhs);
+
+    friend const bool operator>(const Fraction& lhs, const Fraction& rhs);
+
+    friend const bool operator>=(const Fraction& lhs, const Fraction& rhs);
+
+    friend const bool operator<=(const Fraction& lhs, const Fraction& rhs);
+
+    friend const bool operator==(const Fraction& lhs, const Fraction& rhs);
+
+    friend const bool operator!=(const Fraction& lhs, const Fraction& rhs);
 
     friend std::ostream& operator<<(std::ostream& out, const Fraction& fraction);
 

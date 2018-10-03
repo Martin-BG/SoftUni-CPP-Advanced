@@ -30,12 +30,16 @@ namespace MyFraction {
     return this->denominator;
   }
 
-  const Fraction Fraction::operator-() const {
-    return { -this->numerator, this->denominator };
+  Fraction Fraction::operator++(int) {
+    Fraction temp(*this);
+    ++(*this);
+    return temp;
   }
 
-  const Fraction Fraction::operator+() const {
-    return Fraction(*this);
+  Fraction Fraction::operator--(int) {
+    Fraction temp(*this);
+    --(*this);
+    return temp;
   }
 
   Fraction& Fraction::operator++() {
@@ -44,40 +48,10 @@ namespace MyFraction {
     return *this;
   }
 
-  const Fraction Fraction::operator++(int) {
-    Fraction temp(*this);
-    this->operator++();
-    return temp;
-  }
-
   Fraction& Fraction::operator--() {
     this->numerator = this->numerator - this->denominator;
     this->normalize();
     return *this;
-  }
-
-  const Fraction Fraction::operator--(int) {
-    Fraction temp(*this);
-    this->operator--();
-    return temp;
-  }
-
-  const Fraction Fraction::operator+(const Fraction& other) const {
-    return Fraction(*this) += other;
-  }
-
-  const Fraction Fraction::operator-(const Fraction& other) const {
-    return Fraction(*this) -= other;
-  }
-
-  const Fraction Fraction::operator*(const Fraction& other) const {
-    return { this->numerator * other.numerator,
-             this->denominator * other.denominator };
-  }
-
-  const Fraction Fraction::operator/(const Fraction& other) const {
-    return { this->numerator * other.denominator,
-             this->denominator * other.numerator };
   }
 
   Fraction& Fraction::operator/=(const Fraction& other) {
@@ -116,28 +90,60 @@ namespace MyFraction {
     return *this;
   }
 
-  const bool Fraction::operator<(const Fraction& other) const {
-    return this->numerator * other.denominator < other.numerator * this->denominator;
+  Fraction operator-(const Fraction& fraction) {
+    return { -fraction.numerator, fraction.denominator };
   }
 
-  const bool Fraction::operator>(const Fraction& other) const {
-    return this->numerator * other.denominator > other.numerator * this->denominator;
+  Fraction operator+(const Fraction& fraction) {
+    return Fraction{ fraction };
   }
 
-  const bool Fraction::operator>=(const Fraction& other) const {
-    return this->numerator * other.denominator >= other.numerator * this->denominator;
+  Fraction operator+(const Fraction& lhs, const Fraction& rhs) {
+    Fraction result{ lhs };
+    result += rhs;
+    return result;
   }
 
-  const bool Fraction::operator<=(const Fraction& other) const {
-    return this->numerator * other.denominator <= other.numerator * this->denominator;
+  Fraction operator-(const Fraction& lhs, const Fraction& rhs) {
+    Fraction result{ lhs };
+    result -= rhs;
+    return result;
   }
 
-  const bool Fraction::operator==(const Fraction& other) const {
-    return this->numerator * other.denominator == other.numerator * this->denominator;
+  Fraction operator*(const Fraction& lhs, const Fraction& rhs) {
+    Fraction result{ lhs };
+    result *= rhs;
+    return result;
   }
 
-  const bool Fraction::operator!=(const Fraction& other) const {
-    return !(*this == other);
+  Fraction operator/(const Fraction& lhs, const Fraction& rhs) {
+    Fraction result{ lhs };
+    result /= rhs;
+    return result;
+  }
+
+  const bool operator<(const Fraction& lhs, const Fraction& rhs) {
+    return lhs.numerator * rhs.denominator < rhs.numerator * lhs.denominator;
+  }
+
+  const bool operator>(const Fraction& lhs, const Fraction& rhs) {
+    return rhs < lhs;
+  }
+
+  const bool operator>=(const Fraction& lhs, const Fraction& rhs) {
+    return lhs > rhs || lhs == rhs;
+  }
+
+  const bool operator<=(const Fraction& lhs, const Fraction& rhs) {
+    return lhs < rhs || lhs == rhs;
+  }
+
+  const bool operator==(const Fraction& lhs, const Fraction& rhs) {
+    return !(lhs != rhs);
+  }
+
+  const bool operator!=(const Fraction& lhs, const Fraction& rhs) {
+    return lhs < rhs || lhs > rhs;
   }
 
   std::ostream& operator<<(std::ostream& out, const Fraction& fraction) {
