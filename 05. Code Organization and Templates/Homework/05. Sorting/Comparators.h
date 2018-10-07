@@ -5,7 +5,7 @@
 #include <iostream>
 #include "Song.h"
 
-struct lex_compare {
+struct comparator {
   bool operator()(const int& lhs, const int& rhs) const {
     return lhs >= rhs;
   }
@@ -20,7 +20,7 @@ struct lex_compare {
 };
 
 template<class T>
-using LessThan = lex_compare;
+using LessThan = comparator;
 template<typename T, typename = LessThan<T> >
 using Reverse = LessThan<T>;
 
