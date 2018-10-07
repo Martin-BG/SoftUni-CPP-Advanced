@@ -7,7 +7,7 @@
 
 template<typename T>
 struct LessThan {
-  static bool evaluate(const T& lhs, const T& rhs) {
+  static const bool evaluate(const T& lhs, const T& rhs) {
     return lhs < rhs;
   };
 };
@@ -23,7 +23,7 @@ struct Reverse {
 // Solution #1 - the hackish one
 template<typename T>
 struct comparator {
-  bool operator()(const T& lhs, const T& rhs) const {
+  bool const operator()(const T& lhs, const T& rhs) const {
     return !(lhs < rhs);
   }
 };
