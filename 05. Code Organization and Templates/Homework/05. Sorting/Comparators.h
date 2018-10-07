@@ -6,16 +6,14 @@
 #include "Song.h"
 
 template<typename T>
-class LessThan {
-public:
+struct LessThan {
   static bool evaluate(const T& lhs, const T& rhs) {
     return lhs < rhs;
   };
 };
 
 template<typename T, typename D>
-class Reverse {
-public:
+struct Reverse {
   bool operator()(const T& lhs, const T& rhs) const {
     return !D::evaluate(lhs, rhs);
   }
