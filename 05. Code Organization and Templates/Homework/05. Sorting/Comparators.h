@@ -19,8 +19,7 @@ struct Reverse {
   }
 };
 
-/*
-// Solution #1 - the hackish one
+/*// Solution #1 - the hackish one
 template<typename T>
 struct comparator {
   bool const operator()(const T& lhs, const T& rhs) const {
@@ -30,7 +29,6 @@ struct comparator {
 
 template<class T>
 using LessThan = comparator<T>;
-template<typename T, typename = LessThan<T> >
-using Reverse = LessThan<T>;
-*/
+template<typename T, typename D >
+using Reverse = D;*/
 #endif //CPP_ADVANCED_COMPARATORS_H
