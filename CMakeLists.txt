@@ -161,3 +161,17 @@ add_executable(L05_H04.SplitAndJoin ${L05_HOMEWORK_04}SplitAndJoinMain.cpp
         ${L05_HOMEWORK_04}Join.h ${L05_HOMEWORK_04}Split.h)
 add_executable(L05_H05.Sorting ${L05_HOMEWORK_05}SortingMain.cpp ${L05_HOMEWORK_05}Song.h ${L05_HOMEWORK_05}Parser.h
         ${L05_HOMEWORK_05}Comparators.h ${L05_HOMEWORK_05}PrintUtils.h)
+
+#######################################
+set(L06 "06. Exercises/")
+
+set(L06_TASK_01 "${L06}01. Echo/")
+set(L06_TASK_02 "${L06}02. Notes/")
+set(L06_TASK_03 "${L06}03. Vectors/")
+set(L06_TASK_04 "${L06}04. DivisibleBy45/")
+set(L06_TASK_05 "${L06}05. Sequences/")
+add_executable(L06_T01.Echo ${L06_TASK_01}EchoMain.cpp ${L06_TASK_01}ContactManagerUI.cpp ${L06_TASK_01}EmailContact.cpp)
+add_executable(L06_T02.Notes ${L06_TASK_02}NotesMain.cpp)
+add_executable(L06_T03.Vectors ${L06_TASK_03}VectorsMain.cpp)
+add_executable(L06_T04.DivisibleBy45 ${L06_TASK_04}DivisibleBy45Main.cpp)
+add_executable(L06_T04.Sequences ${L06_TASK_05}SequencesMain.cpp)
