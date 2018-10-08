@@ -1,0 +1,108 @@
+01. Which of the following will first look for a local file named FILE, then a system file named FILE to include?
+= #include "FILE"
+. #include <FILE>
+. #include FILE
+. All of these are equivalent
+
+02. What will the following code do?
+
+    #define SUM(a, b) ((a) + (b))
+
+    cout << SUM("5 + ", "3 = ") << " " << SUM(5, 3);
+
+= print "5 + 3 = 8"
+. print "5 + 3 = 53"
+. Cause a compilation error
+. Cause a runtime error
+
+03. What will the following code do?
+
+    #define CONCAT(a, b) ((a) + " " + (b))
+
+    cout << CONCAT("5 + ", "3") << " " << CONCAT(5, 3);
+
+= Cause a compilation error
+. print "5 + 3 = 53"
+. print "5 + 3 = 8"
+. Cause a runtime error
+
+04. Which of the following declares a <code>void</code> function accepting two arguments, which can be of different types (NOTE: ignore class inheritance)?
+= template<typename A, typename B> void example(A a, B b);
+. template<typename T> void example(T a, T b);
+. template<typename A, typename B> void example(A a, A b);
+. template<class A, class B> A example(B b);
+
+05. Given the code below, what is the correct way to call the function <code>divide</code> so that it returns a <code>double</code> result?
+
+    template<typename T>
+    T divide(T a, T b) {
+      return a / b;
+    }
+
+= divide<double>(1, 2)
+. divide<double, int>(1, 2)
+. divide<double, int, int>(1, 2)
+. divide(1, 2)
+
+06. Which of the following declares a specialization of <code>template<typename T> print(T value);</code> for the type <code>string</code>?
+= template<> print<string>(string value);
+. template<string> print<string>(string value);
+. template<string> print(string value);
+. print<string>(string value);
+
+07. What will the following code do?
+
+    template<typename T> void print(T value) {
+      cout << value;
+    }
+
+    template<> void print<string>(string value) {
+      cout << "@" << value << "@";
+    }
+
+    int main() {
+      string s = "hello";
+      int n = 42;
+      print(s);
+      print(n);
+      return 0;
+    }
+
+= print "@hello@42"
+. print "hello42"
+. Cause a compilation error
+. Cause a runtime error
+
+08. Which of the following initializes an object of the class below, with the value field assigned to 0?
+
+    template<typename T> struct Object {
+      T value;
+      Object() : value() {}
+    };
+
+= Object<int> o;
+. Object o<int>();
+. Object o<int>;
+. Object o(0);
+
+09. Which of the following should replace the ??? in the code below, so that the declared function accepts two iterators to any type of container supporting an iterator subclass?
+
+    template<typename ContainerType>
+    void print(const ??? ContainerType::iterator begin, const ??? ContainerType::iterator end);
+
+= typename
+. vector
+. typedef
+. Nothing, the ??? can be removed and the code will be correct
+
+10. Which of the following declares an operator overload that will make the following code compile?
+
+    vector<int> numbers{ 1, 2, 3 };
+    vector<string> words{ "one", "two", "three" };
+    cout << numbers;
+    cout << words;
+
+= template<typename T> ostream& operator<<(ostream& out, const vector<T>& v);
+. template<> ostream& operator<<<int>(ostream& out, const vector<int>& v);
+. ostream& operator<<(ostream& out, const vector<T>& v);
+. ostream& operator<<(ostream& out, const vector& v);
