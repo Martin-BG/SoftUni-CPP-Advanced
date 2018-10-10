@@ -12,13 +12,23 @@ struct LessThan {
   };
 };
 
-template<typename T, typename D>
+template<typename T, typename Comparator>
 struct Reverse {
   const bool operator()(const T& lhs, const T& rhs) const {
-    D comparator;
+    Comparator comparator;
     return !comparator(lhs, rhs);
   }
 };
+
+/*// Solution with Comparator instance reuse
+template<typename T, typename Comparator>
+class Reverse {
+  Comparator comparator;
+public:
+  const bool operator()(const T& lhs, const T& rhs) const {
+    return !this->comparator(lhs, rhs);
+  }
+};*/
 
 /*// Solution #2 - suboptimal
 template<typename T>
