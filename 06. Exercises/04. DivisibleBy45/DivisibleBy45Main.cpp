@@ -12,11 +12,11 @@ int main() {
 
   BigInt currentNum = getFirstNumber(startNumStr);
   const BigInt endNum(endNumStr);
-  const BigInt forty_five(45);
+  const BigInt fortyFive(45);
 
   while (currentNum < endNum) {
     std::cout << currentNum << std::endl;
-    currentNum += forty_five;
+    currentNum += fortyFive;
   }
 
   return 0;
