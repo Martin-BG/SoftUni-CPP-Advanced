@@ -22,7 +22,7 @@ public:
     }
 
     explicit Iterator(std::vector<T>& elements, int index) : elements(elements), next(index) {
-      if (this->elements.size() <= this->next || (this->next < 0 && this->next != END_ITERATOR_INDEX)) {
+      if (this->next >= this->elements.size() || (this->next < 0 && this->next != END_ITERATOR_INDEX)) {
         this->next = END_ITERATOR_INDEX;
       }
     }
