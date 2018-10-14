@@ -174,4 +174,4 @@ add_executable(L06_T01.Echo ${L06_TASK_01}EchoMain.cpp ${L06_TASK_01}ContactMana
 add_executable(L06_T02.Notes ${L06_TASK_02}NotesMain.cpp ${L06_TASK_02}NoteName.h ${L06_TASK_02}SolfegeNoteNaming.h)
 add_executable(L06_T03.Vectors ${L06_TASK_03}VectorsMain.cpp ${L06_TASK_03}Vector.h ${L06_TASK_03}VectorComparisons.h)
 add_executable(L06_T04.DivisibleBy45 ${L06_TASK_04}DivisibleBy45Main.cpp ${L06_TASK_04}BigInt.h)
-add_executable(L06_T04.Sequences ${L06_TASK_05}SequencesMain.cpp)
+add_executable(L06_T05.Sequences ${L06_TASK_05}SequencesMain.cpp ${L06_TASK_05}Sequence.h)
