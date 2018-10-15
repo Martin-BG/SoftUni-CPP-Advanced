@@ -11,21 +11,31 @@ private:
   std::vector<T> elements{ };
 public:
   class Iterator {
+  private:
     static const int END_ITERATOR_INDEX = -1;
     std::vector<T>& elements;
     int next;
-  public:
-    explicit Iterator(std::vector<T>& elements, bool endIterator = false) : elements(elements), next(0) {
-      if (endIterator || this->elements.size() == 0) {
+
+    explicit Iterator(std::vector<T>& elements, int next) : elements(elements), next(next) {
+      if (next >= this->elements.size() || this->elements.size() == 0) {
         this->next = END_ITERATOR_INDEX;
       }
     }
 
-    const bool operator!=(const Iterator& rhs) const {
-      return this->next != rhs.next;
+  public:
+    static Iterator end(std::vector<T>& elements) {
+      return Iterator(elements, END_ITERATOR_INDEX);
     }
 
-    typename Sequence<T, Generator>::Iterator operator++() {
+    static Iterator begin(std::vector<T>& elements) {
+      return Iterator(elements, 0);
+    }
+
+    const bool operator!=(const Iterator& other) const {
+      return this->elements != other.elements || this->next != other.next;
+    }
+
+    Iterator operator++() {
       ++this->next;
       if (this->next >= this->elements.size()) {
         this->next = END_ITERATOR_INDEX;
@@ -33,7 +43,7 @@ public:
       return *this;
     }
 
-    T operator*() const {
+    T& operator*() const {
       return this->elements.at(this->next);
     }
   };
@@ -45,11 +55,11 @@ public:
   }
 
   Iterator begin() {
-    return Iterator(this->elements);
+    return Iterator::begin(this->elements);
   }
 
   Iterator end() {
-    return Iterator(this->elements, true);
+    return Iterator::end(this->elements);
   }
 };
 
