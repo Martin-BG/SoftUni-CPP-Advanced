@@ -1,0 +1,6 @@
+#ifndef CPP_ADVANCED_WORD_H
+#define CPP_ADVANCED_WORD_H
+
+// TODO
+
+#endif //CPP_ADVANCED_WORD_H
