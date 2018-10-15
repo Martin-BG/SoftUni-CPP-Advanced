@@ -7,27 +7,21 @@
 template<typename T, typename Generator>
 class Sequence {
 private:
-  static const int END_ITERATOR_INDEX = -1;
   Generator generator;
   std::vector<T> elements{ };
 public:
   class Iterator {
+    static const int END_ITERATOR_INDEX = -1;
     std::vector<T>& elements;
-    int next = END_ITERATOR_INDEX;
+    int next;
   public:
-    explicit Iterator(std::vector<T>& elements) : elements(elements) {
-      if (this->elements.size() > 0) {
-        this->next = 0;
-      }
-    }
-
-    explicit Iterator(std::vector<T>& elements, int index) : elements(elements), next(index) {
-      if (this->next >= this->elements.size() || (this->next < 0 && this->next != END_ITERATOR_INDEX)) {
+    explicit Iterator(std::vector<T>& elements, bool endIterator = false) : elements(elements), next(0) {
+      if (endIterator || this->elements.size() == 0) {
         this->next = END_ITERATOR_INDEX;
       }
     }
 
-    bool operator!=(const Iterator& rhs) const {
+    const bool operator!=(const Iterator& rhs) const {
       return this->next != rhs.next;
     }
 
@@ -39,7 +33,7 @@ public:
       return *this;
     }
 
-    T operator*() {
+    T operator*() const {
       return this->elements.at(this->next);
     }
   };
@@ -55,7 +49,7 @@ public:
   }
 
   Iterator end() {
-    return Iterator(this->elements, END_ITERATOR_INDEX);
+    return Iterator(this->elements, true);
   }
 };
 
