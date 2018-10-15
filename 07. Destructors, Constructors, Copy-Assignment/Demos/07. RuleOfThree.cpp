@@ -8,7 +8,7 @@ public:
 	IntArray(int size) : data(new int[size]), size(size) {}
 
 	~IntArray() {
-		delete this->data;
+		delete[] this->data;
 	}
 
 	IntArray(const IntArray& other) {
