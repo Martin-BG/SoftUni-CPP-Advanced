@@ -175,3 +175,17 @@ add_executable(L06_T02.Notes ${L06_TASK_02}NotesMain.cpp ${L06_TASK_02}NoteName.
 add_executable(L06_T03.Vectors ${L06_TASK_03}VectorsMain.cpp ${L06_TASK_03}Vector.h ${L06_TASK_03}VectorComparisons.h)
 add_executable(L06_T04.DivisibleBy45 ${L06_TASK_04}DivisibleBy45Main.cpp ${L06_TASK_04}BigInt.h)
 add_executable(L06_T05.Sequences ${L06_TASK_05}SequencesMain.cpp ${L06_TASK_05}Sequence.h)
+
+#######################################
+set(L07 "07. Destructors, Constructors, Copy-Assignment/")
+
+set(L07_DEMOS "${L07}Demos/")
+add_executable(L07_D01.DefaultConstructor "${L07_DEMOS}01. DefaultConstructor.cpp")
+add_executable(L07_D02.CopyConstructionAndAssignment "${L07_DEMOS}02. CopyConstructionAndAssignment.cpp")
+add_executable(L07_D03.Destructor "${L07_DEMOS}03. Destructor.cpp")
+add_executable(L07_D04.DefaultAndDeletedMembers "${L07_DEMOS}04. DefaultAndDeletedMembers.cpp")
+add_executable(L07_D05.ObjectCopyInCopyConstructor "${L07_DEMOS}05. ObjectCopyInCopyConstructor.cpp")
+add_executable(L07_D06.ConstructorAndDestructorNotSufficient "${L07_DEMOS}06. ConstructorAndDestructorNotSufficient.cpp")
+add_executable(L07_D07.RuleOfThree "${L07_DEMOS}07. RuleOfThree.cpp")
+add_executable(L07_D08.PitfallMissingSelfAssignmentCheck "${L07_DEMOS}08. PitfallMissingSelfAssignmentCheck.cpp")
+add_executable(L07_D09.RuleOfZero "${L07_DEMOS}09. RuleOfZero.cpp")
