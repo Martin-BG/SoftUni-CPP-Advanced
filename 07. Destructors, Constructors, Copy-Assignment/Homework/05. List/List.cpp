@@ -29,7 +29,7 @@ void List::Node::setPrev(List::Node* prev) {
 
 List::List() : head(nullptr), tail(nullptr), size(0) { }
 
-List::List(const List& other) : head(nullptr), tail(nullptr), size(0) {
+List::List(const List& other) : List() {
   this->addAll(other);
 }
 
@@ -42,57 +42,49 @@ int List::first() const {
 }
 
 void List::add(int value) {
-  if (this->size == 0) { // First
-    Node* node = new Node(value, nullptr, nullptr);
+  Node* node = new Node(value, this->tail, nullptr);
+  if (this->head == nullptr) {
     this->head = node;
-    this->tail = node;
-  } else if (this->tail->getValue() <= value) { // Push to back
-    Node* node = new Node(value, this->tail, nullptr);
+  } else {
     this->tail->setNext(node);
-    this->tail = node;
-  } else if (this->head->getValue() >= value) { // Insert to start
-    Node* node = new Node(value, nullptr, this->head);
-    this->head->setPrev(node);
-    this->head = node;
-  } else { // Find place
-    Node* prev = this->head;
-    while (prev->getValue() < value && value < prev->getNext()->getValue()) {
-      prev = prev->getNext();
-    }
-    Node* node = new Node(value, prev, prev->getNext());
-    prev->getNext()->setPrev(node);
-    prev->setNext(node);
   }
+  this->tail = node;
   ++this->size;
 }
 
 void List::addAll(const List& other) {
-  Node* current = other.head;
-  while (current != nullptr) {
-    this->add(current->getValue());
-    current = current->getNext();
+  Node* node = other.head;
+  while (node != nullptr) {
+    this->add(node->getValue());
+    node = node->getNext();
   }
 }
 
 void List::removeFirst() {
   if (this->head != nullptr) {
-    Node* first = this->head;
-    if (first->getNext() != nullptr) {
-      first->getNext()->setPrev(nullptr);
-      this->head = first->getNext();
+    Node* node = this->head;
+    if (node->getNext() != nullptr) {
+      node->getNext()->setPrev(nullptr);
+      this->head = node->getNext();
     } else {
       this->head = nullptr;
       this->tail = nullptr;
     }
-    delete first;
+    delete node;
     --this->size;
   }
 }
 
 void List::removeAll() {
-  while (this->head != nullptr) {
-    this->removeFirst();
+  Node* node = this->head;
+  while (node != nullptr) {
+    Node* toDelete = node;
+    node = node->getNext();
+    delete toDelete;
   }
+  this->head = nullptr;
+  this->tail = nullptr;
+  this->size = 0;
 }
 
 size_t List::getSize() const {
@@ -104,40 +96,21 @@ bool List::isEmpty() const {
 }
 
 List List::getReversed(List list) {
-  List reversed(list);
-
-  Node* head = reversed.head;
-  Node* tail = reversed.tail;
-
-  Node* current = reversed.head;
-
-  while (current != tail) {
-    Node* next = current->getNext();
-    current->setPrev(next);
-    next->setNext(current);
-    current = next;
+  List reversed;
+  Node* node = list.tail;
+  while (node != nullptr) {
+    reversed.add(node->getValue());
+    node = node->getPrev();
   }
-
-  reversed.head = tail;
-  reversed.tail = head;
-
-  if (reversed.head != nullptr) {
-    reversed.head->setPrev(nullptr);
-  }
-
-  if (reversed.tail != nullptr) {
-    reversed.tail->setNext(nullptr);
-  }
-
   return reversed;
 }
 
 std::string List::toString() const {
   std::ostringstream os;
-  Node* current = this->head;
-  while (current != nullptr) {
-    os << current->getValue() << ' ';
-    current = current->getNext();
+  Node* node = this->head;
+  while (node != nullptr) {
+    os << node->getValue() << ' ';
+    node = node->getNext();
   }
   return os.str();
 }
