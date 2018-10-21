@@ -1,0 +1,16 @@
+Exercise 1: SmartArray
+
+Implement a SmartArray<T> class that uses dynamic memory
+- Must be RAII, but STL containers/smart pointers NOT allowed
+- Has size, has index access (with operator[])
+- Can be resized
+- No support for copying or assignment
+Bonus: even more RAII
+- Don’t use (directly) new in methods
+Bonus: enable iteration (e.g. with range-based for loop)
+
+
+Exercise 2: Rule of Three for SmartArray
+
+- Implement the Rule of Three for the SmartArray<T> class
+- Bonus: implement it using the copy-and-swap idiom
