@@ -8,7 +8,7 @@ class Lecturer {
 public:
 	Lecturer() {}
 
-	Lecturer(std::string name, double rating) 
+	Lecturer(std::string name, double rating)
 		: name(name), rating(rating) {}
 
 	Lecturer(const Lecturer& other)
@@ -17,11 +17,12 @@ public:
 	}
 
 	Lecturer& operator=(const Lecturer& other) {
-		this->rating = other.rating;
-		this->name = other.name;
+		if (this != &other) {
+			this->rating = other.rating;
+			this->name = other.name;
 
-		std::cout << "Lecturer COPY-ASSIGN operator BODY" << std::endl;
-
+			std::cout << "Lecturer COPY-ASSIGN operator BODY" << std::endl;
+		}
 		return *this;
 	}
 
@@ -62,10 +63,11 @@ public:
 	}
 
 	Lesson& operator=(const Lesson& other) {
-		this->lecturer = other.lecturer;
-		this->subject = other.subject;
-		this->numStudents = other.numStudents;
-
+		if (this != &other) {
+			this->lecturer = other.lecturer;
+			this->subject = other.subject;
+			this->numStudents = other.numStudents;
+		}
 		return *this;
 	}
 };
