@@ -190,6 +190,9 @@ add_executable(L07_D07.RuleOfThree "${L07_DEMOS}07. RuleOfThree.cpp")
 add_executable(L07_D08.PitfallMissingSelfAssignmentCheck "${L07_DEMOS}08. PitfallMissingSelfAssignmentCheck.cpp")
 add_executable(L07_D09.RuleOfZero "${L07_DEMOS}09. RuleOfZero.cpp")
 
+set(L07_EXERCISE "${L07}Exercises/")
+add_executable(L07_E01.Test "${L07_EXERCISE}Test.cpp")
+
 set(L07_HOMEWORK "${L07}Homework/")
 set(L07_HOMEWORK_01 "${L07_HOMEWORK}01. Register/")
 set(L07_HOMEWORK_02 "${L07_HOMEWORK}02. Register of Three/")

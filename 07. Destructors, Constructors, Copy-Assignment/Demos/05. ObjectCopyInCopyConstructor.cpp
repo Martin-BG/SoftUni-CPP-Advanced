@@ -17,6 +17,15 @@ struct Lecturer {
 		this->rating = other.rating;
 		return *this;
 	}
+
+/*	// Fixed code to avoid self-calling recursion
+	Lecturer& operator=(const Lecturer& other) {
+		if (this != &other) {
+			this->name = other.name;
+			this->rating = other.rating;
+		}
+		return *this;
+	}*/
 };
 
 int main() {
