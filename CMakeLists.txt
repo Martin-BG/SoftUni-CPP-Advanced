@@ -191,7 +191,8 @@ add_executable(L07_D08.PitfallMissingSelfAssignmentCheck "${L07_DEMOS}08. Pitfal
 add_executable(L07_D09.RuleOfZero "${L07_DEMOS}09. RuleOfZero.cpp")
 
 set(L07_EXERCISE "${L07}Exercises/")
-add_executable(L07_E01.Test "${L07_EXERCISE}Test.cpp")
+set(L07_EXERCISES_E01 "${L07_EXERCISE}01. SmartArray/")
+add_executable(L07_E01.SmartArray ${L07_EXERCISES_E01}/SmartArrayMain.cpp ${L07_EXERCISES_E01}/SmartArray.h)
 
 set(L07_HOMEWORK "${L07}Homework/")
 set(L07_HOMEWORK_01 "${L07_HOMEWORK}01. Register/")
