@@ -6,6 +6,8 @@
 
 #include <list>
 
+#include "mingw.thread.h"
+
 #include "Particle.h"
 #include "ConsoleScreen.h"
 #include "Engine.h"
