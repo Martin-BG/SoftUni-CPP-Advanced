@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(CPP_Advanced)
 
 set(CMAKE_CXX_STANDARD 11)
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 #######################################
 set(L01 "01. C++ Pointers and References/")
@@ -219,3 +220,8 @@ add_executable(L08_D06.BasePointerToDerived "${L08_DEMOS}06. BasePointerToDerive
 add_executable(L08_D07.VirtualMembersAndBasePointers "${L08_DEMOS}07. VirtualMembersAndBasePointers.cpp")
 add_executable(L08_D08.PitfallNoVirtualDestructor "${L08_DEMOS}08. PitfallNoVirtualDestructor.cpp")
 add_executable(L08_D09.UsingPolymorphism "${L08_DEMOS}09. UsingPolymorphism.cpp")
+
+set(L08_EXERCISE "${L08}Exercises/")
+set(L08_EXERCISES_E01 "${L08_EXERCISE}ParticleSystem/")
+file(GLOB L08_EXERCISES_E01_H "L08_EXERCISES_E01/*.h")
+add_executable(L08_E01.ParticleSystem ${L08_EXERCISES_E01}/ParticleSystemMain.cpp ${L08_EXERCISES_E01_H})
