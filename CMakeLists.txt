@@ -205,3 +205,17 @@ add_executable(L07_H02.RegisterOfThree ${L07_HOMEWORK_02}RegisterMain.cpp ${L07_
 add_executable(L07_H03.ArrayOfPointers ${L07_HOMEWORK_03}ArrayOfPointersMain.cpp ${L07_HOMEWORK_03}Company.h ${L07_HOMEWORK_03}ArrayOfPointers.h)
 add_executable(L07_H04.Words ${L07_HOMEWORK_04}WordsMain.cpp ${L07_HOMEWORK_04}Word.h)
 add_executable(L07_H05.List ${L07_HOMEWORK_05}ListMain.cpp ${L07_HOMEWORK_05}List.cpp)
+
+#######################################
+set(L08 "08. Inheritance and Polymorphism/")
+
+set(L08_DEMOS "${L08}Demos/")
+add_executable(L08_D01.Inheritance "${L08_DEMOS}01. Inheritance.cpp")
+add_executable(L08_D02.ProtectedMembers "${L08_DEMOS}02. ProtectedMembers.cpp")
+add_executable(L08_D03.CallingBaseConstructorsAndMethods "${L08_DEMOS}03. CallingBaseConstructorsAndMethods.cpp")
+add_executable(L08_D04.ObjectSlicing "${L08_DEMOS}04. ObjectSlicing.cpp")
+add_executable(L08_D05.PitfallSlicingOutAHiddenField "${L08_DEMOS}05. PitfallSlicingOutAHiddenField.cpp")
+add_executable(L08_D06.BasePointerToDerived "${L08_DEMOS}06. BasePointerToDerived.cpp")
+add_executable(L08_D07.VirtualMembersAndBasePointers "${L08_DEMOS}07. VirtualMembersAndBasePointers.cpp")
+add_executable(L08_D08.PitfallNoVirtualDestructor "${L08_DEMOS}08. PitfallNoVirtualDestructor.cpp")
+add_executable(L08_D09.UsingPolymorphism "${L08_DEMOS}09. UsingPolymorphism.cpp")
