@@ -1,0 +1,153 @@
+01. Which of the following declares a destructor inside the <code>Test</code> class?
+= ~Test()
+. Test()
+. ::Test()
+. !Test()
+
+02. Which of the following declares a copy assignment operator inside the <code>Test</code> class?
+= Test& operator=(const Test& other)
+. operator copy()
+. Test(const Test& other)
+. Test& operator=()
+
+03. Which of the following prevents creating copies of the <code>Test</code> class, if placed inside it?
+= Test(const Test& other) = delete; Test& operator=(const Test& other) = delete;
+. Test(const Test& other) = default; Test& operator=(const Test& other) = default;
+. Test(const Test& other) = delete;
+. Test& operator=(const Test& other) = delete;
+
+04. Given the following code, what should the /*answer*/ comment be replaced with so that the class does not have memory leaks?
+
+    class Page {
+      char* data;
+      int size;
+    public:
+      Page(int size) : size(size), data(new char[size]) {}
+      Page(const Page& other) = delete;
+      Page& operator=(const Page& other) = delete;
+      ~Page() {
+        /*answer*/
+      }
+    };
+
+= delete[] data;
+. delete data;
+. for (int i = 0; i < size; i++) { delete data[i]; }
+. data = nullptr;
+
+05. Can this class be copy assigned?
+
+    class Test {
+      int field;
+    };
+
+= Yes
+. No
+. Yes, but copying will result in a runtime error
+. Yes, but it cannot be copy constructed
+
+06. Can this class be copy-assigned?
+
+    struct Test {
+      const int field;
+      Test(int field) : field(field) {}
+    };
+
+= No
+. Yes
+. Yes, but copying will result in a runtime error
+. Yes, but it cannot be copy constructed
+
+07. Does the following code have potential memory leaks?
+
+    class Page {
+      int size;
+      char* data;
+    public:
+      Page(int size) : size(size), data(new char[size]) {}
+      ~Page() {
+        delete[] data;
+      }
+    };
+
+= No, but there could be runtime errors in the destructor
+. Yes
+. No
+. No, the code won't compile
+
+08. Does the following code have potential memory leaks?
+
+    class Page {
+      int size;
+      vector<int> data;
+    public:
+      Page(int size) : size(size) {}
+      ~Page() {
+        data.clear();
+      }
+    };
+
+= No
+. Yes
+. No, but there will be runtime error in the destructor
+. Behavior is undefined
+
+09. Is it safe copy and use copies of this class?
+
+    class Page {
+      int size;
+      char* data;
+    public:
+      Page(int size) : size(size), data(new char[size]) {}
+
+      ...
+
+      Page(const Page& other) : size(other.size), data(other.data) {
+      }
+
+      ...
+
+      ~Page() {
+        delete[] data;
+      }
+    };
+
+= No, it could access deallocated memory
+. No, it leaks memory
+. No, copying will not compile
+. Yes
+
+10. Is it safe to create and use copies of this class through the copy assignment operator?
+
+    class Page {
+      int size;
+      char* data;
+    public:
+      Page(int size) : size(size), data(new char[size]) {}
+
+      ...
+
+      Page& operator=(const Page& other) {
+        if (this != &other) {
+          char* dataCopy = new char[other.size];
+          for (int i = 0; i < other.size; i++) {
+            dataCopy[i] = other[i];
+          }
+
+          this->data = dataCopy;
+          this->size = other.size;
+        }
+        return *this;
+      }
+
+      ...
+
+      ~Page() {
+        delete[] data;
+      }
+    };
+
+= No, it leaks memory
+. No, it could access deallocated memory
+. No, copying will not compile
+. Yes
