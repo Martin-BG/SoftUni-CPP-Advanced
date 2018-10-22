@@ -38,7 +38,7 @@ public:
 
 	std::string toString() const {
 		std::ostringstream stream;
-		stream << Vehicle::toString() << this->speed << " altitude: " << this->altitude << " heading: " << this->heading;
+		stream << Vehicle::toString() << " altitude: " << this->altitude << " heading: " << this->heading;
 		return stream.str();
 	}
 };
