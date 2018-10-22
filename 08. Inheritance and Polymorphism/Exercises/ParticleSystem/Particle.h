@@ -14,6 +14,8 @@ public:
 	Particle(Position position, char symbol, int updatesRemaining)
 		: position(position), symbol(symbol), updatesRemaining(updatesRemaining) {}
 
+	virtual ~Particle() = default;
+
 	virtual void update(std::list<Particle*>& producedParticlesOutput) {
 		this->updatesRemaining--;
 	}
