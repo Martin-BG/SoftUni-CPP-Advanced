@@ -3,6 +3,4 @@
 
 #include <iostream>
 
-// TODO
-
 #endif //CPP_ADVANCED_PARSER_H
