@@ -4,6 +4,7 @@
 #include <utility>
 #include <cstddef>
 #include <iostream>
+#include <memory>
 
 template<typename T>
 class SmartArray {
@@ -15,10 +16,14 @@ public:
 
   explicit SmartArray(size_t size) : data(new T[size]{ }), size(size) { };
 
+  SmartArray(std::initializer_list<T> elements) : data(new T[elements.size()]), size(elements.size()) {
+    std::copy(elements.begin(), elements.end(), data);
+  }
+
   SmartArray(const SmartArray<T>& other) : data(nullptr), size(other.size) {
     if (other.data != nullptr) {
       T* newData = new T[other.size];
-      for (int i = 0; i < other.size; ++i) {
+      for (size_t i = 0; i < other.size; ++i) {
         newData[i] = other.data[i];
       }
       this->data = newData;

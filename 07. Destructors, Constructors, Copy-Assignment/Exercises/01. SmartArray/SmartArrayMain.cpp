@@ -29,5 +29,16 @@ int main() {
   c[8] = 77;
   std::cout << c << std::endl;
 
+  SmartArray<int> d{ 4, 5, 1, 34, 55, 67, 98, -123 };
+  std::cout << d.getSize() << " : " << d << std::endl;
+
+  SmartArray<std::string> s{ "hi", "there", "!" };
+  std::cout << s.getSize() << " : " << s << std::endl;
+
+  s[0] = "bye";
+  s.resize(4);
+  s[3] = "<<<>>>";
+  std::cout << s.getSize() << " : " << s << std::endl;
+
   return 0;
 }
