@@ -38,7 +38,11 @@ List::~List() {
 }
 
 int List::first() const {
-  return this->head != nullptr ? this->head->getValue() : 0;
+  if (this->isEmpty()) {
+    throw std::range_error("Cannot get first element of empty list");
+  }
+
+  return this->head->getValue();
 }
 
 void List::add(int value) {
