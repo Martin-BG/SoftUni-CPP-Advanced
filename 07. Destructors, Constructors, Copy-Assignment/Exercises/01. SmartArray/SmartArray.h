@@ -32,8 +32,6 @@ public:
 
   ~SmartArray() {
     delete[] this->data;
-    this->data = nullptr;
-    this->size = 0;
   }
 
   size_t getSize() const {
