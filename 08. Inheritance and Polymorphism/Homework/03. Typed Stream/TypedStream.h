@@ -19,7 +19,7 @@ public:
   std::vector<T> readToEnd() {
     std::vector<T> elements;
     T element;
-    while ((*this >> element).stream.good()) {
+    while ((*this >> element).stream.good()) { // == this->operator>>(element).stream.good()
       elements.push_back(element);
     }
     return elements;
