@@ -6,6 +6,11 @@
 
 template<typename T>
 class TypedStream {
+private:
+  explicit operator bool() const {
+    return this->stream.good();
+  }
+
 protected:
   std::istringstream stream;
 
@@ -19,7 +24,7 @@ public:
   std::vector<T> readToEnd() {
     std::vector<T> elements;
     T element;
-    while ((*this >> element).stream.good()) { // == this->operator>>(element).stream.good()
+    while (*this >> element) { // == this->operator>>(element).stream.good() == (*this >> element).stream.good()
       elements.push_back(element);
     }
     return elements;
