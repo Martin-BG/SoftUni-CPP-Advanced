@@ -11,7 +11,7 @@ protected:
 
   explicit TypedStream(const std::string& input) : stream(input) { }
 
-  virtual TypedStream<T>& operator>>(T& s) = 0;
+  virtual TypedStream<T>& operator>>(T& t) = 0;
 
 public:
   virtual ~TypedStream() = default;
