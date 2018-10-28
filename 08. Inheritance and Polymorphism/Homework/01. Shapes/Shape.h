@@ -16,11 +16,11 @@ public:
 
   virtual ~Shape() = default;
 
-  std::string getCenter() {
+  std::string getCenter() const {
     return this->center;
   }
 
-  double getArea() {
+  double getArea() const {
     return this->area;
   }
 };
