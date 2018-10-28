@@ -1,7 +1,7 @@
 #ifndef AGGREGATOR_H
 #define AGGREGATOR_H
 
-#include "Parser.h"
+#include <istream>
 
 class StreamAggregator {
 private:
