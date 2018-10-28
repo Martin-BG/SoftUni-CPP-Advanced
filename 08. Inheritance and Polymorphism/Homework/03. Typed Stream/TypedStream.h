@@ -7,7 +7,7 @@
 template<typename T>
 class TypedStream {
 protected:
-  std::stringstream stream;
+  std::istringstream stream;
 
   explicit TypedStream(const std::string& input) : stream(input) { }
 
