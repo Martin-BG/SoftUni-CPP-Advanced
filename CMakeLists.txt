@@ -242,3 +242,15 @@ add_executable(L08_H02.Aggregators ${L08_HOMEWORK_02}/AggregatorsMain.cpp ${L08_
 add_executable(L08_H03.TypedStream ${L08_HOMEWORK_03}/TypedStreamMain.cpp ${L08_HOMEWORK_03_H})
 add_executable(L08_H04.Word ${L08_HOMEWORK_04}/WordSkeleton.cpp ${L08_HOMEWORK_04_H})
 add_executable(L08_H05.Calculator ${L08_HOMEWORK_05}/CalculatorMain.cpp ${L08_HOMEWORK_05_H})
+
+#######################################
+set(L09 "09. Pure Virtual Members and Multiple Inheritance/")
+
+set(L09_DEMOS "${L09}Demos/")
+add_executable(L09_D01.InheritanceInMemory "${L09_DEMOS}01. InheritanceInMemory.cpp")
+add_executable(L09_D02.PolymorphismInMemory "${L09_DEMOS}02. PolymorphismInMemory.cpp")
+add_executable(L09_D03.PureVirtualMethods "${L09_DEMOS}03. PureVirtualMethods.cpp")
+add_executable(L09_D04.OOPInterfacesUsage "${L09_DEMOS}04. OOPInterfacesUsage.cpp")
+add_executable(L09_D05.MultipleInheritance "${L09_DEMOS}05. MultipleInheritance.cpp")
+add_executable(L09_D06.VirtualInheritance "${L09_DEMOS}06. VirtualInheritance.cpp")
+add_executable(L09_D07.DynamicCast "${L09_DEMOS}07. DynamicCast.cpp")
