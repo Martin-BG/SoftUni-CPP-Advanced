@@ -1,0 +1,139 @@
+1. Which of the following C++ keywords is directly related to the OOP encapsulation principle?
+= private
+. delete
+. override
+. const
+
+2. Which of the following statements about C++ inheritance is correct?
+= Derived classes can access all non-private members of the base class
+. Derived classes can't call the base class constructor
+. Derived classes can inherit specific fields of the base, skipping others
+. Base classes override members of the derived class
+
+3. Which of the following declarartions inside a base class enables deriving classes to override the method <code>void update()</code>?
+= virtual void update()
+. override void update
+. void update() override
+. void update()
+
+4. Which of the following will cause the members m() and f in the class Base (as defined below) to remain with the same access in class Derived?
+
+    class Base {
+    public:
+        void m() {}
+    private:
+        int f;
+    }
+
+= class Derived : public Base {}
+. class Derived : protected Base {}
+. class Derived : private Base {}
+. class Derived : Base {}
+
+5. What will the following code print (assuming all necessary code is included and all necessary namespaces are used)?
+
+    class Base {
+    public:
+        void print() { cout << "hello"; }
+    }
+
+    class Derived : public Base {
+    public:
+        void print() override { cout << "goodbye"; }
+    }
+
+    int main() {
+        Base* p = new Derived();
+        p->print();
+        delete p;
+        return 0;
+    }
+
+= Nothing, the code will not compile
+. "hello"
+. "goodbye"
+. Nothing, there will be a runtime error
+
+6. If the class Base has [virtual void m() {}], what code should the class Derived have so that [Base* p = new Derived(); p->m();] calls [Base::m()]?
+= It should NOT have a declaration of void m()
+. void m() {}
+. virtual void m() {}
+. virtual void m() override {}
+
+7. Which class members cannot be virtual?
+= Constructors
+. Destructor
+. Operators
+. All of the above can be virtual
+
+8. Which of the following will override the method [void m()] in Derived, if the method [virtual void m() {}] is defined by the class Base, and Derived inherits Base?
+= All of these are correct ways to override m()
+. void m() {}
+. virtual void m() {}
+. virtual void m() override {}
+
+9. What will the following code print?
+
+    class CharAnimation {
+    protected:
+        char current;
+        virtual void update() {}
+    public:
+        CharAnimation(char start) : current(start) {}
+
+        char next() {
+            this->update();
+            return this->current;
+        }
+
+        virtual ~CharAnimation() {}
+    };
+
+    class LettersAnimation : public CharAnimation {
+    public:
+        LettersAnimation() : CharAnimation('a' - 1) {}
+    protected:
+        virtual void update() override {
+            if (current < 'z') {
+                current++;
+            }
+            else {
+                current = 'a';
+            }
+        }
+    };
+
+    int main() {
+        LettersAnimation letters;
+        CharAnimation& a = letters;
+
+        std::cout << a.next();
+        std::cout << a.next();
+
+        return 0;
+    }
+
+= ab
+. ``
+. aa
+. ba
+
+10. Is it safe to inherit the class CharAnimation (as defined below)?
+
+    class CharAnimation {
+    protected:
+        char current;
+        virtual void update() {}
+    public:
+        CharAnimation(char start) : current(start) {}
+
+        char next() {
+            this->update();
+            return this->current;
+        }
+    };
+
+= Yes, but only if [delete] is never called on CharAnimation* to objects of derived classes
+. Yes
+. No
+. Only if we use shared_ptr<CharAnimation> to store pointers to objects of derived classes
