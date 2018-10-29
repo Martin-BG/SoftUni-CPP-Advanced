@@ -15,7 +15,7 @@ public:
 	int numLegs;
 	float weight; // NOTE: hiding weight field from Organism
 
-	Spider(int numLegs, float weight) 
+	Spider(int numLegs, float weight)
 		: Organism(weight, false, true)
 		, numLegs(numLegs) {}
 };
@@ -41,12 +41,12 @@ int main() {
 
 	std::cout << *weight << " " << *eatsPlants << " " << *eatsAnimals << std::endl;
 
-	Spider s(6, 0.01);
-	Organism* sBasePtr = &s;
-	Spider* sPtr = &s;
+	Spider s2(6, 0.01);
+	Organism* sBasePtr = &s2;
+	Spider* sPtr2 = &s2;
 
-	sPtr->weight = 0.042;
-	std::cout << sBasePtr->weight << " vs. " << sPtr->weight << std::endl;
+	sPtr2->weight = 0.042;
+	std::cout << sBasePtr->weight << " vs. " << sPtr2->weight << std::endl;
 
 	return 0;
 }
