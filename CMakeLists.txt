@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 #######################################
-set(L01 "01. C++ Pointers and References/")
+set(L01 "01. Pointers and References/")
 
 set(L01_DEMOS "${L01}Demos/")
 add_executable(L01_D01.ReferencesModifyingParameters "${L01_DEMOS}01. ReferencesModifyingParameters.cpp")
