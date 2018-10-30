@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(CPP_Advanced)
 
 set(CMAKE_CXX_STANDARD 11)
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 
 #######################################
 set(L01 "01. C++ Pointers and References/")
@@ -255,11 +255,36 @@ add_executable(L09_D05.MultipleInheritance "${L09_DEMOS}05. MultipleInheritance.
 add_executable(L09_D06.VirtualInheritance "${L09_DEMOS}06. VirtualInheritance.cpp")
 add_executable(L09_D07.DynamicCast "${L09_DEMOS}07. DynamicCast.cpp")
 
+
 set(L09_EXERCISE "${L09}Exercises/")
+
 set(L09_EXERCISES_E01 "${L09_EXERCISE}Zoo/")
 file(GLOB L09_EXERCISES_E01_H "L09_EXERCISES_E01/*.h")
-add_executable(L08_E01.Zoo ${L09_EXERCISES_E01}/ZooMain.cpp ${L09_EXERCISES_E01_H})
+add_executable(L09_E01.Zoo ${L09_EXERCISES_E01}/ZooMain.cpp ${L09_EXERCISES_E01_H})
 
 set(L09_EXERCISES_E01_A "${L09_EXERCISE}Zoo-Author's/")
 file(GLOB L09_EXERCISES_E01_A_H "L09_EXERCISES_E01_A/*.h")
-add_executable(L08_E01_A.Zoo ${L09_EXERCISES_E01_A}/ZooMain.cpp ${L09_EXERCISES_E01_A_H})
+add_executable(L09_E01_A.Zoo ${L09_EXERCISES_E01_A}/ZooMain.cpp ${L09_EXERCISES_E01_A_H})
+
+
+set(L09_HOMEWORK "${L09}Homework/")
+
+set(L09_HOMEWORK_01 "${L09_HOMEWORK}01. Filters/")
+file(GLOB L09_HOMEWORK_01_H ${L09_HOMEWORK_01}/*.h)
+add_executable(L09_H01.Filters ${L09_HOMEWORK_01}/FiltersMain.cpp ${L09_HOMEWORK_01_H})
+
+set(L09_HOMEWORK_02 "${L09_HOMEWORK}02. IDs/")
+file(GLOB L09_HOMEWORK_02_H ${L09_HOMEWORK_02}/*.h)
+add_executable(L09_H02.IDs ${L09_HOMEWORK_02}/IDsMain.cpp ${L09_HOMEWORK_02}/Company.cpp ${L09_HOMEWORK_02_H})
+
+set(L09_HOMEWORK_03 "${L09_HOMEWORK}03. Files/")
+file(GLOB L09_HOMEWORK_03_H ${L09_HOMEWORK_03}/*.h)
+add_executable(L09_H03.Files ${L09_HOMEWORK_03}/FilesMain.cpp ${L09_HOMEWORK_03_H})
+
+set(L09_HOMEWORK_04 "${L09_HOMEWORK}04. Tree/")
+file(GLOB L09_HOMEWORK_04_H ${L09_HOMEWORK_04}/*.h)
+add_executable(L09_H04.Tree ${L09_HOMEWORK_04}/TreeMain.cpp ${L09_HOMEWORK_04_H})
+
+set(L09_HOMEWORK_05 "${L09_HOMEWORK}05. Explorer/")
+file(GLOB L09_HOMEWORK_05_H ${L09_HOMEWORK_05}/*.h)
+add_executable(L09_H05.Explorer ${L09_HOMEWORK_05}/ExplorerMain.cpp ${L09_HOMEWORK_05_H})
