@@ -10,6 +10,8 @@
 #include "Cat.h"
 #include "Mouse.h"
 
+#include "mingw.thread.h"
+
 const int WORLD_SIZE = 30;
 
 int Position::MinPosition = 0;
@@ -17,7 +19,7 @@ int Position::MaxPosition = WORLD_SIZE - 1;
 
 int main() {
 	Renderer r(WORLD_SIZE);
-	
+
 	while (true) {
 		r.flushToScreen();
 

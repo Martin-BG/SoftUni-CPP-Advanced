@@ -10,10 +10,12 @@
 #include "Cat.h"
 #include "Mouse.h"
 
+#include "mingw.thread.h"
+
 class Loader {
 public:
 	std::vector<Organism*> load() {
-		return { 
+		return {
 			new Cat(Position(0, 0)),
 			new Mouse(Position(0, 0))
 		};
