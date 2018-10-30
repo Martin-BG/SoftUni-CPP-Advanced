@@ -254,3 +254,12 @@ add_executable(L09_D04.OOPInterfacesUsage "${L09_DEMOS}04. OOPInterfacesUsage.cp
 add_executable(L09_D05.MultipleInheritance "${L09_DEMOS}05. MultipleInheritance.cpp")
 add_executable(L09_D06.VirtualInheritance "${L09_DEMOS}06. VirtualInheritance.cpp")
 add_executable(L09_D07.DynamicCast "${L09_DEMOS}07. DynamicCast.cpp")
+
+set(L09_EXERCISE "${L09}Exercises/")
+set(L09_EXERCISES_E01 "${L09_EXERCISE}Zoo/")
+file(GLOB L09_EXERCISES_E01_H "L09_EXERCISES_E01/*.h")
+add_executable(L08_E01.Zoo ${L09_EXERCISES_E01}/ZooMain.cpp ${L09_EXERCISES_E01_H})
+
+set(L09_EXERCISES_E01_A "${L09_EXERCISE}Zoo-Author's/")
+file(GLOB L09_EXERCISES_E01_A_H "L09_EXERCISES_E01_A/*.h")
+add_executable(L08_E01_A.Zoo ${L09_EXERCISES_E01_A}/ZooMain.cpp ${L09_EXERCISES_E01_A_H})
