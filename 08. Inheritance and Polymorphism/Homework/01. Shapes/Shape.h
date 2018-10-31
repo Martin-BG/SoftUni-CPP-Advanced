@@ -9,7 +9,7 @@ private:
 protected:
   double area = 0.0;
 public:
-  Shape() : center(Vector2D(0.0, 0.0)) { };
+  Shape() : Shape(Vector2D(0.0, 0.0)) { };
 
   explicit Shape(const Vector2D& center) : center(center) { }
 
