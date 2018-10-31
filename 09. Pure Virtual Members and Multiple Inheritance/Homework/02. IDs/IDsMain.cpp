@@ -4,7 +4,6 @@
 #include <map>
 
 #include "Company.h"
-#include "Resource.h"
 
 int main() {
 	std::map<int, HasInfo*> byId;
@@ -12,10 +11,10 @@ int main() {
 	std::string line;
 	while (std::getline(std::cin, line) && line != "end") {
 		std::istringstream lineIn(line);
-	
-		Company* c = new Company();	
+
+		Company* c = new Company();
 		lineIn >> *c;
-		
+
 		HasId* hasId = c;
 		byId[hasId->getId()] = c;
 	}
