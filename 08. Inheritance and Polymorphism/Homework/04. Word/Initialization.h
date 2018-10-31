@@ -1,7 +1,6 @@
 #ifndef CPP_ADVANCED_INITIALIZATION_H
 #define CPP_ADVANCED_INITIALIZATION_H
 
-#include <utility>
 #include "CommandInterface.h"
 
 class ExpandedCommandInterface : public CommandInterface {
