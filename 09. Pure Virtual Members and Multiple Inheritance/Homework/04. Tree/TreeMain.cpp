@@ -21,7 +21,7 @@ std::string leftTrim(std::string s) {
 }
 
 class Shortcuts : public FileSystemObject, public FileSystemObjectsContainer {
-	std::list<std::shared_ptr<FileSystemObject> > items;
+	std::vector<std::shared_ptr<FileSystemObject> > items;
 public:
 	Shortcuts() : FileSystemObject("[shortcuts]") {}
 
@@ -29,11 +29,11 @@ public:
 		this->items.push_back(obj);
 	}
 
-	std::list<std::shared_ptr<FileSystemObject> >::const_iterator begin() const override {
+	std::vector<std::shared_ptr<FileSystemObject> >::const_iterator begin() const override {
 		return this->items.begin();
 	}
 
-	std::list<std::shared_ptr<FileSystemObject> >::const_iterator end() const override {
+	std::vector<std::shared_ptr<FileSystemObject> >::const_iterator end() const override {
 		return this->items.end();
 	}
 
