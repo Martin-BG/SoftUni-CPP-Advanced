@@ -17,7 +17,7 @@ protected:
 public:
   virtual ~ByteContainer() = default;
 
-  std::string getBytes() const {
+  const std::string& getBytes() const {
     return this->bytes;
   }
 };
