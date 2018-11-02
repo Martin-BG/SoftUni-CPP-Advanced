@@ -37,13 +37,13 @@ public:
   }
 
   void remove(ObjectPtr obj) override {
-    this->items.erase(std::find(this->items.begin(), this->items.end(), obj));
+    this->items.erase(std::find(this->items.cbegin(), this->items.cend(), obj));
   }
 
-  ObjectPtr getItemByName(const std::string& name) {
-    auto it = std::find_if(this->items.begin(), this->items.end(),
+  const ObjectPtr getItemByName(const std::string& name) {
+    auto it = std::find_if(this->items.cbegin(), this->items.cend(),
                            [&name](const ObjectPtr& obj) { return obj->getName() == name; });
-    return (it != this->items.end()) ? *it : nullptr;
+    return (it != this->items.cend()) ? *it : nullptr;
   }
 };
 
