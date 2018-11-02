@@ -21,11 +21,11 @@ public:
   }
 
   Objects::const_iterator begin() const override {
-    return this->items.begin();
+    return this->items.cbegin();
   }
 
   Objects::const_iterator end() const override {
-    return this->items.end();
+    return this->items.cend();
   }
 
   size_t getSize() const override {
