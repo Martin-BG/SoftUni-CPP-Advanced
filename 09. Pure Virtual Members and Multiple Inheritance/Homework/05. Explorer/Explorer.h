@@ -8,68 +8,78 @@
 #include "Shortcuts.h"
 
 using ObjectPtr = std::shared_ptr<FileSystemObject>;
-using DirectoryPtr = std::shared_ptr<Directory>;
+using ParentPtr = std::weak_ptr<Directory>;
 using Objects = std::vector<ObjectPtr>;
 
 class Explorer {
 private:
   Objects& rootObjects;
-  DirectoryPtr root = std::make_shared<Directory>("\\");
-  DirectoryPtr current = this->root;
+  const ParentPtr rootFolder{ };
+  ParentPtr current{ };
   Objects clipboard{ };
   std::shared_ptr<Shortcuts> shortcuts = nullptr;
 
   void addToRoot(const ObjectPtr& obj) {
     this->rootObjects.push_back(obj);
-    this->root->add(obj);
-    obj->setParent(this->root);
+    obj->setParent(this->rootFolder);
   }
 
   void initFileSystemObject(const ObjectPtr& obj) {
-    if (this->current == this->root) {
-      this->addToRoot(obj);
+    if (auto currentFolderPtr = this->current.lock()) {
+      obj->setParent(currentFolderPtr);
+      currentFolderPtr->add(obj);
     } else {
-      obj->setParent(this->current);
-      this->current->add(obj);
+      this->addToRoot(obj);
     }
+  }
+
+  const ObjectPtr getItemByNameInRoot(const std::string& objectName) const {
+    auto it = find_if(this->rootObjects.cbegin(), this->rootObjects.cend(),
+                      [&objectName](const ObjectPtr& obj) { return obj->getName() == objectName; });
+    return (it != this->rootObjects.cend()) ? *it : nullptr;
+  }
+
+  const ObjectPtr getItemByNameInCurrentDirectory(const std::string& objectName) const {
+    if (auto currentFolderPtr = this->current.lock()) {
+      return currentFolderPtr->getItemByName(objectName);
+    }
+
+    return this->getItemByNameInRoot(objectName);
   }
 
 public:
   explicit Explorer(Objects& rootObjects) : rootObjects(rootObjects) { }
 
   void createFile(const std::string& filename, const std::string& data) {
-    initFileSystemObject(std::make_shared<File>(filename, data));
+    this->initFileSystemObject(std::make_shared<File>(filename, data));
   }
 
   void createDirectory(const std::string& directoryName) {
-    initFileSystemObject(std::make_shared<Directory>(directoryName));
+    this->initFileSystemObject(std::make_shared<Directory>(directoryName));
   }
 
   void createShortcut(const std::string& objectName) {
-    auto item = this->current->getItemByName(objectName);
-    if (!item) {
-      return;
+    if (auto item = this->getItemByNameInCurrentDirectory(objectName)) {
+      if (!this->shortcuts) {
+        this->shortcuts = std::make_shared<Shortcuts>();
+        this->addToRoot(this->shortcuts);
+      }
+      this->shortcuts->add(item);
     }
-    if (!this->shortcuts) {
-      this->shortcuts = std::make_shared<Shortcuts>();
-      this->addToRoot(this->shortcuts);
-    }
-    this->shortcuts->add(item);
   }
 
   void cut(const std::string& objectName) {
-    ObjectPtr obj = current->getItemByName(objectName);
-    if (obj) {
+    if (auto obj = this->getItemByNameInCurrentDirectory(objectName)) {
       this->clipboard.push_back(obj);
     }
   }
 
   void paste() {
     for (const auto& item : this->clipboard) {
-      const std::shared_ptr<Directory>& parent = std::dynamic_pointer_cast<Directory>(item->getParent().lock());
-      parent->remove(item);
-      if (parent == this->root) {
+      if (item->getParent().expired()) {
         this->rootObjects.erase(std::find(this->rootObjects.begin(), this->rootObjects.end(), item));
+      } else {
+        std::static_pointer_cast<Directory>(item->getParent().lock())->remove(item);
       }
       this->initFileSystemObject(item);
     }
@@ -77,13 +87,17 @@ public:
   }
 
   void navigate(const std::string& path) {
-    if (path == ".." && this->current != this->root) {
-      this->current = std::dynamic_pointer_cast<Directory>(this->current->getParent().lock());
+    if (path == "..") {
+      if (!this->current.expired()) {
+        this->current = std::static_pointer_cast<Directory>(this->current.lock()->getParent().lock());
+      }
       return;
     }
-    auto newDirectory = this->current->getItemByName(path);
-    if (newDirectory && std::dynamic_pointer_cast<Directory>(newDirectory)) {
-      this->current = std::dynamic_pointer_cast<Directory>(newDirectory);
+
+    if (auto newObject = this->getItemByNameInCurrentDirectory(path)) {
+      if (auto newDirectory = std::dynamic_pointer_cast<Directory>(newObject)) {
+        this->current = newDirectory;
+      }
     }
   }
 };
