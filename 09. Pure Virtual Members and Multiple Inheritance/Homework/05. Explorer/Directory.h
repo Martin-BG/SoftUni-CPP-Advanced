@@ -41,8 +41,8 @@ public:
   }
 
   const ObjectPtr getItemByName(const std::string& name) {
-    auto it = std::find_if(this->items.cbegin(), this->items.cend(),
-                           [&name](const ObjectPtr& obj) { return obj->getName() == name; });
+    auto nameMatches = [&name](const ObjectPtr& obj) { return obj->getName() == name; };
+    auto it = std::find_if(this->items.cbegin(), this->items.cend(), nameMatches);
     return (it != this->items.cend()) ? *it : nullptr;
   }
 };
