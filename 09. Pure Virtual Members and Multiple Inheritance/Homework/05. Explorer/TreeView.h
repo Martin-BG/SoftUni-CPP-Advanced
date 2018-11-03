@@ -21,8 +21,7 @@ namespace TreeViewUtils {
 
   void walk(const ObjectPtr& obj, std::ostringstream& oss, const std::string& prefix) {
     oss << prefix << obj->getName() << std::endl;
-    auto dirPtr = std::dynamic_pointer_cast<FileSystemObjectsContainer>(obj);
-    if (dirPtr) {
+    if (auto dirPtr = std::dynamic_pointer_cast<FileSystemObjectsContainer>(obj)) {
       const std::set<ObjectPtr, ObjectComparator> items(dirPtr->begin(), dirPtr->end());
       for (const auto& item: items) {
         walk(item, oss, prefix + PREFIX);
