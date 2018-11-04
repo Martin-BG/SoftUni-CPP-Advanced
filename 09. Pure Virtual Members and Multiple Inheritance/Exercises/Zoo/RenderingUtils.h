@@ -16,9 +16,9 @@ private:
 	std::vector<std::vector<char> > renderBuffer;
 public:
 	explicit Renderer(size_t size) : size(size) {
-		for (int r = 0; r < size; r++) {
+		for (size_t r = 0; r < size; r++) {
 			std::vector<char> bufferRow;
-			for (int c = 0; c < size; c++) {
+			for (size_t c = 0; c < size; c++) {
 				bufferRow.push_back(' ');
 			}
 			renderBuffer.push_back(bufferRow);
