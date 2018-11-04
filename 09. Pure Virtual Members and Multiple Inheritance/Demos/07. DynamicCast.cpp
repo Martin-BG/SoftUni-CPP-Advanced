@@ -83,7 +83,7 @@ int main() {
 
 	Organism* spiderUpcastToOrganism = dynamic_cast<Organism*>(&spider);
 	Company* spiderCastToCompany = dynamic_cast<Company*>(&spider);
-	Organism* spiderUpcastToDescribable = dynamic_cast<Organism*>(&spider);
+	Describable* spiderUpcastToDescribable = dynamic_cast<Describable*>(&spider);
 	Describable* companyUpcastToDescribable = dynamic_cast<Describable*>(&company);
 	Spider* companyUpcastToDescribableDowncastToSpider = dynamic_cast<Spider*>(companyUpcastToDescribable);
 
