@@ -6,9 +6,7 @@
 #include <chrono>
 
 #include "RenderingUtils.h"
-#include "Organism.h"
-#include "Cat.h"
-#include "Mouse.h"
+#include "TomAndJerryFactory.h"
 
 #include "mingw.thread.h"
 
@@ -17,14 +15,25 @@ const int WORLD_SIZE = 30;
 int Position::MinPosition = 0;
 int Position::MaxPosition = WORLD_SIZE - 1;
 
+std::unique_ptr<OrganismFactory> getFactory() {
+  return std::make_unique<TomAndJerryFactory>();
+}
+
 int main() {
-	Renderer r(WORLD_SIZE);
+  Renderer r(WORLD_SIZE);
 
-	while (true) {
-		r.flushToScreen();
+  std::vector<std::shared_ptr<Organism> > organisms = getFactory()->buildOrganisms();
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(100));
-	}
+  while (true) {
+    for (const auto& o : organisms) {
+      o->act();
+      r.render(o->getPosition(), o->getImage());
+    }
 
-	return 0;
+    r.flushToScreen();
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+  }
+
+  return 0;
 }

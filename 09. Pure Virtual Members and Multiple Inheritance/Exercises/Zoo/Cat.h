@@ -1,74 +1,70 @@
 #ifndef CAT_H
 #define CAT_H
 
-#include "Organism.h"
 #include <climits>
 
-class Cat : public Organism {
-	int actsPerMove;
-	int actsSinceLastMove;
-	int actsInCurrentState;
+#include "Organism.h"
+#include "MovableOrganism.h"
 
-	std::string name;
-	Position position;
+class Cat : public Organism, public MovableOrganism {
+  static const int FAST_MOVE_ACTS = 1;
+  static const int SLOW_MOVE_ACTS = 4;
+  static const int NOT_MOVING_ACTS = LONG_MAX;
 
-	const int FAST_MOVE_ACTS = 1;
-	const int SLOW_MOVE_ACTS = 4;
-	const int NOT_MOVING_ACTS = LONG_MAX;
+  int actsPerMove = NOT_MOVING_ACTS;
+  int actsSinceLastMove = 0;
+  int actsInCurrentState = 0;
+
 protected:
-	virtual void move() {
-		int rowMove = (rand() % 3) - 1;
-		int colMove = (rand() % 3) - 1;
+  void move() override {
+    int rowMove = (rand() % 3) - 1;
+    int colMove = (rand() % 3) - 1;
 
-		this->position = Position(this->position.getRow() + rowMove, this->position.getCol() + colMove);
-		this->actsSinceLastMove = 0;
-	}
+    this->position = Position(this->position.getRow() + rowMove, this->position.getCol() + colMove);
+    this->actsSinceLastMove = 0;
+  }
 
-	virtual void changeMovement() {
-		this->actsInCurrentState = 0;
-		int actsPerMoveChange = rand() % 3;
-		switch (actsPerMoveChange) {
-		case 0:
-			this->actsPerMove = NOT_MOVING_ACTS;
-			break;
-		case 1:
-			this->actsPerMove = SLOW_MOVE_ACTS;
-			break;
-		case 2:
-			this->actsPerMove = FAST_MOVE_ACTS;
-			break;
-		}
-	}
+  void changeMovement() override {
+    this->actsInCurrentState = 0;
+    int actsPerMoveChange = rand() % 3;
+    switch (actsPerMoveChange) {
+    case 0:
+      this->actsPerMove = NOT_MOVING_ACTS;
+      break;
+    case 1:
+      this->actsPerMove = SLOW_MOVE_ACTS;
+      break;
+    default:
+      this->actsPerMove = FAST_MOVE_ACTS;
+      break;
+    }
+  }
+
 public:
-	Cat(Position p) : name("cat"), position(p), actsPerMove(NOT_MOVING_ACTS), actsSinceLastMove(0), actsInCurrentState(0) {}
+  explicit Cat(const Position& p) : Organism("cat", p) { }
 
-	Position getPosition() const {
-		return this->position;
-	}
+  void act() override {
+    this->actsSinceLastMove++;
+    if (this->actsSinceLastMove >= this->actsPerMove) {
+      move();
+    }
 
-	void act() {
-		this->actsSinceLastMove++;
-		if (this->actsSinceLastMove >= this->actsPerMove) {
-			move();
-		}
+    this->actsInCurrentState++;
+    // 1% chance per act for the cat to change its movement, increased by the number of acts elapsed
+    // - i.e. the longer it stays in the same state, the more likely it is to change speed
+    if ((rand() % 100) < 1 + (this->actsInCurrentState)) {
+      changeMovement();
+    }
+  }
 
-		this->actsInCurrentState++;
-		// 1% chance per act for the cat to change its movement, increased by the number of acts elapsed
-		// - i.e. the longer it stays in the same state, the more likely it is to change speed
-		if ((rand() % 100) < 1 + (this->actsInCurrentState)) {
-			changeMovement();
-		}
-	}
-
-	std::string getImage() const {
-		if (this->actsPerMove == NOT_MOVING_ACTS && this->actsSinceLastMove % 10 < 3) {
-			// make the cat blink once in a while when stationary:
-			return "=^--^=";
-		}
-		else {
-			return "=^..^=";
-		}
-	}
+  std::string getImage() const override {
+    if (this->actsPerMove == NOT_MOVING_ACTS && this->actsSinceLastMove % 10 < 3) {
+      // make the cat blink once in a while when stationary:
+      return "=^--^=";
+    } else {
+      return "=^..^=";
+    }
+  }
 };
 
 #endif // !CAT_H

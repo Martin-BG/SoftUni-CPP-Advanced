@@ -2,74 +2,65 @@
 #define MOUSE_H
 
 #include "Organism.h"
-#include "Position.h"
-#include <string>
+#include "MovableOrganism.h"
 
-class Mouse : public Organism {
-	int diagonal;
-	bool stopped;
-	int actsInCurrentState;
+class Mouse : public Organism, public MovableOrganism {
+  int diagonal = 0;
+  bool stopped = false;
+  int actsInCurrentState = 0;
 
-	std::string name;
-	Position position;
 protected:
-	void move() {
-		switch (this->diagonal) {
-		case 0:
-			this->position = Position(this->position.getRow() - 1, this->position.getCol() + 1);
-			break;
-		case 1:
-			this->position = Position(this->position.getRow() - 1, this->position.getCol() - 1);
-			break;
-		case 2:
-			this->position = Position(this->position.getRow() + 1, this->position.getCol() - 1);
-			break;
-		case 3:
-			this->position = Position(this->position.getRow() + 1, this->position.getCol() + 1);
-			break;
-		default:
-			break;
-		}
-	}
+  void move() override {
+    switch (this->diagonal) {
+    case 0:
+      this->position = Position(this->position.getRow() - 1, this->position.getCol() + 1);
+      break;
+    case 1:
+      this->position = Position(this->position.getRow() - 1, this->position.getCol() - 1);
+      break;
+    case 2:
+      this->position = Position(this->position.getRow() + 1, this->position.getCol() - 1);
+      break;
+    case 3:
+      this->position = Position(this->position.getRow() + 1, this->position.getCol() + 1);
+      break;
+    default:
+      break;
+    }
+  }
 
 public:
-	Mouse(Position p) : name("mouse"), position(p), diagonal(rand() % 4), stopped(rand() % 2), actsInCurrentState(0) {}
+  explicit Mouse(const Position& p) : Organism("mouse", p) { }
 
-	Position getPosition() const {
-		return this->position;
-	}
+  void act() override {
+    actsInCurrentState++;
+    if (rand() % 100 < actsInCurrentState) {
+      this->stopped = rand() % 2;
 
-	void act() {
-		actsInCurrentState++;
-		if (rand() % 100 < actsInCurrentState) {
-			this->stopped = rand() % 2;
+      this->diagonal = rand() % 4;
+      this->actsInCurrentState = 0;
+    }
 
-			this->diagonal = rand() % 4;
-			this->actsInCurrentState = 0;
-		}
+    if (!this->stopped) {
+      this->move();
+    }
+  }
 
-		if (!this->stopped) {
-			this->move();
-		}
-	}
-
-	std::string getImage() const {
-		if (this->diagonal == 0 || this->diagonal == 3) {
-			if (this->stopped) {
-				return "~~(__^->";
-			} else {
-				return "~~(__^o>";
-			}
-		}
-		else {
-			if (this->stopped) {
-				return "<-^__)~~";
-			}
-			else {
-				return "<o^__)~~";
-			}
-		}
-	}
+  std::string getImage() const override {
+    if (this->diagonal == 0 || this->diagonal == 3) {
+      if (this->stopped) {
+        return "~~(__^->";
+      } else {
+        return "~~(__^o>";
+      }
+    } else {
+      if (this->stopped) {
+        return "<-^__)~~";
+      } else {
+        return "<o^__)~~";
+      }
+    }
+  }
 };
 
 #endif // !MOUSE_H
