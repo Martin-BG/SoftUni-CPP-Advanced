@@ -12,7 +12,7 @@
 class Renderer {
 public:
 private:
-	const int size;
+	const size_t size;
 	std::vector<std::vector<char> > renderBuffer;
 public:
 	Renderer(int size) : size(size) {
@@ -26,15 +26,15 @@ public:
 	}
 
 	void render(Position p, std::string image) {
-		for (int i = 0; i < image.size() && p.getCol() + i < size; i++) {
+		for (size_t i = 0; i < image.size() && p.getCol() + i < size; i++) {
 			renderBuffer[p.getRow()][p.getCol() + i] = image[i];
 		}
 	}
 
 	void flushToScreen() {
 		std::ostringstream output;
-		for (int r = 0; r < size; r++) {
-			for (int c = 0; c < size; c++) {
+		for (size_t r = 0; r < size; r++) {
+			for (size_t c = 0; c < size; c++) {
 				output << this->renderBuffer[r][c];
 				this->renderBuffer[r][c] = ' ';
 			}
