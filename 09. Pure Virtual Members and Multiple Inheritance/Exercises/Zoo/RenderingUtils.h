@@ -15,7 +15,7 @@ private:
 	const size_t size;
 	std::vector<std::vector<char> > renderBuffer;
 public:
-	Renderer(int size) : size(size) {
+	explicit Renderer(size_t size) : size(size) {
 		for (int r = 0; r < size; r++) {
 			std::vector<char> bufferRow;
 			for (int c = 0; c < size; c++) {
