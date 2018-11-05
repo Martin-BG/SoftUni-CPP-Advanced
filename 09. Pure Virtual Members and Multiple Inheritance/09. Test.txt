@@ -1,0 +1,131 @@
+1. Which of the following is a correct way to declare a pure-virtual method m?
+= virtual void m() = 0;
+. void m() = 0;
+. virtual void m();
+. pure virtual void m();
+
+2. If a class has a pure-virtual method, it:
+= cannot be instantiated
+. cannot be inherited
+. cannot have a destructor
+. cannot have a constructor
+
+3. If a class inherits a class with a pure-virtual method, can the pure-virtual method remain pure-virtual in it?
+= Yes
+. No
+. Yes, but it will cause a runtime error if the class is instantiated
+. Yes, but behavior will be undefined if the class is instantiated
+
+4. Which of the following most closely represent OOP Interfaces in C++?
+= Pure-virtual class
+. Pure-virtual methods
+. Inheritance
+. Destructors
+
+5. Which of the following is true, when calling a method on an object, if the method was pure-virtual in the object's base class?
+= The code is guaranteed to call an override
+. There will be runtime error
+. The base method will be called
+. Behavior will be undefined
+
+6. Can a class have more than one base class?
+= Yes
+. No
+. Yes, but all base classes must be OOP Interfaces
+. Yes, but all except 1 base classes must be OOP Interfaces
+
+7. What code should be placed instead of the ? so that the following code compiles?
+
+    class Aircraft {};
+    class Fighter : ? Aircraft {};
+    class Bomber : ? Aircraft {};
+    class Mig29 : Fighter {};
+    class F16 : Fighter, Bomber {};
+
+    Bomber* p = new F16();
+
+= virtual
+. public
+. const
+. abstract
+
+8. Which of the casts below will be non-null, given the following code:
+
+    class Aircraft { ... };
+    class Fighter : virtual Aircraft { ... };
+    class Bomber : virtual Aircraft { ... };
+    class Mig29 : Fighter { ... };
+    class F16 : Fighter, Bomber { ... };
+
+    Bomber* p = new F16();
+
+= All of these casts will be non-null
+. dynamic_cast<F16>(p);
+. dynamic_cast<Fighter>(p);
+. dynamic_cast<Aircraft>(p);
+
+9. What code needs to replace the ? below for the code to compile?
+
+    class FileSystemObject {
+    public:
+      virtual int getSize() const = 0;
+    };
+
+    class File : public FileSystemObject {
+    public:
+      ?
+    };
+
+    class Directory : public FileSystemObject {
+    public:
+      virtual int getSize() const {
+        return 0;
+      }
+    };
+
+    int main() {
+      File* f;
+      return 0;
+    }
+
+= Nothing, the code will compile if we remove the ?
+. virtual int getSize() const { return 0; }
+. virtual int getSize() = 0;
+. virtual int getSize() const override { return 0; }
+
+10. What will the following code print (assuming all necessary #include and using statements are present)?
+
+    class FileSystemObject {
+    public:
+      virtual int getSize() const = 0;
+    };
+
+    class File : public FileSystemObject {
+    public:
+      int getSize() const override {
+        return 1;
+      }
+    };
+
+    class Directory : public FileSystemObject {
+    public:
+      virtual int getSize() const {
+        return 0;
+      }
+    };
+
+    class Root : Directory {
+    };
+
+    int main() {
+      FileSystemObject* o = new Root();
+
+      cout << o->getSize() << endl;
+
+      return 0;
+    }
+
+= The code will not compile
+. 0
+. 1
+. There will be a runtime error
