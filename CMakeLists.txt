@@ -284,3 +284,23 @@ add_executable(L09_H04.Tree ${L09_HOMEWORK_04}/TreeMain.cpp ${L09_HOMEWORK_04_H}
 set(L09_HOMEWORK_05 "${L09_HOMEWORK}05. Explorer/")
 file(GLOB L09_HOMEWORK_05_H ${L09_HOMEWORK_05}/*.h)
 add_executable(L09_H05.Explorer ${L09_HOMEWORK_05}/ExplorerMain.cpp ${L09_HOMEWORK_05_H})
+
+
+#######################################
+set(L10 "10. Exercises/")
+
+set(L10_TASK_01 "${L10}01. MaxSumArray/")
+file(GLOB L10_TASK_01_H ${L10_TASK_01}/*.h)
+add_executable(L10_T01.MaxSumArray ${L10_TASK_01}MaxSumArrayMain.cpp ${L10_TASK_01_H})
+
+set(L10_TASK_02 "${L10}02. IndexedSet/")
+file(GLOB L10_TASK_02_H ${L10_TASK_02}/*.h)
+add_executable(L10_T02.IndexedSet ${L10_TASK_02}main.cpp ${L10_TASK_02_H})
+
+set(L10_TASK_03 "${L10}03. Extractor/")
+file(GLOB L10_TASK_03_H ${L10_TASK_03}/*.h)
+add_executable(L10_T03.Extractor ${L10_TASK_03}ExtractorMain.cpp ${L10_TASK_03_H})
+
+set(L10_TASK_04 "${L10}04. Word/")
+file(GLOB L10_TASK_04_H ${L10_TASK_04}/*.h)
+add_executable(L10_T04.Word ${L10_TASK_04}WordSkeleton.cpp ${L10_TASK_04_H})
