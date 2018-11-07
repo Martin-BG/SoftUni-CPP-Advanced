@@ -1,0 +1,5 @@
+example.txt
+examples
+examples/example.txt
+some example bytes as text
+otherFile.txt

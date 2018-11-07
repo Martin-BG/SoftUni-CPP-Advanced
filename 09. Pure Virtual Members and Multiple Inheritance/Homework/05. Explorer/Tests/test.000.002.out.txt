@@ -1,0 +1,13 @@
+[shortcuts]
+--->nested
+--->--->noDot
+--->--->otherFile.txt
+--->otherFile.txt
+--->rootDir
+examples
+--->example.txt
+--->nested
+--->--->noDot
+--->--->otherFile.txt
+rootDir
+rootFile.txt

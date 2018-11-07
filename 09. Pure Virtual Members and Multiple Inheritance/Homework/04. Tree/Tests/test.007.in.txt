@@ -1,0 +1,8 @@
+directory 1 dira
+directory 2 dirb
+directory 3 dirc
+move 3 1
+move 2 3
+shortcut 2
+shortcut 3
+end

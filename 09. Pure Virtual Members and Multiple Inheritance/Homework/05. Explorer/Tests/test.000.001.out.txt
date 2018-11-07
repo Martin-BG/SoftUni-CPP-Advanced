@@ -1,0 +1,6 @@
+examples
+--->example.txt
+--->nested
+--->--->otherFile.txt
+rootDir
+rootFile.txt

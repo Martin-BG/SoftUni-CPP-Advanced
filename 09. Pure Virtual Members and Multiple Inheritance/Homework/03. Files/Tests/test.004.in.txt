@@ -1,0 +1,7 @@
+directory 1 home
+size 1
+file 2 cat.img =^..^=
+copy 2 1
+size 1
+print 2
+end

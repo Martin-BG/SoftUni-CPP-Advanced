@@ -1,0 +1,14 @@
+md dirc
+md dira
+sc dirc
+md dirb
+sc dirb
+cut dirc
+cd dira
+paste
+cd ..
+cut dirb
+cd dira
+cd dirc
+paste
+end

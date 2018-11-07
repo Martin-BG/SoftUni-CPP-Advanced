@@ -1,0 +1,5 @@
+md b
+cd b
+cd ..
+md a
+end

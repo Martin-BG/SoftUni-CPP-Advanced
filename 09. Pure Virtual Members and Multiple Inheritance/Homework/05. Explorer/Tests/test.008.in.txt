@@ -1,0 +1,32 @@
+md dirC
+cd dirC
+mf fileD
+mf fileE
+mf fileF
+md root
+cd ..
+cd dirC
+cut root
+cd ..
+paste
+cd root
+md dirA
+md dirB
+mf fileB
+cut fileB
+cd dirB
+paste
+cd ..
+cut dirB
+cd dirA
+paste
+cd dirB
+cd ..
+mf fileA
+mf fileC
+cd ..
+sc dirA
+cd ..
+cd dirC
+sc fileF
+end

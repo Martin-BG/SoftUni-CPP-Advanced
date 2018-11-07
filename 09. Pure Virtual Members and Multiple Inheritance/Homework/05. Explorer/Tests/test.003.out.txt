@@ -1,0 +1,4 @@
+[shortcuts]
+--->b
+a
+b

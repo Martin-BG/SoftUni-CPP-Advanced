@@ -1,0 +1,23 @@
+mf test10-example.txt some example bytes as text
+md test10-examples
+cut test10-example.txt
+cd test10-examples
+paste
+md test10-nested
+sc test10-nested
+cd test10-nested
+mf test10-otherFile.txt other text
+sc test10-otherFile.txt
+mf test10-rootFile.txt this file is in the file system root 
+cut test10-rootFile.txt
+cd ..
+cd ..
+md test10-rootDir
+paste
+sc test10-rootDir
+mf test10-noDot can't use name to check if directory or file :)
+cut test10-noDot
+cd test10-examples
+cd test10-nested
+paste
+end

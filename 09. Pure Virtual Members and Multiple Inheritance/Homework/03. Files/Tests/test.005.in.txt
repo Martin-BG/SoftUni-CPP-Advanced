@@ -1,0 +1,21 @@
+file 1 monkey.img @('_')@
+directory 2 animals
+file 3 koala.img @( * O * )@
+copy 1 2
+file 4 cat.img =^..^=
+directory 5 empty
+file 6 crowd.img (-(-_(-_-)_-)-)
+directory 7 people
+file 8 starry-eyed.img <*_*>
+copy 3 2
+size 2
+path 3
+size 6
+size 5
+print 8
+copy 6 7
+copy 8 7
+size 7
+print 4
+print 3
+end

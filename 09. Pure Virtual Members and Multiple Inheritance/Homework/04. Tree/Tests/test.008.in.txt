@@ -1,0 +1,21 @@
+file 1 fileA
+file 2 fileB contentsB
+file 3 fileC contents of C
+directory 4 dirA
+directory 5 dirB
+directory 6 dirC
+file 7 fileF
+file 8 fileE
+file 9 fileD
+directory 10 root
+move 1 4
+move 3 4
+move 2 5
+move 7 6
+move 8 6
+move 9 6
+shortcut 7
+shortcut 4
+move 4 10
+move 5 4
+end

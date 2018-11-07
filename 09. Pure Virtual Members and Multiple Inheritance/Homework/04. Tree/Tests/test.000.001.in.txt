@@ -1,0 +1,10 @@
+file 1 example.txt some example bytes as text
+file 2 otherFile.txt other text
+directory 3 examples
+move 1 3
+directory 4 nested
+move 4 3
+move 2 4
+file 5 rootFile.txt this file is in the file system root 
+directory 6 rootDir
+end

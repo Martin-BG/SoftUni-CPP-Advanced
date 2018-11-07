@@ -1,0 +1,4 @@
+file 1 b bcontents
+shortcut 1
+file 2 a acontents
+end

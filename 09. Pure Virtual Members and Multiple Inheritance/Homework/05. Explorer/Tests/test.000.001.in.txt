@@ -1,0 +1,13 @@
+mf example.txt some example bytes as text
+md examples
+cut example.txt
+cd examples
+paste
+md nested
+cd nested
+mf otherFile.txt other text
+cd ..
+cd ..
+md rootDir
+mf rootFile.txt this file is in the file system root 
+end

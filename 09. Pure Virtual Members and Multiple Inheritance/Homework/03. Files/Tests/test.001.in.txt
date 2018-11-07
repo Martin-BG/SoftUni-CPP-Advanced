@@ -1,0 +1,6 @@
+file 1 first.txt contents1
+file 2 second.h #ifndef SECOND_H
+path 1
+size 2
+print 2
+end

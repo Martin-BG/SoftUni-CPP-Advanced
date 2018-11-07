@@ -1,0 +1,7 @@
+mf b bcontents
+md dir
+mf a acontents
+cut b
+cd dir
+paste
+end

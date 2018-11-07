@@ -1,0 +1,5 @@
+directory 1 first
+directory 2 second
+path 1
+size 2
+end

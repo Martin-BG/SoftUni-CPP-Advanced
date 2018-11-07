@@ -1,0 +1,13 @@
+[shortcuts]
+--->test10-nested
+--->--->test10-noDot
+--->--->test10-otherFile.txt
+--->test10-otherFile.txt
+--->test10-rootDir
+test10-examples
+--->test10-example.txt
+--->test10-nested
+--->--->test10-noDot
+--->--->test10-otherFile.txt
+test10-rootDir
+test10-rootFile.txt

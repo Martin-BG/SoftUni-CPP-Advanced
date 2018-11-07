@@ -1,0 +1,10 @@
+file 1 example.txt some example bytes as text
+file 2 otherFile.txt other text
+path 1
+directory 3 examples
+path 3
+copy 1 3
+path 1
+print 1
+path 2
+end

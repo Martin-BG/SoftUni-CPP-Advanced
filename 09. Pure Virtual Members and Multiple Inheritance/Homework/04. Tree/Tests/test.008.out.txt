@@ -1,0 +1,17 @@
+[shortcuts]
+--->dirA
+--->--->dirB
+--->--->--->fileB
+--->--->fileA
+--->--->fileC
+--->fileF
+dirC
+--->fileD
+--->fileE
+--->fileF
+root
+--->dirA
+--->--->dirB
+--->--->--->fileB
+--->--->fileA
+--->--->fileC

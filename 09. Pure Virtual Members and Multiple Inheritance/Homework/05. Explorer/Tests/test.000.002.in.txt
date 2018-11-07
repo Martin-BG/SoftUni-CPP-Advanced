@@ -1,0 +1,23 @@
+mf example.txt some example bytes as text
+md examples
+cut example.txt
+cd examples
+paste
+md nested
+sc nested
+cd nested
+mf otherFile.txt other text
+sc otherFile.txt
+mf rootFile.txt this file is in the file system root 
+cut rootFile.txt
+cd ..
+cd ..
+md rootDir
+paste
+sc rootDir
+mf noDot can't use name to check if directory or file :)
+cut noDot
+cd examples
+cd nested
+paste
+end

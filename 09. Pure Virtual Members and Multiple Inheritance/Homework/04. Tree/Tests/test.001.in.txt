@@ -1,0 +1,3 @@
+file 1 b bcontents
+file 2 a acontents
+end
