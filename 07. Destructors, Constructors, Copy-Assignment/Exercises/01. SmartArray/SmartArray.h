@@ -90,9 +90,7 @@ public:
   // Solution with copy-and-swap idiom:
   // https://stackoverflow.com/questions/3279543/what-is-the-copy-and-swap-idiom
   SmartArray<T>& operator=(SmartArray<T> other) {
-    if (this != &other) {
-      swap(*this, other);
-    }
+    swap(*this, other);
     return *this;
   };
 
