@@ -96,13 +96,13 @@ public:
 
   // https://stackoverflow.com/questions/5695548/public-friend-swap-member-function
   // https://en.cppreference.com/w/cpp/language/adl
-  friend void swap(SmartArray& first, SmartArray& second) {
+  friend void swap(SmartArray<T>& first, SmartArray<T>& second) {
     using std::swap;
     swap(first.size, second.size);
     swap(first.data, second.data);
   }
 
-  friend std::ostream& operator<<(std::ostream& out, const SmartArray& a) {
+  friend std::ostream& operator<<(std::ostream& out, const SmartArray<T>& a) {
     for (auto element: a) {
       std::cout << element << " ";
     }
