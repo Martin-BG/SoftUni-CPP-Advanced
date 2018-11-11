@@ -295,7 +295,7 @@ add_executable(L10_T01.MaxSumArray ${L10_TASK_01}MaxSumArrayMain.cpp ${L10_TASK_
 
 set(L10_TASK_02 "${L10}02. IndexedSet/")
 file(GLOB L10_TASK_02_H ${L10_TASK_02}/*.h)
-add_executable(L10_T02.IndexedSet ${L10_TASK_02}main.cpp ${L10_TASK_02_H})
+add_executable(L10_T02.IndexedSet ${L10_TASK_02}main.cpp ${L10_TASK_02}IndexedSet.cpp ${L10_TASK_02_H})
 
 set(L10_TASK_03 "${L10}03. Extractor/")
 file(GLOB L10_TASK_03_H ${L10_TASK_03}/*.h)
