@@ -20,6 +20,7 @@ protected:
 			buffer.clear();
 			return true;
 		}
+    return false;
 	}
 
 	virtual bool shouldBuffer(char symbol) = 0;
