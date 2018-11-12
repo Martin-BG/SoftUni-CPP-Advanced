@@ -1,9 +1,8 @@
-#include <utility>
-
 #ifndef CPP_ADVANCED_CITYDIFF_H
 #define CPP_ADVANCED_CITYDIFF_H
 
 #include <utility>
+#include <iostream>
 
 #include "City.h"
 
@@ -13,7 +12,7 @@ class CityDiff {
 public:
   CityDiff(City a, City b) : a(std::move(a)), b(std::move(b)) { }
 
-  friend std::ostream& operator<<(std::ostream& out, const CityDiff& a);
+  friend std::ostream& operator<<(std::ostream& out, const CityDiff& diff);
 };
 
 std::ostream& operator<<(std::ostream& out, const CityDiff& diff) {
