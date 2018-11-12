@@ -304,3 +304,22 @@ add_executable(L10_T03.Extractor ${L10_TASK_03}ExtractorMain.cpp ${L10_TASK_03_H
 set(L10_TASK_04 "${L10}04. Word/")
 file(GLOB L10_TASK_04_H ${L10_TASK_04}/*.h)
 add_executable(L10_T04.Word ${L10_TASK_04}WordSkeleton.cpp ${L10_TASK_04_H})
+
+#######################################
+set(L11 "11. Exam Preparation/")
+
+set(L11_TASK_01 "${L11}01. Census/")
+file(GLOB L11_TASK_01_H ${L11_TASK_01}/*.h)
+add_executable(L11_T01.Census ${L11_TASK_01}CensusMain.cpp ${L11_TASK_01_H})
+
+set(L11_TASK_02 "${L11}02. Differences/")
+file(GLOB L11_TASK_02_H ${L11_TASK_02}/*.h)
+add_executable(L11_T02.Differences ${L11_TASK_02}ChangesMain.cpp ${L11_TASK_02_H})
+
+set(L11_TASK_03 "${L11}03. Range/")
+file(GLOB L11_TASK_03_H ${L11_TASK_03}/*.h)
+add_executable(L11_T03.Range ${L11_TASK_03}RangeMain.cpp ${L11_TASK_03_H})
+
+set(L11_TASK_04 "${L11}04. Calculator/")
+file(GLOB L11_TASK_04_H ${L11_TASK_04}/*.h)
+add_executable(L11_T04.Calculator ${L11_TASK_04}CalculatorMain.cpp ${L11_TASK_04_H})
