@@ -318,7 +318,7 @@ add_executable(L11_T02.Differences ${L11_TASK_02}ChangesMain.cpp ${L11_TASK_02_H
 
 set(L11_TASK_03 "${L11}03. Range/")
 file(GLOB L11_TASK_03_H ${L11_TASK_03}/*.h)
-add_executable(L11_T03.Range ${L11_TASK_03}RangeMain.cpp ${L11_TASK_03_H})
+add_executable(L11_T03.Range ${L11_TASK_03}RangeMain.cpp ${L11_TASK_03}Range.cpp ${L11_TASK_03_H})
 
 set(L11_TASK_04 "${L11}04. Calculator/")
 file(GLOB L11_TASK_04_H ${L11_TASK_04}/*.h)
