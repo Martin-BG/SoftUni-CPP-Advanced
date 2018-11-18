@@ -337,7 +337,7 @@ add_executable(L12_T02.MaxReader ${L12_TASK_02}ReaderMain.cpp ${L12_TASK_02})
 
 set(L12_TASK_03 "${L12}03. Groups/")
 file(GLOB L12_TASK_03_H ${L12_TASK_03}/*.h)
-add_executable(L12_T03.Groups ${L12_TASK_03}GroupsMain.cpp ${L12_TASK_03})
+add_executable(L12_T03.Groups ${L12_TASK_03}GroupsMain.cpp ${L12_TASK_03}Unit.cpp ${L12_TASK_03})
 
 set(L12_TASK_04 "${L12}04. Terran/")
 file(GLOB L12_TASK_04_H ${L12_TASK_04}/*.h)
