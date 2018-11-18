@@ -323,3 +323,41 @@ add_executable(L11_T03.Range ${L11_TASK_03}RangeMain.cpp ${L11_TASK_03}Range.cpp
 set(L11_TASK_04 "${L11}04. Calculator/")
 file(GLOB L11_TASK_04_H ${L11_TASK_04}/*.h)
 add_executable(L11_T04.Calculator ${L11_TASK_04}CalculatorMain.cpp ${L11_TASK_04_H})
+
+#######################################
+set(L12 "12. Exam/")
+
+set(L12_TASK_01 "${L12}01. Strings/")
+file(GLOB L12_TASK_01_H ${L12_TASK_01}/*.h)
+add_executable(L12_T01.Strings ${L12_TASK_01}StringsMain.cpp ${L12_TASK_01})
+
+set(L12_TASK_02 "${L12}02. Max Reader/")
+file(GLOB L12_TASK_02_H ${L12_TASK_02}/*.h)
+add_executable(L12_T02.MaxReader ${L12_TASK_02}ReaderMain.cpp ${L12_TASK_02})
+
+set(L12_TASK_03 "${L12}03. Groups/")
+file(GLOB L12_TASK_03_H ${L12_TASK_03}/*.h)
+add_executable(L12_T03.Groups ${L12_TASK_03}GroupsMain.cpp ${L12_TASK_03})
+
+set(L12_TASK_04 "${L12}04. Terran/")
+file(GLOB L12_TASK_04_H ${L12_TASK_04}/*.h)
+add_executable(L12_T04.Terran ${L12_TASK_04}TerranMain.cpp ${L12_TASK_04})
+
+#######################################
+set(L13 "13. Exam Retake/")
+
+set(L13_TASK_01 "${L13}01. Bytes/")
+file(GLOB L13_TASK_01_H ${L13_TASK_01}/*.h)
+add_executable(L13_T01.Bytes ${L13_TASK_01}BytesMain.cpp ${L13_TASK_01})
+
+set(L13_TASK_02 "${L13}02. Iterator/")
+file(GLOB L13_TASK_02_H ${L13_TASK_02}/*.h)
+add_executable(L13_T02.Iterator ${L13_TASK_02}IteratorMain.cpp ${L13_TASK_02})
+
+set(L13_TASK_03 "${L13}03. UnitPtr/")
+file(GLOB L13_TASK_03_H ${L13_TASK_03}/*.h)
+add_executable(L13_T03.UnitPtr ${L13_TASK_03}UnitPtrMain.cpp ${L13_TASK_03})
+
+set(L13_TASK_04 "${L13}04. Nodes/")
+file(GLOB L13_TASK_04_H ${L13_TASK_04}/*.h)
+add_executable(L13_T04.Nodes ${L13_TASK_04}NodesMain.cpp ${L13_TASK_04})
