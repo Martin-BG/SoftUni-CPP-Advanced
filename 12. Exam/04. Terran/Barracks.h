@@ -16,7 +16,7 @@ public:
 
   void handleCommand(const std::vector<std::string>& commandParts) override {
     if (this->buildQueue.size() <= MAX_QUEUE_SIZE && commandParts[0] == "train" && commandParts[1] == "marine") {
-      const Id id{ commandParts[2][0] };
+      Id id = parseId(commandParts[2]);
       this->buildQueue.emplace(id);
       if (!TimedBuilder::isConstructing()) {
         startBuilding(new Marine(id), Marine::BUILD_TIME);
@@ -25,9 +25,8 @@ public:
   }
 
   void handleConstructionCompleted() override {
+    TimedBuilder::handleConstructionCompleted();
     this->buildQueue.pop();
-    this->buildTimeRemaining = 0;
-    this->currentConstruction = nullptr;
     if (!this->buildQueue.empty()) {
       startBuilding(new Marine(this->buildQueue.front()), Marine::BUILD_TIME);
     }

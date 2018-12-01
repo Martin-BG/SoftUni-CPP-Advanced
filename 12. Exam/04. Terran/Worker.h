@@ -18,7 +18,8 @@ public:
     } else if (commandParts[1] == "depot") {
       startBuilding(new Depot(), Depot::BUILD_TIME);
     } else if (commandParts[1] == "barracks") {
-      startBuilding(new Barracks(commandParts[2][0]), Barracks::BUILD_TIME);
+      Id id = parseId(commandParts[2]);
+      startBuilding(new Barracks(id), Barracks::BUILD_TIME);
     }
   }
 };
