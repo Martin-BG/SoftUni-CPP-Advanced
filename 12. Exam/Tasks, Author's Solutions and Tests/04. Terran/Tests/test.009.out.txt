@@ -1,0 +1,6 @@
+worker y busy
+---
+worker y
+barracks b
+marine 1
+marine 2

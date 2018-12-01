@@ -1,0 +1,20 @@
+create worker p
+create worker q
+create marine m
+command m report
+command m report
+command q build barracks b
+idle 10
+command p build depot
+idle 10
+command p report
+command q report
+idle 20
+command p report
+command q report
+idle 30
+command b train marine x
+idle 10
+idle 10
+command x report
+end

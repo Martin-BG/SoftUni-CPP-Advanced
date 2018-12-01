@@ -1,0 +1,12 @@
+create worker w
+command w report
+command w build depot
+command w report
+idle 10
+command w build depot
+idle 20
+command w build depot
+idle 10
+idle 10
+idle 10
+end

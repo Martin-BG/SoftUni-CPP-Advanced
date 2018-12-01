@@ -1,0 +1,25 @@
+create worker w
+create marine m
+command w build depot
+idle 10
+command m report
+command w build barracks b
+idle 20
+command w report
+command w build barracks b
+idle 55
+command b train marine d
+command b train marine e
+idle 31
+command d report
+command e report
+command b train marine f 
+command b train marine g
+create worker x
+command b train marine h
+command b train marine i
+command b train marine j
+command b train marine k
+command b train marine z
+idle 500
+end

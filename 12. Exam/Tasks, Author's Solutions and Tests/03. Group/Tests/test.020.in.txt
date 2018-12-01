@@ -1,0 +1,32 @@
+1000
+unit f
+unit g
+unit h
+unit i
+select f
+select g
+unit j
+unit k
+unit l
+unit m
+unit n
+unit o
+unit p
+unit q
+unit r
+ctrl 1
+shift-select i .
+shift-select h .
+ctrl 2
+select j
+ctrl 4
+shift 3
+shift 3
+select f
+shift-select h i g .
+ctrl 8
+select j
+shift-select m n o j k l p q r .
+shift 8
+ctrl 9
+end

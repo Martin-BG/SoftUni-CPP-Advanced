@@ -1,0 +1,16 @@
+worker y busy
+marine 2 reporting
+marine 1 reporting
+---
+worker y
+barracks b
+marine 1
+marine 2
+worker j
+worker k
+marine 3
+marine 4
+marine 5
+marine 6
+marine 7
+marine 8

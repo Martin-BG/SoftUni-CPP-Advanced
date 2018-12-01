@@ -1,0 +1,7 @@
+create worker w
+command w report
+command w build depot
+command w report
+idle 30
+command w report
+end

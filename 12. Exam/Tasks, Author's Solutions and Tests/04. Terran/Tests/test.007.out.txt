@@ -1,0 +1,5 @@
+worker w busy
+---
+worker w
+barracks b
+marine m

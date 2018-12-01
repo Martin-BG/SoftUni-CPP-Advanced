@@ -1,0 +1,33 @@
+1
+unit a
+unit b
+unit c
+unit d
+select a
+select b
+unit e
+unit f
+unit g
+unit h
+unit i
+unit j
+unit k
+unit l
+unit m
+ctrl 1
+shift-select c .
+shift-select a .
+shift-select d .
+ctrl 2
+shift 3
+select e
+ctrl 4
+shift 3
+shift 3
+shift-select g h i j f k e .
+ctrl 8
+select a
+shift-select c a d m l b .
+shift 8
+ctrl 9
+end

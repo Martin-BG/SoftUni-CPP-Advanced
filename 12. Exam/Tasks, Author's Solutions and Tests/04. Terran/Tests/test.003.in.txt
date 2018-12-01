@@ -1,0 +1,5 @@
+create worker w
+command w report
+create marine x
+command x report
+end

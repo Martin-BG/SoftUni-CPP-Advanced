@@ -1,0 +1,16 @@
+1
+unit a
+unit b
+unit c
+unit d
+select a
+select b
+unit e
+ctrl 1
+shift-select a c d .
+ctrl 2
+shift 3
+select e
+ctrl 4
+shift 3
+end

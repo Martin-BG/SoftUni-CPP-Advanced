@@ -1,0 +1,9 @@
+1000
+unit a
+unit b
+select a
+select b
+ctrl 1
+select a
+ctrl 2
+end

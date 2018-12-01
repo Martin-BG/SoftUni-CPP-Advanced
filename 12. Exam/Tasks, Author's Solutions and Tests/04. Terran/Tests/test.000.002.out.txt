@@ -1,0 +1,19 @@
+marine m reporting
+worker w busy
+worker w free
+marine d reporting
+marine e reporting
+---
+worker w
+marine m
+depot
+barracks b
+marine d
+marine e
+worker x
+marine f
+marine g
+marine h
+marine i
+marine j
+marine k

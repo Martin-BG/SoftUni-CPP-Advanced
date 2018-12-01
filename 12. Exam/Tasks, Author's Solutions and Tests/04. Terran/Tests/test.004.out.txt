@@ -1,0 +1,6 @@
+worker w free
+worker w busy
+worker w free
+---
+worker w
+depot

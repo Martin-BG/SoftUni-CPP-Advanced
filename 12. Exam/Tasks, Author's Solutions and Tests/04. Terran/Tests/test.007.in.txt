@@ -1,0 +1,9 @@
+create worker w
+command w build barracks b
+command w build depot
+idle 60
+command b train marine m
+idle 10
+idle 5
+idle 10
+end
