@@ -1,6 +1,7 @@
 #ifndef CPP_ADVANCED_DESERIALIZEUTILS_H
 #define CPP_ADVANCED_DESERIALIZEUTILS_H
 
+#include <vector>
 #include <string>
 #include <sstream>
 
