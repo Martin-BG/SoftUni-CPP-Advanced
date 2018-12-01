@@ -9,6 +9,23 @@ class Reader {
 public:
   explicit Reader(std::istream& in) : in(in) { }
 
+  Reader& operator>>(std::vector<int>& arr) {
+    std::string line;
+    std::getline(this->in >> std::ws, line);
+    std::istringstream is(line);
+    int next;
+    while (is >> next) {
+      arr.emplace_back(next);
+    }
+    return *this;
+  }
+};
+
+/*class Reader {
+  std::istream& in;
+public:
+  explicit Reader(std::istream& in) : in(in) { }
+
   std::vector<int>& operator>>(std::vector<int>& arr) {
     std::string line;
     std::getline(this->in >> std::ws, line);
@@ -19,6 +36,5 @@ public:
     }
     return arr;
   }
-};
-
+};*/
 #endif //CPP_ADVANCED_READER_H
