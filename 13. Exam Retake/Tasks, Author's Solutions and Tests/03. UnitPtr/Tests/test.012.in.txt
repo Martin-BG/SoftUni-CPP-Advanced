@@ -1,0 +1,9 @@
+500
+unit a
+unit b
+shift-select a .
+shift-select b .
+ctrl 1
+select a
+ctrl 2
+end

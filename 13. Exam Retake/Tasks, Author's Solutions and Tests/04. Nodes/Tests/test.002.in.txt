@@ -1,0 +1,8 @@
+1 input
+2 int
+3 output number
+end
+1 2
+2 3
+end
+13.42.69.|

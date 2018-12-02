@@ -1,0 +1,16 @@
+1
+unit f
+unit g
+unit h
+unit i
+select f
+select g
+unit j
+ctrl 1
+shift-select f h i .
+ctrl 2
+shift 3
+select j
+ctrl 4
+shift 3
+end

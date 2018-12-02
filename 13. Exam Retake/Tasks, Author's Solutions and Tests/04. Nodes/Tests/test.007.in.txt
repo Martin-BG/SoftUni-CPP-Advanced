@@ -1,0 +1,12 @@
+1 input
+2 int
+3 reverse
+4 sum
+5 output number
+end
+1 2
+2 3
+3 4
+4 5
+end
+0.13.42.69.46.|

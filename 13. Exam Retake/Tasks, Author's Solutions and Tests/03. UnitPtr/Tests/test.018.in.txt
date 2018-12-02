@@ -1,0 +1,16 @@
+500
+unit a
+unit b
+select b
+shift 1
+select a
+shift 1
+unit c
+select c
+shift 1
+shift 2
+select b
+shift 3
+select a
+shift 3
+end

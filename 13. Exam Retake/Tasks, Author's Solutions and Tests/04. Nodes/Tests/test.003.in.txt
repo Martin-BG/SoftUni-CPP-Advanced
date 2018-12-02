@@ -1,0 +1,8 @@
+1 input
+2 reverse
+3 output
+end
+1 2
+2 3
+end
+abcd.|
