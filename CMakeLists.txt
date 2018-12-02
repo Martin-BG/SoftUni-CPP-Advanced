@@ -356,7 +356,7 @@ add_executable(L13_T02.Iterator ${L13_TASK_02}IteratorMain.cpp ${L13_TASK_02})
 
 set(L13_TASK_03 "${L13}03. UnitPtr/")
 file(GLOB L13_TASK_03_H ${L13_TASK_03}/*.h)
-add_executable(L13_T03.UnitPtr ${L13_TASK_03}UnitPtrMain.cpp ${L13_TASK_03})
+add_executable(L13_T03.UnitPtr ${L13_TASK_03}UnitPtrMain.cpp ${L13_TASK_03}Unit.cpp ${L13_TASK_03}Group.cpp ${L13_TASK_03})
 
 set(L13_TASK_04 "${L13}04. Nodes/")
 file(GLOB L13_TASK_04_H ${L13_TASK_04}/*.h)
