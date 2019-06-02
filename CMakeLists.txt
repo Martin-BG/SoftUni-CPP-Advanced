@@ -79,7 +79,7 @@ set(L03_TASK_02 "${L03}02. Sort Pointers/")
 set(L03_TASK_03 "${L03}03. Duplicates/")
 set(L03_TASK_04 "${L03}04. Ranges/")
 add_executable(L03_T01.Sort ${L03_TASK_01}SortMain.cpp ${L03_TASK_01}Company.h)
-add_executable(L03_T02.SortPointers ${L03_TASK_02}SortPointersMain.cpp ${L03_TASK_02}Company.h ${L03_TASK_02}Sortby.h)
+add_executable(L03_T02.SortPointers ${L03_TASK_02}SortPointersMain.cpp ${L03_TASK_02}Company.h ${L03_TASK_02}SortBy.h)
 add_executable(L03_T03.Duplicates ${L03_TASK_03}DuplicatesMain.cpp ${L03_TASK_03}Company.h ${L03_TASK_03}RemoveDuplicates.h)
 add_executable(L03_T04.Ranges ${L03_TASK_04}RangesMain.cpp)
 
