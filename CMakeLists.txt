@@ -329,35 +329,76 @@ set(L12 "12. Exam/")
 
 set(L12_TASK_01 "${L12}01. Strings/")
 file(GLOB L12_TASK_01_H ${L12_TASK_01}/*.h)
-add_executable(L12_T01.Strings ${L12_TASK_01}StringsMain.cpp ${L12_TASK_01})
+add_executable(L12_T01.Strings ${L12_TASK_01}StringsMain.cpp ${L12_TASK_01_H})
 
 set(L12_TASK_02 "${L12}02. Max Reader/")
 file(GLOB L12_TASK_02_H ${L12_TASK_02}/*.h)
-add_executable(L12_T02.MaxReader ${L12_TASK_02}ReaderMain.cpp ${L12_TASK_02})
+add_executable(L12_T02.MaxReader ${L12_TASK_02}ReaderMain.cpp ${L12_TASK_02_H})
 
 set(L12_TASK_03 "${L12}03. Groups/")
 file(GLOB L12_TASK_03_H ${L12_TASK_03}/*.h)
-add_executable(L12_T03.Groups ${L12_TASK_03}GroupsMain.cpp ${L12_TASK_03}Unit.cpp ${L12_TASK_03}Group.cpp ${L12_TASK_03})
+add_executable(L12_T03.Groups ${L12_TASK_03}GroupsMain.cpp ${L12_TASK_03}Unit.cpp ${L12_TASK_03}Group.cpp ${L12_TASK_03_H})
 
 set(L12_TASK_04 "${L12}04. Terran/")
 file(GLOB L12_TASK_04_H ${L12_TASK_04}/*.h)
-add_executable(L12_T04.Terran ${L12_TASK_04}TerranMain.cpp ${L12_TASK_04})
+add_executable(L12_T04.Terran ${L12_TASK_04}TerranMain.cpp ${L12_TASK_04_H})
 
 #######################################
 set(L13 "13. Exam Retake/")
 
 set(L13_TASK_01 "${L13}01. Bytes/")
 file(GLOB L13_TASK_01_H ${L13_TASK_01}/*.h)
-add_executable(L13_T01.Bytes ${L13_TASK_01}BytesMain.cpp ${L13_TASK_01})
+add_executable(L13_T01.Bytes ${L13_TASK_01}BytesMain.cpp ${L13_TASK_01_H})
 
 set(L13_TASK_02 "${L13}02. Iterator/")
 file(GLOB L13_TASK_02_H ${L13_TASK_02}/*.h)
-add_executable(L13_T02.Iterator ${L13_TASK_02}IteratorMain.cpp ${L13_TASK_02})
+add_executable(L13_T02.Iterator ${L13_TASK_02}IteratorMain.cpp ${L13_TASK_02_H})
 
 set(L13_TASK_03 "${L13}03. UnitPtr/")
 file(GLOB L13_TASK_03_H ${L13_TASK_03}/*.h)
-add_executable(L13_T03.UnitPtr ${L13_TASK_03}UnitPtrMain.cpp ${L13_TASK_03}Unit.cpp ${L13_TASK_03}Group.cpp ${L13_TASK_03}UnitPtr.cpp ${L13_TASK_03})
+add_executable(L13_T03.UnitPtr ${L13_TASK_03}UnitPtrMain.cpp ${L13_TASK_03}Unit.cpp ${L13_TASK_03}Group.cpp ${L13_TASK_03}UnitPtr.cpp ${L13_TASK_03_H})
 
 set(L13_TASK_04 "${L13}04. Nodes/")
 file(GLOB L13_TASK_04_H ${L13_TASK_04}/*.h)
-add_executable(L13_T04.Nodes ${L13_TASK_04}NodesMain.cpp ${L13_TASK_04})
+add_executable(L13_T04.Nodes ${L13_TASK_04}NodesMain.cpp ${L13_TASK_04_H})
+
+#######################################
+set(L14 "14. Exams/")
+
+###
+set(L14_01 "${L14}2019.04.07/")
+
+set(L14_01_TASK_01 "${L14_01}01. Memory Allocator/")
+file(GLOB L14_01_TASK_01_H ${L14_01_TASK_01}/*.h)
+add_executable(L14_01_T01.MemoryAllocator ${L14_01_TASK_01}main.cpp ${L14_01_TASK_01_H} ${L14_01_TASK_01}MemoryAllocator.cpp)
+
+set(L14_01_TASK_02 "${L14_01}02. Bytes Parsing/")
+file(GLOB L14_01_TASK_02_H ${L14_01_TASK_02}/*.h)
+add_executable(L14_01_T02.BytesParsing ${L14_01_TASK_02}main.cpp ${L14_01_TASK_02_H})
+
+set(L14_01_TASK_03 "${L14_01}03. Hardware Store/")
+file(GLOB L14_01_TASK_03_H ${L14_01_TASK_03}/*.h)
+add_executable(L14_01_T03.HardwareStore ${L14_01_TASK_03}main.cpp ${L14_01_TASK_03_H})
+
+set(L14_01_TASK_04 "${L14_01}04. Warcraft IV/")
+file(GLOB L14_01_TASK_04_H ${L14_01_TASK_04}/*.h)
+add_executable(L14_01_T04.WarcraftIV ${L14_01_TASK_04}main.cpp ${L14_01_TASK_04_H})
+
+###
+set(L14_02 "${L14}2019.04.21/")
+
+set(L14_02_TASK_01 "${L14_02}01. Cipher/")
+file(GLOB L14_02_TASK_01_H ${L14_02_TASK_01}/*.h)
+add_executable(L14_02_T01.Cipher ${L14_02_TASK_01}main.cpp ${L14_02_TASK_01_H})
+
+set(L14_02_TASK_02 "${L14_02}02. Memory Allocator Reforged/")
+file(GLOB L14_02_TASK_02_H ${L14_02_TASK_02}/*.h)
+add_executable(L14_02_T02.MemoryAllocatorReforged ${L14_02_TASK_02}main.cpp ${L14_02_TASK_02_H})
+
+set(L14_02_TASK_03 "${L14_02}03. Memory Nightmare/")
+file(GLOB L14_02_TASK_03_H ${L14_02_TASK_03}/*.h)
+add_executable(L14_02_T03.MemoryNightmare ${L14_02_TASK_03}main.cpp ${L14_02_TASK_03_H})
+
+set(L14_02_TASK_04 "${L14_02}04. Overloading Madness/")
+file(GLOB L14_02_TASK_04_H ${L14_02_TASK_04}/*.h)
+add_executable(L14_02_T04.OverloadingMadness ${L14_02_TASK_04}main.cpp ${L14_02_TASK_04_H})
