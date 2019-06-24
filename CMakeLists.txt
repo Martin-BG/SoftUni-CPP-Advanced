@@ -370,35 +370,43 @@ set(L14_01 "${L14}2019.04.07/")
 
 set(L14_01_TASK_01 "${L14_01}01. Memory Allocator/")
 file(GLOB L14_01_TASK_01_H ${L14_01_TASK_01}/*.h)
-add_executable(L14_01_T01.MemoryAllocator ${L14_01_TASK_01}main.cpp ${L14_01_TASK_01_H} ${L14_01_TASK_01}MemoryAllocator.cpp)
+file(GLOB L14_01_TASK_01_CPP ${L14_01_TASK_01}/*.cpp)
+add_executable(L14_01_T01.MemoryAllocator ${L14_01_TASK_01_CPP} ${L14_01_TASK_01_H})
 
 set(L14_01_TASK_02 "${L14_01}02. Bytes Parsing/")
 file(GLOB L14_01_TASK_02_H ${L14_01_TASK_02}/*.h)
-add_executable(L14_01_T02.BytesParsing ${L14_01_TASK_02}main.cpp ${L14_01_TASK_02_H})
+file(GLOB L14_01_TASK_02_CPP ${L14_01_TASK_02}/*.cpp)
+add_executable(L14_01_T02.BytesParsing ${L14_01_TASK_02_CPP} ${L14_01_TASK_02_H})
 
 set(L14_01_TASK_03 "${L14_01}03. Hardware Store/")
 file(GLOB L14_01_TASK_03_H ${L14_01_TASK_03}/*.h)
-add_executable(L14_01_T03.HardwareStore ${L14_01_TASK_03}main.cpp ${L14_01_TASK_03_H})
+file(GLOB L14_01_TASK_03_CPP ${L14_01_TASK_03}/*.cpp)
+add_executable(L14_01_T03.HardwareStore ${L14_01_TASK_03_CPP} ${L14_01_TASK_03_H})
 
 set(L14_01_TASK_04 "${L14_01}04. Warcraft IV/")
 file(GLOB L14_01_TASK_04_H ${L14_01_TASK_04}/*.h)
-add_executable(L14_01_T04.WarcraftIV ${L14_01_TASK_04}main.cpp ${L14_01_TASK_04_H})
+file(GLOB L14_01_TASK_04_CPP ${L14_01_TASK_04}/*.cpp)
+add_executable(L14_01_T04.WarcraftIV ${L14_01_TASK_04_CPP} ${L14_01_TASK_04_H})
 
 ###
 set(L14_02 "${L14}2019.04.21/")
 
 set(L14_02_TASK_01 "${L14_02}01. Cipher/")
 file(GLOB L14_02_TASK_01_H ${L14_02_TASK_01}/*.h)
-add_executable(L14_02_T01.Cipher ${L14_02_TASK_01}main.cpp ${L14_02_TASK_01_H})
+file(GLOB L14_02_TASK_01_CPP ${L14_02_TASK_01}/*.cpp)
+add_executable(L14_02_T01.Cipher ${L14_02_TASK_01_CPP} ${L14_02_TASK_01_H})
 
 set(L14_02_TASK_02 "${L14_02}02. Memory Allocator Reforged/")
 file(GLOB L14_02_TASK_02_H ${L14_02_TASK_02}/*.h)
-add_executable(L14_02_T02.MemoryAllocatorReforged ${L14_02_TASK_02}main.cpp ${L14_02_TASK_02_H})
+file(GLOB L14_02_TASK_02_CPP ${L14_02_TASK_02}/*.cpp)
+add_executable(L14_02_T02.MemoryAllocatorReforged ${L14_02_TASK_02_CPP} ${L14_02_TASK_02_H})
 
 set(L14_02_TASK_03 "${L14_02}03. Memory Nightmare/")
 file(GLOB L14_02_TASK_03_H ${L14_02_TASK_03}/*.h)
-add_executable(L14_02_T03.MemoryNightmare ${L14_02_TASK_03}main.cpp ${L14_02_TASK_03_H})
+file(GLOB L14_02_TASK_03_CPP ${L14_02_TASK_03}/*.cpp)
+add_executable(L14_02_T03.MemoryNightmare ${L14_02_TASK_03_CPP} ${L14_02_TASK_03_H})
 
 set(L14_02_TASK_04 "${L14_02}04. Overloading Madness/")
 file(GLOB L14_02_TASK_04_H ${L14_02_TASK_04}/*.h)
-add_executable(L14_02_T04.OverloadingMadness ${L14_02_TASK_04}main.cpp ${L14_02_TASK_04_H})
+file(GLOB L14_02_TASK_04_CPP ${L14_02_TASK_04}/*.cpp)
+add_executable(L14_02_T04.OverloadingMadness ${L14_02_TASK_04_CPP} ${L14_02_TASK_04_H})
