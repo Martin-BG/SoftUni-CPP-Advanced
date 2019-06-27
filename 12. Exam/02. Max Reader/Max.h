@@ -5,6 +5,7 @@
 #include <iostream>
 #include <set>
 #include <vector>
+#include <limits.h>
 
 class VectorMax {
   int max{ INT_MIN };
