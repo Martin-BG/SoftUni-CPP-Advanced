@@ -410,3 +410,26 @@ set(L14_02_TASK_04 "${L14_02}04. Overloading Madness/")
 file(GLOB L14_02_TASK_04_H ${L14_02_TASK_04}/*.h)
 file(GLOB L14_02_TASK_04_CPP ${L14_02_TASK_04}/*.cpp)
 add_executable(L14_02_T04.OverloadingMadness ${L14_02_TASK_04_CPP} ${L14_02_TASK_04_H})
+
+###
+set(L14_03 "${L14}2020.02.29/")
+
+set(L14_03_TASK_01 "${L14_03}01. Statistics/")
+file(GLOB L14_03_TASK_01_H ${L14_03_TASK_01}/*.h)
+file(GLOB L14_03_TASK_01_CPP ${L14_03_TASK_01}/*.cpp)
+add_executable(L14_03_T01.Statistics ${L14_03_TASK_01_CPP} ${L14_03_TASK_01_H})
+
+set(L14_03_TASK_02 "${L14_03}02. Array Trouble/")
+file(GLOB L14_03_TASK_02_H ${L14_03_TASK_02}/*.h)
+file(GLOB L14_03_TASK_02_CPP ${L14_03_TASK_02}/*.cpp)
+add_executable(L14_03_T02.ArrayTrouble ${L14_03_TASK_02_CPP} ${L14_03_TASK_02_H})
+
+set(L14_03_TASK_03 "${L14_03}03. Memory Pool/")
+file(GLOB L14_03_TASK_03_H ${L14_03_TASK_03}/*.h)
+file(GLOB L14_03_TASK_03_CPP ${L14_03_TASK_03}/*.cpp)
+add_executable(L14_03_T03.MemoryPool ${L14_03_TASK_03_CPP} ${L14_03_TASK_03_H})
+
+set(L14_03_TASK_04 "${L14_03}04. Starcraft III/")
+file(GLOB L14_03_TASK_04_H ${L14_03_TASK_04}/*.h)
+file(GLOB L14_03_TASK_04_CPP ${L14_03_TASK_04}/*.cpp)
+add_executable(L14_03_T04.StarcraftIII ${L14_03_TASK_04_CPP} ${L14_03_TASK_04_H})

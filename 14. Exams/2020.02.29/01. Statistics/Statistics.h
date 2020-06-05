@@ -1,0 +1,10 @@
+#ifndef CPP_ADVANCED_STATISTICS_H
+#define CPP_ADVANCED_STATISTICS_H
+
+
+class Statistics {
+// TODO
+};
+
+
+#endif //CPP_ADVANCED_STATISTICS_H
