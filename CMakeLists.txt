@@ -433,3 +433,26 @@ set(L14_03_TASK_04 "${L14_03}04. Starcraft III/")
 file(GLOB L14_03_TASK_04_H ${L14_03_TASK_04}/*.h)
 file(GLOB L14_03_TASK_04_CPP ${L14_03_TASK_04}/*.cpp)
 add_executable(L14_03_T04.StarcraftIII ${L14_03_TASK_04_CPP} ${L14_03_TASK_04_H})
+
+###
+set(L14_04 "${L14}2020.03.15/")
+
+set(L14_04_TASK_01 "${L14_04}01. String Concatenator/")
+file(GLOB L14_04_TASK_01_H ${L14_04_TASK_01}/*.h)
+file(GLOB L14_04_TASK_01_CPP ${L14_04_TASK_01}/*.cpp)
+add_executable(L14_04_T01.StringConcatenator ${L14_04_TASK_01_CPP} ${L14_04_TASK_01_H})
+
+set(L14_04_TASK_02 "${L14_04}02. Memory Monitor/")
+file(GLOB L14_04_TASK_02_H ${L14_04_TASK_02}/*.h)
+file(GLOB L14_04_TASK_02_CPP ${L14_04_TASK_02}/*.cpp)
+add_executable(L14_04_T02.MemoryMonitor ${L14_04_TASK_02_CPP} ${L14_04_TASK_02_H})
+
+set(L14_04_TASK_03 "${L14_04}03. Snake/")
+file(GLOB L14_04_TASK_03_H ${L14_04_TASK_03}/*.h)
+file(GLOB L14_04_TASK_03_CPP ${L14_04_TASK_03}/*.cpp)
+add_executable(L14_04_T03.Snake ${L14_04_TASK_03_CPP} ${L14_04_TASK_03_H})
+
+set(L14_04_TASK_04 "${L14_04}04. Pistol Round/")
+file(GLOB L14_04_TASK_04_H ${L14_04_TASK_04}/*.h)
+file(GLOB L14_04_TASK_04_CPP ${L14_04_TASK_04}/*.cpp)
+add_executable(L14_04_T04.PistolRound ${L14_04_TASK_04_CPP} ${L14_04_TASK_04_H})
