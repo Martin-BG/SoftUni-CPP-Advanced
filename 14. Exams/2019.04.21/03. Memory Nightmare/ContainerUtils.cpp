@@ -43,6 +43,7 @@ void popContainer(std::stack<ContainerInterface*>& containers,
   printOccupiedMemory(occupiedMemory);
 }
 
+// NOTE: Remove this method before submitting solution to Judge system
 void freeMemory(std::stack<ContainerInterface*>& containers) {
   while (!containers.empty()) {
     auto container = containers.top();
