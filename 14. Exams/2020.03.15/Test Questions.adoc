@@ -101,7 +101,7 @@
 ----
     class Base {
     public:
-      virtual ~Base() = default;
+        virtual ~Base() = default;
         virtual void print() { std::cout << "Base"; }
     };
 
