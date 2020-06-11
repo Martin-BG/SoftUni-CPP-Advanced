@@ -1,0 +1,121 @@
+===== 01. What will be the output to the console If we have:
+
+[source,cpp]
+----
+    int arr[]{ 13, 42, 69 };
+    int* p = &arr[1];
+    ++(*p);
+
+    for (const int elem : arr) {
+        std::cout << elem << ' ';
+    }
+----
+
+- . 14 43 70
+- , 13 43 69
+- . 13 43 70
+- . 13 42 69
+
+===== 02. What will happen if we call delete two times in a row on a dynamically allocated integer?
+
+- , Behavior is undefined
+- . there would be a memory leak
+- . the memory will get freed only if the Operating System (OS) allows to
+- . there will be a compilation error
+
+===== 03. Will the following piece of code execute and what will happen (assume the Building class is defined and has a default ctor)?
+
+[source,cpp]
+----
+    for (int i = 0; i < 3; ++i) {
+        std::unique_ptr<Building> buildingOne(new Building());
+        std::unique_ptr<Building> buildingTwo(new Building());
+    }
+----
+
+- = This code has not bugs and the program will execute cleanly.
+- . There is a compilation error.
+- . There is a memory leak.
+- . There is a runtime error - you cannot use std::unique_ptr inside a loop
+
+===== 04. What will the following code do?
+
+[source,cpp]
+----
+    std::string& operator<<(std::string& a, std::string& b) {
+        a.append(b);
+        return a;
+    }
+
+    int main() {
+        std::string a = "this";
+        std::string b = "Looks";
+        std::string c = "Familiar";
+
+        a << b << c;
+        std::cout << a << std::endl;
+
+        return 0;
+    }
+----
+
+- . Behavior is undefined
+- , Print "thisLooksFamiliar"
+- . Print "this Looks Familiar"
+- . Cause a compilation error
+
+===== 05. Given the code below, what is the correct way to call the function `multiply` so that it returns a `float` result?
+
+[source,cpp]
+----
+    template<typename T>
+    T multiply(T a, T b) {
+        return a / b;
+    }
+----
+
+- . multiply<float, int>(1, 2)
+- , multiply<float>(1, 2)
+- . multiply<float, int, int>(1, 2)
+- . multiply(1, 2)
+
+===== 06. Which of the following prevents creating copies of the <code>Dog</code> class, if placed inside it?
+
+- . Dog(const Dog& other) = default; Dog& operator=(const Dog& other) = default;
+- , Dog(const Dog& other) = delete; Dog& operator=(const Dog& other) = delete;
+- . Dog(const Dog& other) = delete;
+- . Dog& operator=(const Dog& other) = delete;
+
+===== 07. What will the following code print (assuming all necessary code is included)?
+
+[source,cpp]
+----
+    class Base {
+    public:
+        void print() { std::cout << "Base"; }
+    };
+
+    class Derived : public Base {
+    public:
+        void print() { std::cout << "Derived"; }
+    };
+
+    int main() {
+        Base* p = new Derived();
+        p->print();
+        delete p;
+        return 0;
+    }
+----
+
+- . Nothing, the code will not compile
+- , "Base"
+- . "Derived"
+- . Nothing, there will be a runtime error
+
+===== 08. If a class has a pure-virtual method, it:
+
+- . can be instantiated
+- . cannot have a virtual destructor
+- . cannot have a copy constructor
+- , can be inherited
