@@ -1,0 +1,131 @@
+===== 01. Which of the following is not a valid C++ construct (i.e. valid things in C++)?
+
+- . `int* p` - a pointer to a pointer to an `integer`
+- . `int*** p` - a pointer to a pointer to a pointer to an `integer`
+- . `int& p` - a reference to an `integer`
+- , `int&&& p` - a reference to a reference to a reference to an `integer`
+
+===== 02. Are there any bugs in this piece of code?
+
+[source,cpp]
+----
+    int* ptr = nullptr;
+    for (int i = 0; i < 3; ++i) {
+        ptr = new int;
+        *ptr = i;
+    }
+----
+
+- . There will be a compilation error
+- . There are no bugs in this program
+- , There are memory leaks
+- . There will be an out-of-bound exception
+
+===== 03. Will the following piece of code execute and what will happen (assume the `Table` class is defined and has a default ctor)?
+
+[source,cpp]
+----
+    std::unique_ptr<Table> tableOne(new Table());
+    std::unique_ptr<Table> tableTwo = tableOne;
+----
+
+- . This code has not bugs and the program will execute cleanly.
+- , There will be a compile time error.
+- . Behavior is undefined
+- . There will be a runtine error - unique_ptr could not hold a user defined type.
+
+===== 04. What will the following code do?
+
+[source,cpp]
+----
+    std::string& operator<<(std::string& a, std::string& b) {
+      a.append(b);
+    }
+
+    int main() {
+      std::string a = "piece";
+      std::string b = "Of";
+      std::string c = "Cake";
+
+      a << b << c;
+      std::cout << a << std::endl;
+
+      return 0;
+    }
+----
+
+- , Behavior is undefined
+- . Print "pieceOfCake"
+- . Print "piece Of Cake"
+- . Cause a compilation error
+
+===== 05. Which of the following initializes an object of the class below, with the value field assigned to 0?
+
+[source,cpp]
+----
+    template<typename T>
+    struct Container {
+      Container() : value() {}
+      T value;
+    };
+----
+
+- . `Container obj<int>();`
+- . `Container obj<int>;`
+- , `Container<int> obj;`
+- . `Container obj(0);`
+
+===== 06. Does the following code have potential memory leaks?
+
+[source,cpp]
+----
+    class Info {
+      int size;
+      vector<int> data;
+    public:
+      Info(int size) : size(size) {}
+      ~Info() {
+        data.clear();
+      }
+    };
+----
+
+- . Behavior is undefined
+- . Yes
+- , No
+- . No, but there will be runtime error in the destructor
+
+===== 07. What will the following code print (assuming all necessary code is included and all necessary namespaces are used)?
+
+[source,cpp]
+----
+    class Base {
+    public:
+      virtual ~Base() = default;
+        virtual void print() { std::cout << "Base"; }
+    };
+
+    class Derived : public Base {
+    public:
+        virtual void print() { std::cout << "Derived"; }
+    };
+
+    int main() {
+        Base* p = new Derived();
+        p->print();
+        delete p;
+        return 0;
+    }
+----
+
+- . Nothing, the code will not compile
+- . "Base"
+- , "Derived"
+- . Nothing, there will be a runtime error
+
+===== 08. Can a class have more than one base class?
+
+- . No
+- , Yes
+- . Yes, but all base classes must have implemented destructors
+- . Yes, but all except 1 base classes must have implemented destructors
