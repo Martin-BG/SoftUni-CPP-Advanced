@@ -7,17 +7,24 @@
 #include "Company.h"
 
 namespace local {
-  void parseCompanies(const std::string& input,
-                      std::vector<Company>& companies) {
+  std::vector<Company> parseCompanies(const std::string& input) {
+    std::vector<Company> companies{ };
+
     std::istringstream companiesIn(input);
+
     Company company;
     while (companiesIn >> company) {
       companies.push_back(company);
     }
+
+    return companies;
   }
 
-  void serialize(const std::vector<Company>& companies, std::vector<byte>& serialized) {
+  std::vector<byte> serialize(const std::vector<Company>& companies) {
+    std::vector<byte> serialized{ };
+
     serialized.push_back(static_cast<unsigned char&&>(companies.size()));
+
     for (const Company& company : companies) {
       serialized.push_back(static_cast<unsigned char&&>(company.getId()));
 
@@ -32,6 +39,8 @@ namespace local {
         serialized.push_back(static_cast<unsigned char&&>(employee.second));
       }
     }
+
+    return serialized;
   }
 }
 
@@ -39,11 +48,9 @@ byte* serializeToMemory(const std::string& input,
                         size_t& bytesWritten) {
   bytesWritten = 0;
 
-  std::vector<Company> companies;
-  local::parseCompanies(input, companies);
+  std::vector<Company> companies = local::parseCompanies(input);
 
-  std::vector<byte> serialized;
-  local::serialize(companies, serialized);
+  std::vector<byte> serialized = local::serialize(companies);
 
   bytesWritten = serialized.size();
   auto result = new byte[bytesWritten];
