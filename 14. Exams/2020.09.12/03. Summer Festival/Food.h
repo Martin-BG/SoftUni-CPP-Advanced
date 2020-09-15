@@ -1,0 +1,6 @@
+#ifndef CPP_ADVANCED_FOOD_H
+#define CPP_ADVANCED_FOOD_H
+
+// TODO
+
+#endif //CPP_ADVANCED_FOOD_H

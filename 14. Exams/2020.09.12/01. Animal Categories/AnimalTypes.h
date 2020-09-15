@@ -1,0 +1,10 @@
+#ifndef CPP_ADVANCED_ANIMALTYPES_H
+#define CPP_ADVANCED_ANIMALTYPES_H
+
+
+class AnimalTypes {
+  // TODO
+};
+
+
+#endif //CPP_ADVANCED_ANIMALTYPES_H
