@@ -456,3 +456,39 @@ set(L14_04_TASK_04 "${L14_04}04. Pistol Round/")
 file(GLOB L14_04_TASK_04_H ${L14_04_TASK_04}/*.h)
 file(GLOB L14_04_TASK_04_CPP ${L14_04_TASK_04}/*.cpp)
 add_executable(L14_04_T04.PistolRound ${L14_04_TASK_04_CPP} ${L14_04_TASK_04_H})
+
+###
+set(L14_05 "${L14}2020.09.05/")
+
+set(L14_05_TASK_01 "${L14_05}01. Magic Kingdom/")
+file(GLOB L14_05_TASK_01_H ${L14_05_TASK_01}/*.h)
+file(GLOB L14_05_TASK_01_CPP ${L14_05_TASK_01}/*.cpp)
+add_executable(L14_05_T01.MagicKingdom ${L14_05_TASK_01_CPP} ${L14_05_TASK_01_H})
+
+set(L14_05_TASK_02 "${L14_05}02. Discoveries/")
+file(GLOB L14_05_TASK_02_H ${L14_05_TASK_02}/*.h)
+file(GLOB L14_05_TASK_02_CPP ${L14_05_TASK_02}/*.cpp)
+add_executable(L14_05_T02.Discoveries ${L14_05_TASK_02_CPP} ${L14_05_TASK_02_H})
+
+set(L14_05_TASK_03 "${L14_05}03. My Tropico/")
+file(GLOB L14_05_TASK_03_H ${L14_05_TASK_03}/*.h)
+file(GLOB L14_05_TASK_03_CPP ${L14_05_TASK_03}/*.cpp)
+add_executable(L14_05_T03.MyTropico ${L14_05_TASK_03_CPP} ${L14_05_TASK_03_H})
+
+###
+set(L14_06 "${L14}2020.09.12/")
+
+set(L14_06_TASK_01 "${L14_06}01. Animal Categories/")
+file(GLOB L14_06_TASK_01_H ${L14_06_TASK_01}/*.h)
+file(GLOB L14_06_TASK_01_CPP ${L14_06_TASK_01}/*.cpp)
+add_executable(L14_06_T01.AnimalCategories ${L14_06_TASK_01_CPP} ${L14_06_TASK_01_H})
+
+set(L14_06_TASK_02 "${L14_06}02. Scientists/")
+file(GLOB L14_06_TASK_02_H ${L14_06_TASK_02}/*.h)
+file(GLOB L14_06_TASK_02_CPP ${L14_06_TASK_02}/*.cpp)
+add_executable(L14_06_T02.Scientists ${L14_06_TASK_02_CPP} ${L14_06_TASK_02_H})
+
+set(L14_06_TASK_03 "${L14_06}03. Summer Festival/")
+file(GLOB L14_06_TASK_03_H ${L14_06_TASK_03}/*.h)
+file(GLOB L14_06_TASK_03_CPP ${L14_06_TASK_03}/*.cpp)
+add_executable(L14_06_T03.SummerFestival ${L14_06_TASK_03_CPP} ${L14_06_TASK_03_H})
