@@ -2,7 +2,7 @@
 #define CPP_ADVANCED_ARRAY_H
 
 #include <algorithm>
-#include <cstdlib>
+#include <cstring>
 
 template<typename T>
 class Array {
