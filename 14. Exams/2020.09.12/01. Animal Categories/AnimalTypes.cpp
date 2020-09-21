@@ -18,7 +18,7 @@ void AnimalTypes::print() const {
 }
 
 AnimalTypes& operator<<(AnimalTypes& animalTypes, const AnimalCharacteristics& animal) {
-  animalTypes.animals.at(animal.category).emplace_back(animal);
+  animalTypes.animals[animal.category].emplace_back(animal);
   return animalTypes;
 }
 
