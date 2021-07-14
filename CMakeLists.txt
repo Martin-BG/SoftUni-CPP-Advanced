@@ -492,3 +492,18 @@ set(L14_06_TASK_03 "${L14_06}03. Summer Festival/")
 file(GLOB L14_06_TASK_03_H ${L14_06_TASK_03}/*.h)
 file(GLOB L14_06_TASK_03_CPP ${L14_06_TASK_03}/*.cpp)
 add_executable(L14_06_T03.SummerFestival ${L14_06_TASK_03_CPP} ${L14_06_TASK_03_H})
+
+###
+set(L14_07 "${L14}2021.07.03/")
+
+add_executable(L14_07_TASK_01.FormatLines "${L14_07}01. Format Lines.cpp")
+add_executable(L14_07_TASK_02.Ranges "${L14_07}02. Ranges.cpp")
+add_executable(L14_07_TASK_03.Glitches "${L14_07}03. Glitches.cpp")
+
+
+###
+set(L14_08 "${L14}2021.07.10/")
+
+add_executable(L14_08_TASK_01.Entities "${L14_08}01. Entities.cpp")
+add_executable(L14_08_TASK_02.Code "${L14_08}02. Code.cpp")
+add_executable(L14_08_TASK_03.Data "${L14_08}03. Data.cpp")
