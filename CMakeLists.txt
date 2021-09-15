@@ -500,10 +500,27 @@ add_executable(L14_07_TASK_01.FormatLines "${L14_07}01. Format Lines.cpp")
 add_executable(L14_07_TASK_02.Ranges "${L14_07}02. Ranges.cpp")
 add_executable(L14_07_TASK_03.Glitches "${L14_07}03. Glitches.cpp")
 
-
 ###
 set(L14_08 "${L14}2021.07.10/")
 
 add_executable(L14_08_TASK_01.Entities "${L14_08}01. Entities.cpp")
 add_executable(L14_08_TASK_02.Code "${L14_08}02. Code.cpp")
 add_executable(L14_08_TASK_03.Data "${L14_08}03. Data.cpp")
+
+###
+set(L14_09 "${L14}2021.09.12/")
+
+set(L14_09_TASK_01 "${L14_09}01. String Wrapper/")
+file(GLOB L14_09_TASK_01_H ${L14_09_TASK_01}/*.h)
+file(GLOB L14_09_TASK_01_CPP ${L14_09_TASK_01}/*.cpp)
+add_executable(L14_09_T01.StringWrapper ${L14_09_TASK_01_CPP} ${L14_09_TASK_01_H})
+
+set(L14_09_TASK_02 "${L14_09}02. Console Store/")
+file(GLOB L14_09_TASK_02_H ${L14_09_TASK_02}/*.h)
+file(GLOB L14_09_TASK_02_CPP ${L14_09_TASK_02}/*.cpp)
+add_executable(L14_09_T02.ConsoleStore ${L14_09_TASK_02_CPP} ${L14_09_TASK_02_H})
+
+set(L14_09_TASK_03 "${L14_09}03. Diablo/")
+file(GLOB L14_09_TASK_03_H ${L14_09_TASK_03}/*.h)
+file(GLOB L14_09_TASK_03_CPP ${L14_09_TASK_03}/*.cpp)
+add_executable(L14_09_T03.Diablo ${L14_09_TASK_03_CPP} ${L14_09_TASK_03_H})
