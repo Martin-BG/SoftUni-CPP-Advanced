@@ -524,3 +524,21 @@ set(L14_09_TASK_03 "${L14_09}03. Diablo/")
 file(GLOB L14_09_TASK_03_H ${L14_09_TASK_03}/*.h)
 file(GLOB L14_09_TASK_03_CPP ${L14_09_TASK_03}/*.cpp)
 add_executable(L14_09_T03.Diablo ${L14_09_TASK_03_CPP} ${L14_09_TASK_03_H})
+
+###
+set(L14_10 "${L14}2021.09.19/")
+
+set(L14_10_TASK_01 "${L14_10}01. Virtual Book/")
+file(GLOB L14_10_TASK_01_H ${L14_10_TASK_01}/*.h)
+file(GLOB L14_10_TASK_01_CPP ${L14_10_TASK_01}/*.cpp)
+add_executable(L14_10_T01.VirtualBook ${L14_10_TASK_01_CPP} ${L14_10_TASK_01_H})
+
+set(L14_10_TASK_02 "${L14_10}02. Vehicles/")
+file(GLOB L14_10_TASK_02_H ${L14_10_TASK_02}/*.h)
+file(GLOB L14_10_TASK_02_CPP ${L14_10_TASK_02}/*.cpp)
+add_executable(L14_10_T02.Vehicles ${L14_10_TASK_02_CPP} ${L14_10_TASK_02_H})
+
+set(L14_10_TASK_03 "${L14_10}03. Bomberman Reforged/")
+file(GLOB L14_10_TASK_03_H ${L14_10_TASK_03}/*.h)
+file(GLOB L14_10_TASK_03_CPP ${L14_10_TASK_03}/*.cpp)
+add_executable(L14_10_T03.BombermanReforged ${L14_10_TASK_03_CPP} ${L14_10_TASK_03_H})
