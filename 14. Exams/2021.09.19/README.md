@@ -2,4 +2,4 @@
 
 [C++ OOP course - July 2021](https://softuni.bg/trainings/3259/cpp-oop-july-2021)
 
-[Judge](https://judge.softuni.org/Contests/#!/List/ByCategory/320/CPlusPlus-OOP-Exams)
+[Judge](https://judge.softuni.org/Contests/3152/CPlusPlus-OOP-Regular-Exam-19-September-2021)
