@@ -11,7 +11,9 @@ void VirtualBook::printContent() const {
 }
 
 void VirtualBook::removeLastPage() {
-  _pages.pop_back();
+  if (!_pages.empty()) {
+    _pages.pop_back();
+  }
 }
 
 void VirtualBook::removeAllPages() {

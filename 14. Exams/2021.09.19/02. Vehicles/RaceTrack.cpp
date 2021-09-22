@@ -9,7 +9,7 @@
 bool RaceTrack::isRaceRunning() const {
   size_t carsOutOfFuel = 0;
   std::for_each(_cars.cbegin(), _cars.cend(),
-                [&carsOutOfFuel](const auto& car) { if (!car->hasFuel()) { ++carsOutOfFuel; }});
+                [&carsOutOfFuel](const std::unique_ptr<Car>& car) { if (!car->hasFuel()) { ++carsOutOfFuel; }});
   return carsOutOfFuel == 0 || _cars.size() - carsOutOfFuel >= 2;
 }
 
@@ -44,7 +44,7 @@ void RaceTrack::printWinner() {
 }
 
 void RaceTrack::advance() {
-  std::for_each(_cars.begin(), _cars.end(), [](auto& car) { car->advance(); });
+  std::for_each(_cars.begin(), _cars.end(), [](std::unique_ptr<Car>& car) { car->advance(); });
 }
 
 void RaceTrack::createManualCar(std::vector<int> const& shifts, int maxSpeed, int startFuel) {
@@ -57,10 +57,12 @@ void RaceTrack::createAutomaticCar(int maxSpeed, int startFuel) {
 
 void RaceTrack::increaseSpeed(int speedIncrease, int fuelConsumtion) {
   std::for_each(_cars.begin(), _cars.end(),
-                [speedIncrease, fuelConsumtion](auto& car) { car->increaseSpeed(speedIncrease, fuelConsumtion); });
+                [speedIncrease, fuelConsumtion](std::unique_ptr<Car>& car) {
+                  car->increaseSpeed(speedIncrease, fuelConsumtion);
+                });
 }
 
 void RaceTrack::decreaseSpeed(int speedDecrease) {
   std::for_each(_cars.begin(), _cars.end(),
-                [speedDecrease](auto& car) { car->decreaseSpeed(speedDecrease); });
+                [speedDecrease](std::unique_ptr<Car>& car) { car->decreaseSpeed(speedDecrease); });
 }

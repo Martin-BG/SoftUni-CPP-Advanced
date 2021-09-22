@@ -1,6 +1,7 @@
 #ifndef CPP_ADVANCED_CAR_H
 #define CPP_ADVANCED_CAR_H
 
+#include <cstddef>
 
 class Car {
 public:
