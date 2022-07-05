@@ -542,3 +542,17 @@ set(L14_10_TASK_03 "${L14_10}03. Bomberman Reforged/")
 file(GLOB L14_10_TASK_03_H ${L14_10_TASK_03}/*.h)
 file(GLOB L14_10_TASK_03_CPP ${L14_10_TASK_03}/*.cpp)
 add_executable(L14_10_T03.BombermanReforged ${L14_10_TASK_03_CPP} ${L14_10_TASK_03_H})
+
+###
+set(L14_11 "${L14}2022.06.18/")
+
+add_executable(L14_11_T01.MinMaxTemperature ${L14_11}01.\ Min-Max\ Temperature.cpp)
+add_executable(L14_11_T02.SumOfOdds ${L14_11}02.\ Sum\ Of\ Odds.cpp)
+add_executable(L14_11_T03.Twins ${L14_11}03.\ Twins.cpp)
+
+###
+set(L14_12 "${L14}2022.06.25/")
+
+add_executable(L14_12_T01.ShoppingList ${L14_12}01.\ Shopping\ List.cpp)
+add_executable(L14_12_T02.TheMatrix ${L14_12}02.\ The\ Matrix.cpp)
+add_executable(L14_12_T03.ProductsAndCities ${L14_12}03.\ Products\ and\ Cities.cpp)
