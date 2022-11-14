@@ -1,3 +1,0 @@
-= C++ OOP - Retake Exam - 11 September 2022
-
-Link to https://judge.softuni.org/Contests/3598/CPlusPlus-OOP-Retake-Exam-11-September-2022[Judge]
