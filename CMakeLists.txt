@@ -556,3 +556,43 @@ set(L14_12 "${L14}2022.06.25/")
 add_executable(L14_12_T01.ShoppingList ${L14_12}01.\ Shopping\ List.cpp)
 add_executable(L14_12_T02.TheMatrix ${L14_12}02.\ The\ Matrix.cpp)
 add_executable(L14_12_T03.ProductsAndCities ${L14_12}03.\ Products\ and\ Cities.cpp)
+
+
+#######################################
+set(L15 "15. CPP OOP Exams/")
+
+###
+set(L15_01 "${L15}2022.09.04/")
+
+set(L15_01_TASK_01 "${L15_01}01. String Wrapper/Solution")
+file(GLOB L15_01_TASK_01_H ${L15_01_TASK_01}/*.h)
+file(GLOB L15_01_TASK_01_CPP ${L15_01_TASK_01}/*.cpp)
+add_executable(L15_01_T01.StringWrapper ${L15_01_TASK_01_CPP} ${L15_01_TASK_01_H})
+
+set(L15_01_TASK_02 "${L15_01}02. Console Store/Solution")
+file(GLOB L15_01_TASK_02_H ${L15_01_TASK_02}/*.h)
+file(GLOB L15_01_TASK_02_CPP ${L15_01_TASK_02}/*.cpp)
+add_executable(L15_01_T02.ConsoleStore ${L15_01_TASK_02_CPP} ${L15_01_TASK_02_H})
+
+set(L15_01_TASK_03 "${L15_01}03. Diablo/Solution")
+file(GLOB L15_01_TASK_03_H ${L15_01_TASK_03}/*.h)
+file(GLOB L15_01_TASK_03_CPP ${L15_01_TASK_03}/*.cpp)
+add_executable(L15_01_T03.Diablo ${L15_01_TASK_03_CPP} ${L15_01_TASK_03_H})
+
+###
+set(L15_02 "${L15}2022.09.11/")
+
+set(L15_02_TASK_01 "${L15_02}01. Virtual Book/Solution")
+file(GLOB L15_02_TASK_01_H ${L15_02_TASK_01}/*.h)
+file(GLOB L15_02_TASK_01_CPP ${L15_02_TASK_01}/*.cpp)
+add_executable(L15_02_T01.VirtualBook ${L15_02_TASK_01_CPP} ${L15_02_TASK_01_H})
+
+set(L15_02_TASK_02 "${L15_02}02. Vehicles/Solution")
+file(GLOB L15_02_TASK_02_H ${L15_02_TASK_02}/*.h)
+file(GLOB L15_02_TASK_02_CPP ${L15_02_TASK_02}/*.cpp)
+add_executable(L15_02_T02.Vehicles ${L15_02_TASK_02_CPP} ${L15_02_TASK_02_H})
+
+set(L15_02_TASK_03 "${L15_02}03. Bomberman Reforged/Solution")
+file(GLOB L15_02_TASK_03_H ${L15_02_TASK_03}/*.h)
+file(GLOB L15_02_TASK_03_CPP ${L15_02_TASK_03}/*.cpp)
+add_executable(L15_02_T03.BombermanReforged ${L15_02_TASK_03_CPP} ${L15_02_TASK_03_H})
