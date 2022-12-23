@@ -37,10 +37,10 @@ int main() {
   std::cin >> itemsCount;
   std::vector<City> items(itemsCount);
 
-  std::ranges::for_each(items.begin(), items.end(), [](City& item) { std::cin >> item; });
-  std::ranges::stable_sort(items.begin(), items.end(), std::greater<>());
+  std::ranges::for_each(items, [](City& item) { std::cin >> item; });
+  std::ranges::stable_sort(items, std::greater<>());
   std::cout << "The total sum is: " << std::accumulate(items.cbegin(), items.cend(), 0.0f) << " lv." << std::endl;
-  std::ranges::for_each(items.cbegin(), items.cend(), [](const City& item) { std::cout << item; });
+  std::ranges::for_each(items, [](const City& item) { std::cout << item; });
 
   return 0;
 }
