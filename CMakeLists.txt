@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.12)
 project(CPP_Advanced)
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wcast-align -Wcast-qual -Wconversion -Wdouble-promotion -Werror -Wextra -Wnon-virtual-dtor -Wnull-dereference -Woverloaded-virtual -Wpedantic -Wpointer-arith -Wreorder -Wshadow -Wsign-conversion -Wundef -Wuninitialized -Wunused-parameter -Wextra-semi -Wunused -Wimplicit-fallthrough -Wformat=2")
 
 #######################################
 set(L01 "01. Pointers and References/")
