@@ -8,12 +8,12 @@
 
 class Noises {
 
-    typedef std::map<std::string, Noise> NoisesMap;
+    using NoisesMap = std::map<std::string, Noise, std::less<>>;
     NoisesMap noises;
 
     // transforms the string "+XXXX" to the number XXXX
-    size_t stringToTime(const std::string & time) {
-        return (time[1]-'0')*1000+(time[2]-'0')*100+(time[3]-'0')*10+time[4]-'0';        // ignore the "+" sign
+    [[nodiscard]] size_t stringToTime(const std::string & time) const {
+        return static_cast<size_t>((time[1]-'0')*1000+(time[2]-'0')*100+(time[3]-'0')*10+time[4]-'0');        // ignore the "+" sign
     }
 
     public:

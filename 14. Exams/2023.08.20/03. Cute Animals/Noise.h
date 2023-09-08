@@ -5,25 +5,31 @@
 
 class Noise {
 
-    size_t first;
-    size_t last;
-    size_t number;
-    size_t each;
+    size_t first{};
+    size_t last{};
+    size_t number{1};
+    size_t each{1};
 
-    public:
-        Noise() {}
-        Noise(size_t first_) : number(1), last(first_), first(first_), each(1) {}
-        Noise(const Noise &) = default;
-        Noise & operator = (const Noise &) = default;
+public:
+    Noise() = default;
 
-        int getFirst(void) const { return first; }
-        int getLast(void) const { return last; }
-        int getNumber(void) const { return number; }
+    explicit Noise(size_t first_) : first(first_), last(first_) {}
 
-        void newNoise(size_t time);
+    Noise(const Noise &) = default;
 
-        std::string getNewNoiseStatistics(void) const;
-        std::string getFinalStatistics(void) const;
+    Noise &operator=(const Noise &) = default;
+
+    [[nodiscard]] size_t getFirst() const { return first; }
+
+    [[nodiscard]] size_t getLast() const { return last; }
+
+    [[nodiscard]] size_t getNumber() const { return number; }
+
+    void newNoise(size_t time);
+
+    std::string getNewNoiseStatistics() const;
+
+    std::string getFinalStatistics() const;
 };
 
 #endif
