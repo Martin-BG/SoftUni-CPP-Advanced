@@ -556,3 +556,11 @@ set(L14_12 "${L14}2022.06.25/")
 add_executable(L14_12_T01.ShoppingList ${L14_12}01.\ Shopping\ List.cpp)
 add_executable(L14_12_T02.TheMatrix ${L14_12}02.\ The\ Matrix.cpp)
 add_executable(L14_12_T03.ProductsAndCities ${L14_12}03.\ Products\ and\ Cities.cpp)
+
+###
+set(L14_13 "${L14}2023.08.20/")
+
+set(L14_13_TASK_02 "${L14_13}02. Library/")
+file(GLOB L14_13_TASK_02_H ${L14_13_TASK_02}/*.h)
+file(GLOB L14_13_TASK_02_CPP ${L14_13_TASK_02}/*.cpp)
+add_executable(L14_13_T02.Library ${L14_13_TASK_02_CPP} ${L14_13_TASK_02_H})
