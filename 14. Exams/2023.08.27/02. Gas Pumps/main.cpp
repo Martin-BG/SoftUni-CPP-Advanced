@@ -27,12 +27,12 @@ Commands str2command(const string & str) {
 
 std::unique_ptr< GasReservoir > GasReservoir::theReservoir(nullptr);
 
-GasReservoir & GasReservoir::get(void) { 
-    if (theReservoir.get() == nullptr) {
+GasReservoir & GasReservoir::get() {
+    if (theReservoir == nullptr) {
         theReservoir = unique_ptr<GasReservoir>(new GasReservoir());
     }
 
-    return *theReservoir.get();
+    return *theReservoir;
 }
 
 int main() {
@@ -51,8 +51,8 @@ int main() {
             break;
 	}
 
-    for(auto c = cmd_list.begin(); c!=cmd_list.end(); c++)
-        (*c)->process();
+    for(auto const & c : cmd_list)
+        c->process();
 
     return 0;
 }

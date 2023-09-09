@@ -16,21 +16,21 @@ class GasReservoir {
     private:
         static std::unique_ptr< GasReservoir > theReservoir;
 
-        int cycles;
-        int amount;
+        int cycles{};
+        int amount{};
 
-        GasReservoir() : cycles(0), amount(0) {}
+        GasReservoir() = default;
+
+    public:
         GasReservoir(const GasReservoir &) = delete;
         GasReservoir & operator=(const GasReservoir &) = delete;
 
-    public:
+        static GasReservoir & get();
 
-        static GasReservoir & get(void);
-
-        int getCycles(void) const { return cycles; }
+        [[nodiscard]] int getCycles() const { return cycles; }
         void addCycles(int additionalCycles_) { cycles += additionalCycles_; } 
 
-        int getQuantity(void) const { return amount; }
+        [[nodiscard]] int getQuantity() const { return amount; }
         void setQuantity(int newAmount) { amount = newAmount; }
 };
 

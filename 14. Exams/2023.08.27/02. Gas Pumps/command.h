@@ -10,18 +10,22 @@
 class Command {
 
     protected:
-        Command(std::istream &) {};    
+        explicit Command(std::istream &) {}
 
-        std::ostream & outputTicks(std::ostream & ostr) { ostr << "Hour " << std::setfill('0') << std::setw(4) << GasReservoir::get().getCycles(); return ostr; }
+        std::ostream & outputTicks(std::ostream & ostr) {
+            ostr << "Hour " << std::setfill('0') << std::setw(4)
+            << GasReservoir::get().getCycles();
+            return ostr;
+        }
 
     public:
         Command() = delete;
 
         static std::unique_ptr<Command> CommandFactory(std::istream & istr);
 
-        virtual void process(void) = 0;
+        virtual void process() = 0;
 
-        virtual ~Command() {};
+        virtual ~Command() = default;
 };
 
 #endif
