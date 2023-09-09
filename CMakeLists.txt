@@ -574,3 +574,11 @@ set(L14_13_TASK_03 "${L14_13}03. Cute Animals/")
 file(GLOB L14_13_TASK_03_H ${L14_13_TASK_03}/*.h)
 file(GLOB L14_13_TASK_03_CPP ${L14_13_TASK_03}/*.cpp)
 add_executable(L14_13_T03.CuteAnimals ${L14_13_TASK_03_CPP} ${L14_13_TASK_03_H})
+
+###
+set(L14_14 "${L14}2023.08.27/")
+
+set(L14_14_TASK_02 "${L14_14}02. Gas Pumps/")
+file(GLOB L14_14_TASK_02_H ${L14_14_TASK_02}/*.h)
+file(GLOB L14_14_TASK_02_CPP ${L14_14_TASK_02}/*.cpp)
+add_executable(L14_14_T02.GasPumps ${L14_14_TASK_02_CPP} ${L14_14_TASK_02_H})
